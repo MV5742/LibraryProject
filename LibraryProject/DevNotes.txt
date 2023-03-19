@@ -1,0 +1,55 @@
+>>> Three-Layer Model
+
+> Data -> Models, Interfaces, Repositories
+> Business -> Services, Interfaces, UnitOfWork
+> Presentation -> Views, UI, Interfaces etc.
+
+> Interfaces are used everywhere because they provide abstraction and allow you to use generic types
+
+>>> Data
+
+> Models declare what properties each entity will have
+> Repositories store the entities
+
+>>> Business
+
+> Services describe the functionality of the application
+
+>>> General Notes
+
+> TEntity is just the generic type for any class just like 'T', but for Entity Framework
+> Tasks are classes that represent an asynchronous operation. They can be used to perform long tasks in the background. Result returns what their function is supposed to return
+> Async/await 
+--> Async is usually contained in the names of Methods to show that they will be performing AND returning a task 
+--> Await is written in the beginning of a line containing an Async Method so that the program knows it has to await a response
+> Custom DbContext classes use a connection string and keep DbSets which represent the tables in a database
+> The connection string can be stored in a config or json file
+
+
+>>> TODO
+> Convert the models into a DB
+> Finish the Service Layer
+> Create the Presentation Layer
+> Create Unit Tests
+> Input some testing data into the DB
+
+
+>>> 2 DO 2 Electric Boogaloo
+> Add abstract class Entity + other abstract classes
+> change all private to public
+> genre should be enum
+> add max length attribute (example in author)
+> check if Configuration.cs is still needed
+> Add constructors to all model classes. Instantiate the ICollection in the constructors
+> Add NUnit project. Look up how to test services and repositories
+Make ListBoxes have a scroll bar
+
+
+>>> VERY IMPORTANT <<<
+> Use the syntax in the image on your phone to run Sql scripts in the migration files' Up method.
+> Migrations execute one after the other and if something break make a new migration that fixes it
+> Do NOT use Remove-Migration
+>>> The View classes you saw are used only for Console Applications. 
+> The views in this project are the form design files and their respective .cs files
+
+
