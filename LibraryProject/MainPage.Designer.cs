@@ -32,6 +32,7 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.trendingButton = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
+            this.privacyPolicy = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // logInButton
@@ -74,11 +75,21 @@
             this.Title.TabIndex = 12;
             this.Title.Text = "Bookish cataloge";
             // 
+            // privacyPolicy
+            // 
+            this.privacyPolicy.AutoSize = true;
+            this.privacyPolicy.Location = new System.Drawing.Point(375, 329);
+            this.privacyPolicy.Name = "privacyPolicy";
+            this.privacyPolicy.Size = new System.Drawing.Size(80, 15);
+            this.privacyPolicy.TabIndex = 13;
+            this.privacyPolicy.Text = "Privacy Policy";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 362);
+            this.Controls.Add(this.privacyPolicy);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.trendingButton);
             this.Controls.Add(this.searchButton);
@@ -96,5 +107,6 @@
         private Button searchButton;
         private Button trendingButton;
         private Label Title;
+        private Label privacyPolicy;
     }
 }
