@@ -14,12 +14,13 @@ namespace LibraryProject.Data.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(40)]
-        private string FirstName { get; set; }
+        public string FirstName { get; set; }
         [Required]
         [MaxLength(40)]
-        private string LastName { get; set; }
-        private string ShortBiography { get; set; }
-        private int BooksWritten { get => Books.Count; }
+        public string LastName { get; set; }
+        public string ShortBiography { get; set; }
+        public int BooksWritten { get => Books.Count; }
+        [Required]
         public ICollection<Book> Books { get; set; }
     }
 }

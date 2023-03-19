@@ -12,6 +12,7 @@ namespace LibraryProject.Data.Models
         [Key]
         public int CityId { get; set; }
         [Required]
+        [MaxLength(30)]
         public string CityName { get; set; }
 
         [Required]

@@ -12,9 +12,11 @@ namespace LibraryProject.Data.Models
         [MaxLength(13)]
         public string ISBN { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Title { get; set; }
         public string Description { get; set; }
         [Required]
+        [MaxLength(30)]
         public string Genre { get; set; }
         [Required]
         public int QuantityInStock { get; set; }
@@ -26,16 +28,19 @@ namespace LibraryProject.Data.Models
         [ForeignKey("Author")]
         [Required]
         public int AuthorId { get; set; }
+        [Required]
         public Author Author { get; set; }
 
         [ForeignKey("Publisher")]
         [Required]
         public int PublisherId { get; set; }
+        [Required]
         public Publisher Publisher { get; set; }
 
         [ForeignKey("BookShop")]
         [Required]
         public int BookShopId { get; set; }
+        [Required]
         public BookShop BookShop { get; set; }
     }
 }

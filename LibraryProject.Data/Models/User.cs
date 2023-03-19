@@ -9,12 +9,16 @@ namespace LibraryProject.Data.Models
 {
     public class User
     {
+        [Key]
         public int Id { get; set; }
         [Required]
+        [MaxLength(25)]
         public string Username { get; set; }
         [Required]
+        [MaxLength(45)]
         public string Email { get; set; }
         [Required]
+        [MaxLength(25)]
         public string Password { get; set; }
         [Required]
         public DateTime Created { get; set; }
