@@ -9,6 +9,15 @@ namespace LibraryProject.Data.Models
 {
     public class User
     {
+        public User(string username, string email, string password, DateTime dateCreated)
+        {
+            Username = username;
+            Email = email;
+            Password = password;
+            DateCreated = dateCreated;
+            Wishlist = new HashSet<Book>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -21,7 +30,7 @@ namespace LibraryProject.Data.Models
         [MaxLength(25)]
         public string Password { get; set; }
         [Required]
-        public DateTime Created { get; set; }
+        public DateTime DateCreated { get; set; }
         [Required]
         public ICollection<Book> Wishlist { get; set; }
     }

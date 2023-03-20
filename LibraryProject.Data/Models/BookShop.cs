@@ -10,6 +10,14 @@ namespace LibraryProject.Data.Models
 {
     public class BookShop
     {
+        public BookShop(string name, string address, int cityId)
+        {
+            Name = name;
+            Address = address;
+            Books = new HashSet<Book>();
+            CityId = cityId;
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]

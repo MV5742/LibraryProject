@@ -10,6 +10,14 @@ namespace LibraryProject.Data.Models
 {
     public class Author
     {
+        public Author(string firstName, string lastName, string shortBiography)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            ShortBiography = shortBiography;
+            Books = new HashSet<Book>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]

@@ -6,6 +6,20 @@ namespace LibraryProject.Data.Models
 {
     public class Book
     {
+        public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price, DateTime datePublished, int authorId, int publisherId, int bookShopId)
+        {
+            ISBN = iSBN;
+            Title = title;
+            Description = description;
+            Genre = genre;
+            QuantityInStock = quantityInStock;
+            Price = price;
+            DatePublished = datePublished;
+            AuthorId = authorId;
+            PublisherId = publisherId;
+            BookShopId = bookShopId;
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]

@@ -9,8 +9,15 @@ namespace LibraryProject.Data.Models
 {
     public class City
     {
+        public City(string cityName)
+        {
+            CityName = cityName;
+            Publishers = new HashSet<Publisher>();
+            BookShops = new HashSet<BookShop>();
+        }
+
         [Key]
-        public int CityId { get; set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(30)]
         public string CityName { get; set; }
