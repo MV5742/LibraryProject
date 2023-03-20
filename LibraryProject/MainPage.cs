@@ -19,17 +19,23 @@ namespace LibraryProject.Presentation
 
         private void trendingButton_Click(object sender, EventArgs e)
         {
-
+            TrendingPage trendingPage = new TrendingPage();
+            trendingPage.Show();
+            this.Hide();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-
+            SearchAndViewPage search = new SearchAndViewPage();
+            search.Show();
+            this.Hide();
         }
 
         private void logInButton_Click(object sender, EventArgs e)
         {
-
+            LoginPage login = new LoginPage();
+            login.Show();
+            this.Hide();
         }
     }
 }

@@ -35,7 +35,6 @@ namespace LibraryProject.Service.Services
             await _dbContext.SaveChangesAsync();
             return entity;
         }
-
         public virtual async Task UpdateAsync(TEntity entity)
         {
             //Does not modify anything. It just sets the state to modified and saves the changes. Still needs logic

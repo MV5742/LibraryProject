@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace LibraryProject.Presentation
 {
-    public partial class BookView : Form
+    public partial class TrendingPage : Form
     {
-        public BookView()
+        public TrendingPage()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BookView_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

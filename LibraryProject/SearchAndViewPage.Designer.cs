@@ -1,6 +1,6 @@
 ﻿namespace LibraryProject.Presentation
 {
-    partial class BookView
+    partial class SearchAndViewPage
     {
         /// <summary>
         /// Required designer variable.

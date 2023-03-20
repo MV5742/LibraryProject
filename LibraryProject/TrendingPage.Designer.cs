@@ -1,6 +1,6 @@
 ﻿namespace LibraryProject.Presentation
 {
-    partial class Form2
+    partial class TrendingPage
     {
         /// <summary>
         /// Required designer variable.

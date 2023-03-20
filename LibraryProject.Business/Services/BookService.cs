@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {
-    public class AuthorService : BaseService<Author>
+    public class BookService : BaseService<Book>
     {
-        public AuthorService(DbContext dbContext) : base(dbContext)
+        public BookService(DbContext dbContext) : base(dbContext)
         {
-
         }
     }
 }
