@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryProject.Data.Models
+namespace LibraryProject.Business
 {
     public class City
     {
@@ -23,7 +23,7 @@ namespace LibraryProject.Data.Models
         public string CityName { get; set; }
 
         [Required]
-        public ICollection<Publisher> Publishers { get; set;}
+        public ICollection<Publisher> Publishers { get; set; }
         [Required]
         public ICollection<BookShop> BookShops { get; set; }
     }

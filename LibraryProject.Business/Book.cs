@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LibraryProject.Data.Models
+namespace LibraryProject.Business
 {
     public class Book
     {
@@ -38,7 +37,7 @@ namespace LibraryProject.Data.Models
         public decimal Price { get; set; }
         [Required]
         public DateTime DatePublished { get; set; }
-        
+
         [ForeignKey("Author")]
         [Required]
         public int AuthorId { get; set; }

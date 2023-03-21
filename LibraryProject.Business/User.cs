@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryProject.Data.Models
+namespace LibraryProject.Business
 {
     public class User
     {

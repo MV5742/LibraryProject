@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryProject.Data.Models
+namespace LibraryProject.Business
 {
-    public class Publisher
+    public class BookShop
     {
-        public Publisher(string name, string address, int cityId)
+        public BookShop(string name, string address, int cityId)
         {
             Name = name;
             Address = address;
-            BooksPublished = new HashSet<Book>();
+            Books = new HashSet<Book>();
             CityId = cityId;
         }
 
@@ -24,13 +24,12 @@ namespace LibraryProject.Data.Models
         [MaxLength(40)]
         public string Name { get; set; }
         [Required]
-        [MaxLength(30)]
+        [MaxLength(60)]
         public string Address { get; set; }
         [Required]
         public string CityName => City.CityName;
-        public int BookCount => BooksPublished.Count;
         [Required]
-        public ICollection<Book> BooksPublished { get; set; }
+        public ICollection<Book> Books { get; set; }
 
         [ForeignKey("City")]
         [Required]

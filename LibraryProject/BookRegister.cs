@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryProject.Business;
 
 namespace LibraryProject.Presentation
 {
@@ -25,7 +26,16 @@ namespace LibraryProject.Presentation
         }
 
         private void registerBookButton_Click(object sender, EventArgs e)
-        { 
+        {
+            string iSBN = iSBNBox.Text;
+            string title = titleBox.Text;
+            string description = descriptionBox.Text;
+            string genre = genreBox.Text;
+            int quantity = int.Parse(quantityBox.Text);
+            decimal price = decimal.Parse(priceBox.Text);
+            DateTime datePublished = DateTime.Parse(dateBox.Text);
+
+            //Book book = new Book();    
         }
     }
 }

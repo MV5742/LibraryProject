@@ -40,14 +40,14 @@
             this.priceBox = new System.Windows.Forms.TextBox();
             this.dateLabel = new System.Windows.Forms.Label();
             this.dateBox = new System.Windows.Forms.TextBox();
-            this.bioLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.descriptionBox = new System.Windows.Forms.TextBox();
             this.registerBookButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.AuthorsBox = new System.Windows.Forms.TextBox();
             this.publisherLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.publisherNameBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // titleLable
@@ -152,23 +152,23 @@
             this.dateBox.Size = new System.Drawing.Size(100, 23);
             this.dateBox.TabIndex = 11;
             // 
-            // bioLabel
+            // descriptionLabel
             // 
-            this.bioLabel.AutoSize = true;
-            this.bioLabel.Location = new System.Drawing.Point(104, 287);
-            this.bioLabel.Name = "bioLabel";
-            this.bioLabel.Size = new System.Drawing.Size(92, 15);
-            this.bioLabel.TabIndex = 12;
-            this.bioLabel.Text = "Short Biography";
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Location = new System.Drawing.Point(104, 287);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(98, 15);
+            this.descriptionLabel.TabIndex = 12;
+            this.descriptionLabel.Text = "Short Description";
             // 
-            // textBox1
+            // descriptionBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 313);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(246, 106);
-            this.textBox1.TabIndex = 13;
+            this.descriptionBox.Location = new System.Drawing.Point(25, 313);
+            this.descriptionBox.Multiline = true;
+            this.descriptionBox.Name = "descriptionBox";
+            this.descriptionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descriptionBox.Size = new System.Drawing.Size(246, 106);
+            this.descriptionBox.TabIndex = 13;
             // 
             // registerBookButton
             // 
@@ -199,13 +199,13 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "                 Author Name(s) \r\n(Make sure to split with a comma (,))";
             // 
-            // textBox2
+            // AuthorsBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(53, 207);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox2.Size = new System.Drawing.Size(201, 23);
-            this.textBox2.TabIndex = 17;
+            this.AuthorsBox.Location = new System.Drawing.Point(53, 207);
+            this.AuthorsBox.Name = "AuthorsBox";
+            this.AuthorsBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.AuthorsBox.Size = new System.Drawing.Size(201, 23);
+            this.AuthorsBox.TabIndex = 17;
             // 
             // publisherLabel
             // 
@@ -216,27 +216,27 @@
             this.publisherLabel.TabIndex = 18;
             this.publisherLabel.Text = "Publisher Name";
             // 
-            // textBox3
+            // publisherNameBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(53, 256);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox3.Size = new System.Drawing.Size(201, 23);
-            this.textBox3.TabIndex = 19;
+            this.publisherNameBox.Location = new System.Drawing.Point(53, 256);
+            this.publisherNameBox.Name = "publisherNameBox";
+            this.publisherNameBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.publisherNameBox.Size = new System.Drawing.Size(201, 23);
+            this.publisherNameBox.TabIndex = 19;
             // 
             // BookRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 536);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.publisherNameBox);
             this.Controls.Add(this.publisherLabel);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.AuthorsBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.registerBookButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.bioLabel);
+            this.Controls.Add(this.descriptionBox);
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.dateBox);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.priceBox);
@@ -270,13 +270,13 @@
         private TextBox priceBox;
         private Label dateLabel;
         private TextBox dateBox;
-        private Label bioLabel;
-        private TextBox textBox1;
+        private Label descriptionLabel;
+        private TextBox descriptionBox;
         private Button registerBookButton;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox AuthorsBox;
         private Label publisherLabel;
-        private TextBox textBox3;
+        private TextBox publisherNameBox;
     }
 }
