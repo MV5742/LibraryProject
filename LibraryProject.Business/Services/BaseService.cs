@@ -48,5 +48,10 @@ namespace LibraryProject.Service.Services
             _dbSet.Remove(entity);
             await _dbContext.SaveChangesAsync();
         }
+
+        public virtual string PrintInfoById(int id)
+        {
+            return "Lore ipsum...";
+        }
     }
 }

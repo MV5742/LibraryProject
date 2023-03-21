@@ -37,7 +37,7 @@
             // 
             // logInButton
             // 
-            this.logInButton.Location = new System.Drawing.Point(171, 127);
+            this.logInButton.Location = new System.Drawing.Point(171, 116);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(131, 36);
             this.logInButton.TabIndex = 9;
@@ -47,7 +47,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(171, 187);
+            this.searchButton.Location = new System.Drawing.Point(171, 167);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(131, 36);
             this.searchButton.TabIndex = 10;
@@ -57,7 +57,7 @@
             // 
             // trendingButton
             // 
-            this.trendingButton.Location = new System.Drawing.Point(171, 243);
+            this.trendingButton.Location = new System.Drawing.Point(171, 219);
             this.trendingButton.Name = "trendingButton";
             this.trendingButton.Size = new System.Drawing.Size(131, 36);
             this.trendingButton.TabIndex = 11;
@@ -78,7 +78,7 @@
             // privacyPolicy
             // 
             this.privacyPolicy.AutoSize = true;
-            this.privacyPolicy.Location = new System.Drawing.Point(375, 329);
+            this.privacyPolicy.Location = new System.Drawing.Point(387, 353);
             this.privacyPolicy.Name = "privacyPolicy";
             this.privacyPolicy.Size = new System.Drawing.Size(80, 15);
             this.privacyPolicy.TabIndex = 13;
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 362);
+            this.ClientSize = new System.Drawing.Size(492, 387);
             this.Controls.Add(this.privacyPolicy);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.trendingButton);

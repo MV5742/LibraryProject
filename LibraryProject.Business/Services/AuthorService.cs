@@ -14,5 +14,17 @@ namespace LibraryProject.Service.Services
         {
 
         }
+
+        public override string PrintInfoById(int id)
+        {
+            Author author = base.GetByIdAsync(id).Result;
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine($"Author information:");
+            stringBuilder.AppendLine($"Name: {author.FirstName} {author.LastName}");
+            stringBuilder.AppendLine($"Books written: {author.BooksWritten}");
+            stringBuilder.AppendLine($"Short biography:");
+            stringBuilder.Append($"{author.ShortBiography}");
+            return stringBuilder.ToString();
+        }
     }
 }

@@ -71,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(297, 67);
+            this.label1.Location = new System.Drawing.Point(290, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 5;
@@ -80,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(290, 275);
+            this.label2.Location = new System.Drawing.Point(290, 252);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 15);
             this.label2.TabIndex = 6;
@@ -133,7 +133,7 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Bookish cataloge";
             // 
-            // BookView
+            // SearchAndViewPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +148,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "BookView";
+            this.Name = "SearchAndViewPage";
             this.Text = "BookView";
             this.Load += new System.EventHandler(this.BookView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

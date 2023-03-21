@@ -42,8 +42,9 @@
 > check if Configuration.cs is still needed
 > Add constructors to all model classes. Instantiate the ICollection in the constructors
 > Add NUnit project. Look up how to test services and repositories
-Make ListBoxes have a scroll bar
-
+> Make ListBoxes have a scroll bar
+> Create many-to-many relation using FluentAPI
+> Create contributor form where you can add entries to the database (pass: hiMom1234)
 
 >>> VERY IMPORTANT <<<
 > Use the syntax in the image on your phone to run Sql scripts in the migration files' Up method.

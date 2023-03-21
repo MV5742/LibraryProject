@@ -26,6 +26,7 @@ namespace LibraryProject.Data.Models
         [Required]
         [MaxLength(40)]
         public string LastName { get; set; }
+        public string FullName => FirstName + " " + LastName;
         public string ShortBiography { get; set; }
         public int BooksWritten { get => Books.Count; }
         [Required]

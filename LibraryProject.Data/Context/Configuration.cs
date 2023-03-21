@@ -12,7 +12,7 @@ namespace LibraryProject.Data.Context
         public static IConfiguration GetConfiguration()
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath("")
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
             return builder.Build();
