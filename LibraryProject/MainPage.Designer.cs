@@ -33,11 +33,12 @@
             this.trendingButton = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
             this.privacyPolicy = new System.Windows.Forms.Label();
+            this.ContributorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // logInButton
             // 
-            this.logInButton.Location = new System.Drawing.Point(171, 116);
+            this.logInButton.Location = new System.Drawing.Point(157, 130);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(131, 36);
             this.logInButton.TabIndex = 9;
@@ -47,7 +48,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(171, 167);
+            this.searchButton.Location = new System.Drawing.Point(157, 191);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(131, 36);
             this.searchButton.TabIndex = 10;
@@ -57,7 +58,7 @@
             // 
             // trendingButton
             // 
-            this.trendingButton.Location = new System.Drawing.Point(171, 219);
+            this.trendingButton.Location = new System.Drawing.Point(157, 251);
             this.trendingButton.Name = "trendingButton";
             this.trendingButton.Size = new System.Drawing.Size(131, 36);
             this.trendingButton.TabIndex = 11;
@@ -78,17 +79,28 @@
             // privacyPolicy
             // 
             this.privacyPolicy.AutoSize = true;
-            this.privacyPolicy.Location = new System.Drawing.Point(387, 353);
+            this.privacyPolicy.Location = new System.Drawing.Point(379, 352);
             this.privacyPolicy.Name = "privacyPolicy";
             this.privacyPolicy.Size = new System.Drawing.Size(80, 15);
             this.privacyPolicy.TabIndex = 13;
             this.privacyPolicy.Text = "Privacy Policy";
+            // 
+            // ContributorLabel
+            // 
+            this.ContributorLabel.AutoSize = true;
+            this.ContributorLabel.Location = new System.Drawing.Point(21, 352);
+            this.ContributorLabel.Name = "ContributorLabel";
+            this.ContributorLabel.Size = new System.Drawing.Size(103, 15);
+            this.ContributorLabel.TabIndex = 14;
+            this.ContributorLabel.Text = "Contributor Mode";
+            this.ContributorLabel.Click += new System.EventHandler(this.ContributorLabel_Click);
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 387);
+            this.Controls.Add(this.ContributorLabel);
             this.Controls.Add(this.privacyPolicy);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.trendingButton);
@@ -108,5 +120,6 @@
         private Button trendingButton;
         private Label Title;
         private Label privacyPolicy;
+        private Label ContributorLabel;
     }
 }

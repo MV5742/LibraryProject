@@ -9,7 +9,6 @@ namespace LibraryProject.Presentation
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainPage());
-            
         }
     }
 }

@@ -1,0 +1,282 @@
+﻿namespace LibraryProject.Presentation
+{
+    partial class BookRegister
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.titleLable = new System.Windows.Forms.Label();
+            this.iSBNLabel = new System.Windows.Forms.Label();
+            this.genreLabel = new System.Windows.Forms.Label();
+            this.quantityLabel = new System.Windows.Forms.Label();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.titleBox = new System.Windows.Forms.TextBox();
+            this.iSBNBox = new System.Windows.Forms.TextBox();
+            this.genreBox = new System.Windows.Forms.TextBox();
+            this.quantityBox = new System.Windows.Forms.TextBox();
+            this.priceBox = new System.Windows.Forms.TextBox();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.dateBox = new System.Windows.Forms.TextBox();
+            this.bioLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.registerBookButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.publisherLabel = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // titleLable
+            // 
+            this.titleLable.AutoSize = true;
+            this.titleLable.Location = new System.Drawing.Point(27, 19);
+            this.titleLable.Name = "titleLable";
+            this.titleLable.Size = new System.Drawing.Size(29, 15);
+            this.titleLable.TabIndex = 0;
+            this.titleLable.Text = "Title";
+            // 
+            // iSBNLabel
+            // 
+            this.iSBNLabel.AutoSize = true;
+            this.iSBNLabel.Location = new System.Drawing.Point(27, 63);
+            this.iSBNLabel.Name = "iSBNLabel";
+            this.iSBNLabel.Size = new System.Drawing.Size(32, 15);
+            this.iSBNLabel.TabIndex = 1;
+            this.iSBNLabel.Text = "ISBN";
+            // 
+            // genreLabel
+            // 
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.Location = new System.Drawing.Point(27, 107);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(38, 15);
+            this.genreLabel.TabIndex = 2;
+            this.genreLabel.Text = "Genre";
+            // 
+            // quantityLabel
+            // 
+            this.quantityLabel.AutoSize = true;
+            this.quantityLabel.Location = new System.Drawing.Point(171, 19);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.Size = new System.Drawing.Size(92, 15);
+            this.quantityLabel.TabIndex = 3;
+            this.quantityLabel.Text = "QuantityInStock";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Location = new System.Drawing.Point(170, 66);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(33, 15);
+            this.priceLabel.TabIndex = 4;
+            this.priceLabel.Text = "Price";
+            // 
+            // titleBox
+            // 
+            this.titleBox.Location = new System.Drawing.Point(27, 37);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.titleBox.Size = new System.Drawing.Size(100, 23);
+            this.titleBox.TabIndex = 5;
+            // 
+            // iSBNBox
+            // 
+            this.iSBNBox.Location = new System.Drawing.Point(27, 81);
+            this.iSBNBox.Name = "iSBNBox";
+            this.iSBNBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.iSBNBox.Size = new System.Drawing.Size(100, 23);
+            this.iSBNBox.TabIndex = 6;
+            // 
+            // genreBox
+            // 
+            this.genreBox.Location = new System.Drawing.Point(29, 125);
+            this.genreBox.Name = "genreBox";
+            this.genreBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.genreBox.Size = new System.Drawing.Size(100, 23);
+            this.genreBox.TabIndex = 7;
+            // 
+            // quantityBox
+            // 
+            this.quantityBox.Location = new System.Drawing.Point(171, 37);
+            this.quantityBox.Name = "quantityBox";
+            this.quantityBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.quantityBox.Size = new System.Drawing.Size(100, 23);
+            this.quantityBox.TabIndex = 8;
+            // 
+            // priceBox
+            // 
+            this.priceBox.Location = new System.Drawing.Point(171, 84);
+            this.priceBox.Name = "priceBox";
+            this.priceBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.priceBox.Size = new System.Drawing.Size(100, 23);
+            this.priceBox.TabIndex = 9;
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(171, 112);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(83, 15);
+            this.dateLabel.TabIndex = 10;
+            this.dateLabel.Text = "DatePublished";
+            // 
+            // dateBox
+            // 
+            this.dateBox.Location = new System.Drawing.Point(171, 130);
+            this.dateBox.Name = "dateBox";
+            this.dateBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dateBox.Size = new System.Drawing.Size(100, 23);
+            this.dateBox.TabIndex = 11;
+            // 
+            // bioLabel
+            // 
+            this.bioLabel.AutoSize = true;
+            this.bioLabel.Location = new System.Drawing.Point(104, 287);
+            this.bioLabel.Name = "bioLabel";
+            this.bioLabel.Size = new System.Drawing.Size(92, 15);
+            this.bioLabel.TabIndex = 12;
+            this.bioLabel.Text = "Short Biography";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(25, 313);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(246, 106);
+            this.textBox1.TabIndex = 13;
+            // 
+            // registerBookButton
+            // 
+            this.registerBookButton.Location = new System.Drawing.Point(104, 436);
+            this.registerBookButton.Name = "registerBookButton";
+            this.registerBookButton.Size = new System.Drawing.Size(75, 23);
+            this.registerBookButton.TabIndex = 14;
+            this.registerBookButton.Text = "Register";
+            this.registerBookButton.UseVisualStyleBackColor = true;
+            this.registerBookButton.Click += new System.EventHandler(this.registerBookButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(144, 500);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Back to Main Contributor Page";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(53, 165);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 30);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "                 Author Name(s) \r\n(Make sure to split with a comma (,))";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(53, 207);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.textBox2.Size = new System.Drawing.Size(201, 23);
+            this.textBox2.TabIndex = 17;
+            // 
+            // publisherLabel
+            // 
+            this.publisherLabel.AutoSize = true;
+            this.publisherLabel.Location = new System.Drawing.Point(112, 238);
+            this.publisherLabel.Name = "publisherLabel";
+            this.publisherLabel.Size = new System.Drawing.Size(91, 15);
+            this.publisherLabel.TabIndex = 18;
+            this.publisherLabel.Text = "Publisher Name";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(53, 256);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.textBox3.Size = new System.Drawing.Size(201, 23);
+            this.textBox3.TabIndex = 19;
+            // 
+            // BookRegister
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(328, 536);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.publisherLabel);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.registerBookButton);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.bioLabel);
+            this.Controls.Add(this.dateBox);
+            this.Controls.Add(this.dateLabel);
+            this.Controls.Add(this.priceBox);
+            this.Controls.Add(this.quantityBox);
+            this.Controls.Add(this.genreBox);
+            this.Controls.Add(this.iSBNBox);
+            this.Controls.Add(this.titleBox);
+            this.Controls.Add(this.priceLabel);
+            this.Controls.Add(this.quantityLabel);
+            this.Controls.Add(this.genreLabel);
+            this.Controls.Add(this.iSBNLabel);
+            this.Controls.Add(this.titleLable);
+            this.Name = "BookRegister";
+            this.Text = "BookRegister";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Label titleLable;
+        private Label iSBNLabel;
+        private Label genreLabel;
+        private Label quantityLabel;
+        private Label priceLabel;
+        private TextBox titleBox;
+        private TextBox iSBNBox;
+        private TextBox genreBox;
+        private TextBox quantityBox;
+        private TextBox priceBox;
+        private Label dateLabel;
+        private TextBox dateBox;
+        private Label bioLabel;
+        private TextBox textBox1;
+        private Button registerBookButton;
+        private Label label1;
+        private Label label2;
+        private TextBox textBox2;
+        private Label publisherLabel;
+        private TextBox textBox3;
+    }
+}

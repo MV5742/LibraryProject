@@ -37,5 +37,12 @@ namespace LibraryProject.Presentation
             login.Show();
             this.Hide();
         }
+
+        private void ContributorLabel_Click(object sender, EventArgs e)
+        {
+            ContributorModeMain contributor = new ContributorModeMain();
+            contributor.Show();
+            this.Hide();
+        }
     }
 }
