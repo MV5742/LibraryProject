@@ -1,7 +1,17 @@
+using Microsoft.Extensions.DependencyInjection;
+using LibraryProject.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using LibraryProject.Data.Interfaces;
+using LibraryProject.Data.Repositories;
+using LibraryProject.Service.Interfaces;
+using LibraryProject.Service.Services;
+using LibraryProject.Business;
+
 namespace LibraryProject.Presentation
 {
-    internal static class Program
+    public static class Program
     {
+        public static IServiceProvider GetServiceProvider { get; private set; }
         [STAThread]
         static void Main()
         {
@@ -9,6 +19,14 @@ namespace LibraryProject.Presentation
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainPage());
+
+            IServiceProvider serviceProvider = new ServiceCollection()
+            .AddDbContext<LibraryContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")))
+            .AddScoped<IRepository, BaseRepository>()
+            .AddScoped<IBaseService<Book>, BookService>()
+            .BuildServiceProvider();
+            GetServiceProvider = serviceProvider;
         }
     }
 }

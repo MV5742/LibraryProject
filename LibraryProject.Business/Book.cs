@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using LibraryProject.Business.Interfaces;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibraryProject.Business
 {
-    public class Book
+    public class Book : IEntity
     {
-        public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price, DateTime datePublished, int authorId, int publisherId, int bookShopId)
+        public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price, DateTime datePublished, int publisherId)
         {
             ISBN = iSBN;
             Title = title;
@@ -14,9 +15,9 @@ namespace LibraryProject.Business
             QuantityInStock = quantityInStock;
             Price = price;
             DatePublished = datePublished;
-            AuthorId = authorId;
+            Authors = new HashSet<Author>();
+            BookShops = new HashSet<BookShop>();
             PublisherId = publisherId;
-            BookShopId = bookShopId;
         }
 
         [Key]
@@ -37,12 +38,7 @@ namespace LibraryProject.Business
         public decimal Price { get; set; }
         [Required]
         public DateTime DatePublished { get; set; }
-
-        [ForeignKey("Author")]
-        [Required]
-        public int AuthorId { get; set; }
-        [Required]
-        public Author Author { get; set; }
+        public string AuthorNames => string.Join(", ", Authors.Select(x => x.FullName).ToList());
 
         [ForeignKey("Publisher")]
         [Required]
@@ -50,10 +46,9 @@ namespace LibraryProject.Business
         [Required]
         public Publisher Publisher { get; set; }
 
-        [ForeignKey("BookShop")]
         [Required]
-        public int BookShopId { get; set; }
+        public ICollection<Author> Authors { get; set; }
         [Required]
-        public BookShop BookShop { get; set; }
+        public ICollection<BookShop> BookShops { get; set; }
     }
 }

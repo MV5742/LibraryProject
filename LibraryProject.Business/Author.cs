@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryProject.Business.Interfaces;
 
 namespace LibraryProject.Business
 {
-    public class Author
+    public class Author : IEntity
     {
         public Author(string firstName, string lastName, string shortBiography)
         {

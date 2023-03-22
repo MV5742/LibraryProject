@@ -1,4 +1,5 @@
-﻿using LibraryProject.Service.Interfaces;
+﻿using LibraryProject.Data.Interfaces;
+using LibraryProject.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,48 +11,32 @@ namespace LibraryProject.Service.Services
 {
     public abstract class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class
     {
-        protected readonly DbContext _dbContext;
-        protected readonly DbSet<TEntity> _dbSet;
+        protected readonly IRepository repo;
 
-        public BaseService(DbContext dbContext)
+        public BaseService(IRepository _repo)
         {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TEntity>();
+            repo = _repo;
+        }
+        public virtual IQueryable<TEntity> GetAllAsync()
+        {
+            return repo.GetAllAsync<TEntity>();
         }
 
-        public virtual async Task<TEntity> GetByIdAsync(int id)
+        public virtual async Task CreateAsync(TEntity entity)
         {
-            return await _dbSet.FindAsync(id);
+            await repo.Add(entity);
         }
 
-        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
-        {
-            return await _dbSet.ToListAsync();
-        }
-
-        public virtual async Task<TEntity> CreateAsync(TEntity entity)
-        {
-            _dbSet.Add(entity);
-            await _dbContext.SaveChangesAsync();
-            return entity;
-        }
         public virtual async Task UpdateAsync(TEntity entity)
         {
             //Does not modify anything. It just sets the state to modified and saves the changes. Still needs logic
 
-            _dbContext.Entry(entity).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
+            repo.Update(entity);
         }
 
         public virtual async Task DeleteAsync(TEntity entity)
         {
-            _dbSet.Remove(entity);
-            await _dbContext.SaveChangesAsync();
-        }
-
-        public virtual string PrintInfoById(int id)
-        {
-            return "Lore ipsum...";
+            repo.Remove(entity);
         }
     }
 }

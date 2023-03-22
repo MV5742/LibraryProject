@@ -3,45 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryProject.Data.Context;
 using LibraryProject.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryProject.Data.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    public abstract class BaseRepository : IRepository
     {
-        private readonly DbContext _dbContext;
-        private readonly DbSet<TEntity> _dbSet;
+        protected DbContext Context  { get; set; }
 
-        public BaseRepository(DbContext dbContext)
+        protected BaseRepository(LibraryContext context)
         {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TEntity>();
+            this.Context = context;
         }
 
-        public async Task<List<TEntity>> GetAllAsync()
+        public DbSet<T> GetDbSet<T>() where T : class
         {
-            return await _dbSet.ToListAsync();
+            return Context.Set<T>();
         }
 
-        public async Task<TEntity> GetByIdAsync(int id)
+        public async Task Add<T>(T entity) where T : class
         {
-            return await _dbSet.FindAsync(id);
+            await GetDbSet<T>().AddAsync(entity);
         }
 
-        public void Add(TEntity entity)
+        public IQueryable<T> GetAllAsync<T>() where T : class
         {
-            _dbSet.AddAsync(entity);
+            return GetDbSet<T>()
+                .AsQueryable();
         }
 
-        public void Update(TEntity entity)
+        public void Remove<T>(T entity) where T : class
         {
-            _dbSet.Update(entity);
+            GetDbSet<T>().Remove(entity);
         }
 
-        public void Remove(TEntity entity)
+        public async Task Update<T>(T entity) where T : class
         {
-            _dbSet.Remove(entity);
+            throw new NotImplementedException();
         }
     }
 }

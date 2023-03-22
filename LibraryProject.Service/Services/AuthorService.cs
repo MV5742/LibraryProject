@@ -1,4 +1,6 @@
 ﻿using LibraryProject.Business;
+using LibraryProject.Data.Interfaces;
+using LibraryProject.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,16 +10,20 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {
-    public class AuthorService : BaseService<Author>
+    public class AuthorService : BaseService<Author>, ICustomService<Author>
     {
-        public AuthorService(DbContext dbContext) : base(dbContext)
+        public AuthorService(IRepository _repo) : base(_repo)
         {
 
         }
 
-        public override string PrintInfoById(int id)
+        public Task<Author> GetByIdAsync(int id)
         {
-            Author author = base.GetByIdAsync(id).Result;
+            return repo.GetAllAsync<Author>().FirstOrDefaultAsync(x => x.Id == id);
+        }
+        public string PrintInfoById(int id)
+        {
+            Author author = GetByIdAsync(id).Result;
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"Author information:");
             stringBuilder.AppendLine($"Name: {author.FirstName} {author.LastName}");

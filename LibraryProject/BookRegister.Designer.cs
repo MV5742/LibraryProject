@@ -172,7 +172,7 @@
             // 
             // registerBookButton
             // 
-            this.registerBookButton.Location = new System.Drawing.Point(104, 436);
+            this.registerBookButton.Location = new System.Drawing.Point(52, 440);
             this.registerBookButton.Name = "registerBookButton";
             this.registerBookButton.Size = new System.Drawing.Size(75, 23);
             this.registerBookButton.TabIndex = 14;
@@ -183,7 +183,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(144, 500);
+            this.label1.Location = new System.Drawing.Point(146, 512);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 15);
             this.label1.TabIndex = 15;

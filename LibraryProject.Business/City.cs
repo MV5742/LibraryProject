@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryProject.Business.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Business
 {
-    public class City
+    public class City : IEntity
     {
         public City(string cityName)
         {

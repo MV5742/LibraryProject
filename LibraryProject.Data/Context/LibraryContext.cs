@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace LibraryProject.Data.Context
 {
     public class LibraryContext : DbContext
@@ -28,20 +27,7 @@ namespace LibraryProject.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>()
-                .HasOne(b => b.Author)
-                .WithMany(a => a.Books)
-                .HasForeignKey(b => b.AuthorId);
-
-            modelBuilder.Entity<Book>()
-                .HasOne(b => b.Publisher)
-                .WithMany(p => p.BooksPublished)
-                .HasForeignKey(b => b.PublisherId);
-
-            modelBuilder.Entity<Book>()
-                .HasOne(b => b.BookShop)
-                .WithMany(bs => bs.Books)
-                .HasForeignKey(b => b.BookShopId);
+            //One-to-one relations
 
             modelBuilder.Entity<Publisher>()
                 .HasOne(p => p.City)
@@ -52,6 +38,37 @@ namespace LibraryProject.Data.Context
                 .HasOne(bs => bs.City)
                 .WithMany(c => c.BookShops)
                 .HasForeignKey(bs => bs.CityId);
+
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Publisher)
+                .WithMany(p => p.BooksPublished)
+                .HasForeignKey(b => b.PublisherId);
+
+            //Many-to-many relations
+
+            modelBuilder.Entity<Author>()
+            .HasMany(a => a.Books)
+            .WithMany(b => b.Authors)
+            .UsingEntity(x => x.ToTable("AuthorBooks"));
+
+            modelBuilder.Entity<BookShop>()
+                .HasMany(bs => bs.Books)
+                .WithMany(b => b.BookShops)
+                .UsingEntity(x => x.ToTable("BooksShopBooks"));
+
+            //Unique/Distinct validations
+
+            modelBuilder.Entity<Book>()
+                .HasIndex(b => b.Title)
+                .IsUnique();
+
+            modelBuilder.Entity<Publisher>()
+                .HasIndex(p => p.Name)
+                .IsUnique();
+
+            modelBuilder.Entity<BookShop>()
+                .HasIndex(bs => bs.Name)
+                .IsUnique();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

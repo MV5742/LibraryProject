@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryProject.Business.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Business
 {
-    public class BookShop
+    public class BookShop : IEntity
     {
         public BookShop(string name, string address, int cityId)
         {

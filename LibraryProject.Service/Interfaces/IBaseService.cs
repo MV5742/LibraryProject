@@ -8,9 +8,8 @@ namespace LibraryProject.Service.Interfaces
 {
     public interface IBaseService<TEntity>
     {
-        Task<TEntity> GetByIdAsync(int id);
-        Task<IEnumerable<TEntity>> GetAllAsync();
-        Task<TEntity> CreateAsync(TEntity entity);
+        IQueryable<TEntity> GetAllAsync();
+        Task CreateAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
         Task DeleteAsync(TEntity entity);
     }
