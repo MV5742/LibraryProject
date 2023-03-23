@@ -16,10 +16,16 @@ namespace LibraryProject.Presentation
     public partial class BookRegister : Form
     {
         private BookService bookService;
+        private PublisherService publisherService;
+        private AuthorService authorService;
+        private BookShopService bookShopService;
         public BookRegister()
         {
             InitializeComponent();
             bookService = Program.GetServiceProvider.GetService<BookService>();
+            publisherService = Program.GetServiceProvider.GetService<PublisherService>();
+            authorService = Program.GetServiceProvider.GetService<AuthorService>();
+            bookShopService = Program.GetServiceProvider.GetService<BookShopService>();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,11 +45,20 @@ namespace LibraryProject.Presentation
             int quantity = int.Parse(quantityBox.Text);
             decimal price = decimal.Parse(priceBox.Text);
             DateTime datePublished = DateTime.Parse(dateBox.Text);
-            //needs to have PublisherService
-            //int publisherId
-
-            //change last argument (should NOT be 0)
-            Book book = new Book(iSBN, title, description, genre, quantity, price, datePublished, 0);    
+            Publisher publisher = publisherService.GetAllAsync().FirstOrDefault(x => x.Name == publisherNameBox.Text);
+            List<Author> authors = authorService
+                .GetAllAsync()
+                .Where(x => AuthorsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.FullName))
+                .ToList();
+            List<BookShop> bookShops = bookShopService
+                .GetAllAsync()
+                .Where(x => bookShopsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.Name))
+                .ToList();
+            Book book = new Book(iSBN, title, description, genre, quantity, price, datePublished, publisher.Id);
+            book.Publisher = publisher;
+            book.Authors = authors;
+            book.BookShops = bookShops;
+            bookService.CreateAsync(book);
         }
     }
 }

@@ -32,8 +32,6 @@ namespace LibraryProject.Service.Services
 
         public virtual async Task UpdateAsync(TEntity entity)
         {
-            //Does not modify anything. It just sets the state to modified and saves the changes. Still needs logic
-
             repo.Update(entity);
         }
 

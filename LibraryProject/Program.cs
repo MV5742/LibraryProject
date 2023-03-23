@@ -25,6 +25,9 @@ namespace LibraryProject.Presentation
             options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")))
             .AddScoped<IRepository, BaseRepository>()
             .AddScoped<IBaseService<Book>, BookService>()
+            .AddScoped<IBaseService<Publisher>, PublisherService>()
+            .AddScoped<IBaseService<Author>, AuthorService>()
+            .AddScoped<IBaseService<BookShop>, BookShopService>()
             .BuildServiceProvider();
             GetServiceProvider = serviceProvider;
         }

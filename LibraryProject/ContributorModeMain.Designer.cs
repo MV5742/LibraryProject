@@ -67,7 +67,7 @@
             // 
             // authorButton
             // 
-            this.authorButton.Location = new System.Drawing.Point(49, 160);
+            this.authorButton.Location = new System.Drawing.Point(49, 81);
             this.authorButton.Name = "authorButton";
             this.authorButton.Size = new System.Drawing.Size(107, 23);
             this.authorButton.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // bookButton
             // 
-            this.bookButton.Location = new System.Drawing.Point(162, 160);
+            this.bookButton.Location = new System.Drawing.Point(162, 81);
             this.bookButton.Name = "bookButton";
             this.bookButton.Size = new System.Drawing.Size(97, 23);
             this.bookButton.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             // publisherButton
             // 
-            this.publisherButton.Location = new System.Drawing.Point(37, 189);
+            this.publisherButton.Location = new System.Drawing.Point(37, 110);
             this.publisherButton.Name = "publisherButton";
             this.publisherButton.Size = new System.Drawing.Size(119, 23);
             this.publisherButton.TabIndex = 5;
@@ -100,19 +100,19 @@
             // 
             // bookShopButton
             // 
-            this.bookShopButton.Location = new System.Drawing.Point(162, 189);
+            this.bookShopButton.Location = new System.Drawing.Point(162, 110);
             this.bookShopButton.Name = "bookShopButton";
             this.bookShopButton.Size = new System.Drawing.Size(130, 23);
             this.bookShopButton.TabIndex = 6;
             this.bookShopButton.Text = "Register Book Shop";
             this.bookShopButton.UseVisualStyleBackColor = true;
             this.bookShopButton.Visible = false;
-            this.bookShopButton.Click += new System.EventHandler(this.button1_Click);
+            this.bookShopButton.Click += new System.EventHandler(this.bookShopButton_Click);
             // 
             // backButton
             // 
             this.backButton.AutoSize = true;
-            this.backButton.Location = new System.Drawing.Point(231, 242);
+            this.backButton.Location = new System.Drawing.Point(231, 165);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(111, 15);
             this.backButton.TabIndex = 7;
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 275);
+            this.ClientSize = new System.Drawing.Size(354, 207);
             this.Controls.Add(this.checkButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.bookShopButton);

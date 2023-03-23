@@ -43,7 +43,7 @@ namespace LibraryProject.Presentation
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bookShopButton_Click(object sender, EventArgs e)
         {
 
         }

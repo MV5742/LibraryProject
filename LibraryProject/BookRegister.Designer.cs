@@ -48,6 +48,8 @@
             this.AuthorsBox = new System.Windows.Forms.TextBox();
             this.publisherLabel = new System.Windows.Forms.Label();
             this.publisherNameBox = new System.Windows.Forms.TextBox();
+            this.bookShopsBox = new System.Windows.Forms.TextBox();
+            this.bookShopsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLable
@@ -155,7 +157,7 @@
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(104, 287);
+            this.descriptionLabel.Location = new System.Drawing.Point(105, 356);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(98, 15);
             this.descriptionLabel.TabIndex = 12;
@@ -163,7 +165,7 @@
             // 
             // descriptionBox
             // 
-            this.descriptionBox.Location = new System.Drawing.Point(25, 313);
+            this.descriptionBox.Location = new System.Drawing.Point(27, 379);
             this.descriptionBox.Multiline = true;
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -172,7 +174,7 @@
             // 
             // registerBookButton
             // 
-            this.registerBookButton.Location = new System.Drawing.Point(52, 440);
+            this.registerBookButton.Location = new System.Drawing.Point(54, 506);
             this.registerBookButton.Name = "registerBookButton";
             this.registerBookButton.Size = new System.Drawing.Size(75, 23);
             this.registerBookButton.TabIndex = 14;
@@ -183,7 +185,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(146, 512);
+            this.label1.Location = new System.Drawing.Point(146, 567);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 15);
             this.label1.TabIndex = 15;
@@ -224,11 +226,30 @@
             this.publisherNameBox.Size = new System.Drawing.Size(201, 23);
             this.publisherNameBox.TabIndex = 19;
             // 
+            // bookShopsBox
+            // 
+            this.bookShopsBox.Location = new System.Drawing.Point(53, 327);
+            this.bookShopsBox.Name = "bookShopsBox";
+            this.bookShopsBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.bookShopsBox.Size = new System.Drawing.Size(201, 23);
+            this.bookShopsBox.TabIndex = 21;
+            // 
+            // bookShopsLabel
+            // 
+            this.bookShopsLabel.AutoSize = true;
+            this.bookShopsLabel.Location = new System.Drawing.Point(53, 285);
+            this.bookShopsLabel.Name = "bookShopsLabel";
+            this.bookShopsLabel.Size = new System.Drawing.Size(201, 30);
+            this.bookShopsLabel.TabIndex = 20;
+            this.bookShopsLabel.Text = "                 BookShop Name(s) \r\n(Make sure to split with a comma (,))";
+            // 
             // BookRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 536);
+            this.ClientSize = new System.Drawing.Size(328, 601);
+            this.Controls.Add(this.bookShopsBox);
+            this.Controls.Add(this.bookShopsLabel);
             this.Controls.Add(this.publisherNameBox);
             this.Controls.Add(this.publisherLabel);
             this.Controls.Add(this.AuthorsBox);
@@ -278,5 +299,7 @@
         private TextBox AuthorsBox;
         private Label publisherLabel;
         private TextBox publisherNameBox;
+        private TextBox bookShopsBox;
+        private Label bookShopsLabel;
     }
 }
