@@ -9,6 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryProject.Data.Repositories
 {
+    //Implements the Repository pattern.
+    //Doesn't take a generic type at creation to increase abstraction by not creating different repositories for all entities
+    //Instead it expects a generic type to be given when methods are called so it can use the appropriate DbSet
     public abstract class BaseRepository : IRepository
     {
         protected DbContext Context  { get; set; }
@@ -22,6 +25,8 @@ namespace LibraryProject.Data.Repositories
         {
             return Context.Set<T>();
         }
+
+        //CRUD
 
         public async Task Add<T>(T entity) where T : class
         {
@@ -39,6 +44,7 @@ namespace LibraryProject.Data.Repositories
             GetDbSet<T>().Remove(entity);
         }
 
+        //Fix this when needed
         public async Task Update<T>(T entity) where T : class
         {
             throw new NotImplementedException();

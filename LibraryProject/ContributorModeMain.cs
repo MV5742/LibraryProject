@@ -17,6 +17,7 @@ namespace LibraryProject.Presentation
             InitializeComponent();
         }
 
+        //Unlocks the Contributor Form if password is correct
         private void checkButton_Click(object sender, EventArgs e)
         {
             if (passwordBox.Text == "HiMom1234" || passwordBox.Text == "L")

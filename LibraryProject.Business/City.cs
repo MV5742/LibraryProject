@@ -10,6 +10,8 @@ namespace LibraryProject.Business
 {
     public class City : IEntity
     {
+        //Constructor(s)
+
         public City(string cityName)
         {
             CityName = cityName;
@@ -17,11 +19,15 @@ namespace LibraryProject.Business
             BookShops = new HashSet<BookShop>();
         }
 
+        //Properties
+
         [Key]
         public int Id { get; set; }
         [Required]
         [MaxLength(30)]
         public string CityName { get; set; }
+
+        //Dependencies
 
         [Required]
         public ICollection<Publisher> Publishers { get; set; }

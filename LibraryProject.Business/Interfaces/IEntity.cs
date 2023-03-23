@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Business.Interfaces
 {
+    //The interface that defines an Id property for all entities. Is also used to increase abstraction
     public interface IEntity
     {
         [Key]

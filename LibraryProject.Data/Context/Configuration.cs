@@ -9,6 +9,7 @@ namespace LibraryProject.Data.Context
 {
     public static class Configuration
     {
+        //Handles the Configuration of the Connection String
         public static IConfiguration GetConfiguration()
         {
             var builder = new ConfigurationBuilder()
@@ -18,6 +19,7 @@ namespace LibraryProject.Data.Context
             return builder.Build();
         }
 
+        //Is able to return the Connection string anywhere it is needed
         public static string GetConnectionString(string name)
         {
             return GetConfiguration().GetConnectionString(name);

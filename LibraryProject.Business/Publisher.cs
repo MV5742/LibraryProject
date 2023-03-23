@@ -11,6 +11,7 @@ namespace LibraryProject.Business
 {
     public class Publisher : IEntity
     {
+        //Constructor(s)
         public Publisher(string name, string address, int cityId)
         {
             Name = name;
@@ -18,6 +19,8 @@ namespace LibraryProject.Business
             BooksPublished = new HashSet<Book>();
             CityId = cityId;
         }
+
+        //Properties
 
         [Key]
         public int Id { get; set; }
@@ -27,9 +30,9 @@ namespace LibraryProject.Business
         [Required]
         [MaxLength(30)]
         public string Address { get; set; }
-        [Required]
-        public string CityName => City.CityName;
-        public int BookCount => BooksPublished.Count;
+
+        //Dependencies
+
         [Required]
         public ICollection<Book> BooksPublished { get; set; }
 
@@ -38,5 +41,7 @@ namespace LibraryProject.Business
         public int CityId { get; set; }
         [Required]
         public City City { get; set; }
+        public string CityName => City.CityName;
+        public int BookCount => BooksPublished.Count;
     }
 }

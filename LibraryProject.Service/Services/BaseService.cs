@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
-{
+{   
     public abstract class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class
     {
         protected readonly IRepository repo;
@@ -17,6 +17,9 @@ namespace LibraryProject.Service.Services
         {
             repo = _repo;
         }
+
+        //CRUD 
+
         public virtual IQueryable<TEntity> GetAllAsync()
         {
             return repo.GetAllAsync<TEntity>();

@@ -20,6 +20,8 @@ namespace LibraryProject.Service.Services
         {
             return repo.GetAllAsync<Book>().FirstOrDefaultAsync(x => x.Id == id);
         }
+
+        //Prints book information
         public string PrintInfoById(int id)
         {
             //Finish method + make book-author/pub/shop many to many

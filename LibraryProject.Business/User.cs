@@ -10,6 +10,8 @@ namespace LibraryProject.Business
 {
     public class User : IEntity
     {
+        //Constructor(s)
+
         public User(string username, string email, string password, DateTime dateCreated)
         {
             Username = username;
@@ -18,6 +20,8 @@ namespace LibraryProject.Business
             DateCreated = dateCreated;
             Wishlist = new HashSet<Book>();
         }
+
+        //Properties
 
         [Key]
         public int Id { get; set; }
@@ -32,6 +36,9 @@ namespace LibraryProject.Business
         public string Password { get; set; }
         [Required]
         public DateTime DateCreated { get; set; }
+
+        //Dependencies
+
         [Required]
         public ICollection<Book> Wishlist { get; set; }
     }

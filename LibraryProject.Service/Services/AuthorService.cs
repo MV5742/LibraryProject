@@ -14,13 +14,14 @@ namespace LibraryProject.Service.Services
     {
         public AuthorService(IRepository _repo) : base(_repo)
         {
-
         }
 
         public Task<Author> GetByIdAsync(int id)
         {
             return repo.GetAllAsync<Author>().FirstOrDefaultAsync(x => x.Id == id);
         }
+
+        //Prints author information
         public string PrintInfoById(int id)
         {
             Author author = GetByIdAsync(id).Result;

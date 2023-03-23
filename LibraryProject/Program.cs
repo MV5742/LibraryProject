@@ -15,11 +15,11 @@ namespace LibraryProject.Presentation
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            ///Runs the MainPage Form
             ApplicationConfiguration.Initialize();
             Application.Run(new MainPage());
 
+            //Sets up the service provider who is responsible for implementing the Dependency Injection Pattern
             IServiceProvider serviceProvider = new ServiceCollection()
             .AddDbContext<LibraryContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")))

@@ -11,6 +11,8 @@ namespace LibraryProject.Business
 {
     public class Author : IEntity
     {
+        //Constructor(s)
+
         public Author(string firstName, string lastName, string shortBiography)
         {
             FirstName = firstName;
@@ -18,6 +20,8 @@ namespace LibraryProject.Business
             ShortBiography = shortBiography;
             Books = new HashSet<Book>();
         }
+
+        //Propeties
 
         [Key]
         public int Id { get; set; }
@@ -30,6 +34,9 @@ namespace LibraryProject.Business
         public string FullName => FirstName + " " + LastName;
         public string ShortBiography { get; set; }
         public int BooksWritten { get => Books.Count; }
+        
+        //Dependencies
+
         [Required]
         public ICollection<Book> Books { get; set; }
     }

@@ -11,6 +11,7 @@ namespace LibraryProject.Data.Context
 {
     public class LibraryContextFactory : IDesignTimeDbContextFactory<LibraryContext>
     {
+        //Instantiates new Contexts using Factory Pattern
         public LibraryContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<LibraryContext>();

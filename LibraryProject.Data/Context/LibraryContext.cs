@@ -10,21 +10,25 @@ namespace LibraryProject.Data.Context
 {
     public class LibraryContext : DbContext
     {
+        //Tables represented in code
         private DbSet<Book> Books { get; set; }
         private DbSet<Author> Authors { get; set; }
         private DbSet<Publisher> Publishers { get; set; }
         private DbSet<BookShop> BookShops { get; set; }
         private DbSet<City> Cities { get; set; }
 
+        //Constructor
         public LibraryContext(string connectionString) : base(GetOptions(connectionString))
         {
         }
 
+        //Retrieves connection options
         private static DbContextOptions GetOptions(string connectionString)
         {
             return SqlServerDbContextOptionsExtensions.UseSqlServer(new DbContextOptionsBuilder(), connectionString).Options;
         }
 
+        //Creates Constraints
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //One-to-one relations
@@ -71,6 +75,7 @@ namespace LibraryProject.Data.Context
                 .IsUnique();
         }
 
+        //Handles Connection String Configuration
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

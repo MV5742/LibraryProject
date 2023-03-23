@@ -6,6 +6,7 @@ namespace LibraryProject.Business
 {
     public class Book : IEntity
     {
+        //Constructor(s)
         public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price, DateTime datePublished, int publisherId)
         {
             ISBN = iSBN;
@@ -19,6 +20,8 @@ namespace LibraryProject.Business
             BookShops = new HashSet<BookShop>();
             PublisherId = publisherId;
         }
+
+        //Properties
 
         [Key]
         public int Id { get; set; }
@@ -38,17 +41,18 @@ namespace LibraryProject.Business
         public decimal Price { get; set; }
         [Required]
         public DateTime DatePublished { get; set; }
-        public string AuthorNames => string.Join(", ", Authors.Select(x => x.FullName).ToList());
+
+        //Dependencies
 
         [ForeignKey("Publisher")]
         [Required]
         public int PublisherId { get; set; }
         [Required]
         public Publisher Publisher { get; set; }
-
         [Required]
         public ICollection<Author> Authors { get; set; }
         [Required]
         public ICollection<BookShop> BookShops { get; set; }
+        public string AuthorNames => string.Join(", ", Authors.Select(x => x.FullName).ToList());
     }
 }

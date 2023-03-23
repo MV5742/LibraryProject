@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Interfaces
 {
+    //The interface that provides the CRUD functionallity for the Service classes
     public interface IBaseService<TEntity>
     {
         IQueryable<TEntity> GetAllAsync();

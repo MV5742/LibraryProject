@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Data.Interfaces
 {
+    //The interface for Repository classes
     public interface IRepository
     {
         DbSet<T> GetDbSet<T>() where T : class;

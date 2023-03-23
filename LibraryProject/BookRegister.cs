@@ -29,6 +29,7 @@ namespace LibraryProject.Presentation
             this.Hide();
         }
 
+        //Creates a new instance of a book and sends it to the Service layer
         private void registerBookButton_Click(object sender, EventArgs e)
         {
             string iSBN = iSBNBox.Text;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Interfaces
 {
+    //Specific interface for the purpose of this project 
     public interface ICustomService<TEntity>
     {
         public string PrintInfoById(int id);
