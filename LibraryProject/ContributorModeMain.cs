@@ -28,7 +28,9 @@ namespace LibraryProject.Presentation
 
         private void authorButton_Click(object sender, EventArgs e)
         {
-
+            AuthorRegister authorRegister = new AuthorRegister();
+            authorRegister.Show();
+            this.Hide();
         }
 
         private void bookButton_Click(object sender, EventArgs e)

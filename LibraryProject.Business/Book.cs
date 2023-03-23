@@ -8,7 +8,7 @@ namespace LibraryProject.Business
     public class Book : IEntity
     {
         //Constructor(s)
-        public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price, DateTime datePublished, int publisherId)
+        public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price, DateTime datePublished)
         {
             ISBN = iSBN;
             Title = title;
@@ -19,7 +19,6 @@ namespace LibraryProject.Business
             DatePublished = datePublished;
             Authors = new HashSet<Author>();
             BookShops = new HashSet<BookShop>();
-            PublisherId = publisherId;
         }
 
         //Properties

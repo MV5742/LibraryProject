@@ -11,7 +11,7 @@ namespace LibraryProject.Service.Interfaces
     {
         IQueryable<TEntity> GetAllAsync();
         Task CreateAsync(TEntity entity);
-        Task UpdateAsync(TEntity entity);
+        Task UpdateAsync();
         Task DeleteAsync(TEntity entity);
     }
 }

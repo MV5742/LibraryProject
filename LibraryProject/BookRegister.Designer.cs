@@ -50,6 +50,10 @@
             this.publisherNameBox = new System.Windows.Forms.TextBox();
             this.bookShopsBox = new System.Windows.Forms.TextBox();
             this.bookShopsLabel = new System.Windows.Forms.Label();
+            this.addAuthorsButton = new System.Windows.Forms.Button();
+            this.addPublisherButton = new System.Windows.Forms.Button();
+            this.addShopsButton = new System.Windows.Forms.Button();
+            this.disclaimerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLable
@@ -157,7 +161,7 @@
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(105, 356);
+            this.descriptionLabel.Location = new System.Drawing.Point(105, 162);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(98, 15);
             this.descriptionLabel.TabIndex = 12;
@@ -165,7 +169,7 @@
             // 
             // descriptionBox
             // 
-            this.descriptionBox.Location = new System.Drawing.Point(27, 379);
+            this.descriptionBox.Location = new System.Drawing.Point(27, 185);
             this.descriptionBox.Multiline = true;
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -174,7 +178,7 @@
             // 
             // registerBookButton
             // 
-            this.registerBookButton.Location = new System.Drawing.Point(54, 506);
+            this.registerBookButton.Location = new System.Drawing.Point(52, 305);
             this.registerBookButton.Name = "registerBookButton";
             this.registerBookButton.Size = new System.Drawing.Size(75, 23);
             this.registerBookButton.TabIndex = 14;
@@ -185,7 +189,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(146, 567);
+            this.label1.Location = new System.Drawing.Point(12, 352);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 15);
             this.label1.TabIndex = 15;
@@ -195,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 165);
+            this.label2.Location = new System.Drawing.Point(302, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 30);
             this.label2.TabIndex = 16;
@@ -203,7 +207,7 @@
             // 
             // AuthorsBox
             // 
-            this.AuthorsBox.Location = new System.Drawing.Point(53, 207);
+            this.AuthorsBox.Location = new System.Drawing.Point(302, 116);
             this.AuthorsBox.Name = "AuthorsBox";
             this.AuthorsBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.AuthorsBox.Size = new System.Drawing.Size(201, 23);
@@ -212,7 +216,7 @@
             // publisherLabel
             // 
             this.publisherLabel.AutoSize = true;
-            this.publisherLabel.Location = new System.Drawing.Point(112, 238);
+            this.publisherLabel.Location = new System.Drawing.Point(361, 181);
             this.publisherLabel.Name = "publisherLabel";
             this.publisherLabel.Size = new System.Drawing.Size(91, 15);
             this.publisherLabel.TabIndex = 18;
@@ -220,7 +224,7 @@
             // 
             // publisherNameBox
             // 
-            this.publisherNameBox.Location = new System.Drawing.Point(53, 256);
+            this.publisherNameBox.Location = new System.Drawing.Point(302, 199);
             this.publisherNameBox.Name = "publisherNameBox";
             this.publisherNameBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.publisherNameBox.Size = new System.Drawing.Size(201, 23);
@@ -228,7 +232,7 @@
             // 
             // bookShopsBox
             // 
-            this.bookShopsBox.Location = new System.Drawing.Point(53, 327);
+            this.bookShopsBox.Location = new System.Drawing.Point(302, 306);
             this.bookShopsBox.Name = "bookShopsBox";
             this.bookShopsBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.bookShopsBox.Size = new System.Drawing.Size(201, 23);
@@ -237,17 +241,60 @@
             // bookShopsLabel
             // 
             this.bookShopsLabel.AutoSize = true;
-            this.bookShopsLabel.Location = new System.Drawing.Point(53, 285);
+            this.bookShopsLabel.Location = new System.Drawing.Point(302, 264);
             this.bookShopsLabel.Name = "bookShopsLabel";
             this.bookShopsLabel.Size = new System.Drawing.Size(201, 30);
             this.bookShopsLabel.TabIndex = 20;
             this.bookShopsLabel.Text = "                 BookShop Name(s) \r\n(Make sure to split with a comma (,))";
             // 
+            // addAuthorsButton
+            // 
+            this.addAuthorsButton.Location = new System.Drawing.Point(361, 145);
+            this.addAuthorsButton.Name = "addAuthorsButton";
+            this.addAuthorsButton.Size = new System.Drawing.Size(91, 23);
+            this.addAuthorsButton.TabIndex = 22;
+            this.addAuthorsButton.Text = "Add Author(s)";
+            this.addAuthorsButton.UseVisualStyleBackColor = true;
+            this.addAuthorsButton.Click += new System.EventHandler(this.addAuthorsButton_Click);
+            // 
+            // addPublisherButton
+            // 
+            this.addPublisherButton.Location = new System.Drawing.Point(357, 228);
+            this.addPublisherButton.Name = "addPublisherButton";
+            this.addPublisherButton.Size = new System.Drawing.Size(95, 23);
+            this.addPublisherButton.TabIndex = 23;
+            this.addPublisherButton.Text = "Add Publisher";
+            this.addPublisherButton.UseVisualStyleBackColor = true;
+            this.addPublisherButton.Click += new System.EventHandler(this.addPublisherButton_Click);
+            // 
+            // addShopsButton
+            // 
+            this.addShopsButton.Location = new System.Drawing.Point(361, 335);
+            this.addShopsButton.Name = "addShopsButton";
+            this.addShopsButton.Size = new System.Drawing.Size(91, 23);
+            this.addShopsButton.TabIndex = 24;
+            this.addShopsButton.Text = "Add Shop(s)";
+            this.addShopsButton.UseVisualStyleBackColor = true;
+            this.addShopsButton.Click += new System.EventHandler(this.addShopsButton_Click);
+            // 
+            // disclaimerLabel
+            // 
+            this.disclaimerLabel.AutoSize = true;
+            this.disclaimerLabel.Location = new System.Drawing.Point(328, 30);
+            this.disclaimerLabel.Name = "disclaimerLabel";
+            this.disclaimerLabel.Size = new System.Drawing.Size(155, 30);
+            this.disclaimerLabel.TabIndex = 25;
+            this.disclaimerLabel.Text = "Please input the book\'s title \r\n    to use the buttons below";
+            // 
             // BookRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 601);
+            this.ClientSize = new System.Drawing.Size(530, 390);
+            this.Controls.Add(this.disclaimerLabel);
+            this.Controls.Add(this.addShopsButton);
+            this.Controls.Add(this.addPublisherButton);
+            this.Controls.Add(this.addAuthorsButton);
             this.Controls.Add(this.bookShopsBox);
             this.Controls.Add(this.bookShopsLabel);
             this.Controls.Add(this.publisherNameBox);
@@ -301,5 +348,9 @@
         private TextBox publisherNameBox;
         private TextBox bookShopsBox;
         private Label bookShopsLabel;
+        private Button addAuthorsButton;
+        private Button addPublisherButton;
+        private Button addShopsButton;
+        private Label disclaimerLabel;
     }
 }

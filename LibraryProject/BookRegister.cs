@@ -45,20 +45,44 @@ namespace LibraryProject.Presentation
             int quantity = int.Parse(quantityBox.Text);
             decimal price = decimal.Parse(priceBox.Text);
             DateTime datePublished = DateTime.Parse(dateBox.Text);
-            Publisher publisher = publisherService.GetAllAsync().FirstOrDefault(x => x.Name == publisherNameBox.Text);
+            Book book = new Book(iSBN, title, description, genre, quantity, price, datePublished);
+            bookService.CreateAsync(book);
+        }
+
+        private async void addAuthorsButton_Click(object sender, EventArgs e)
+        {
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == titleBox.Text);
             List<Author> authors = authorService
                 .GetAllAsync()
                 .Where(x => AuthorsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.FullName))
                 .ToList();
+            foreach (Author author in authors)
+            {
+                book.Authors.Add(author);
+            }
+            await bookService.UpdateAsync();
+        }
+
+        private async void addPublisherButton_Click(object sender, EventArgs e)
+        {
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == titleBox.Text);
+            Publisher publisher = publisherService.GetAllAsync().FirstOrDefault(x => x.Name == publisherNameBox.Text);
+            book.Publisher = publisher;
+            await bookService.UpdateAsync();
+        }
+
+        private async void addShopsButton_Click(object sender, EventArgs e)
+        {
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == titleBox.Text);
             List<BookShop> bookShops = bookShopService
                 .GetAllAsync()
                 .Where(x => bookShopsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.Name))
                 .ToList();
-            Book book = new Book(iSBN, title, description, genre, quantity, price, datePublished, publisher.Id);
-            book.Publisher = publisher;
-            book.Authors = authors;
-            book.BookShops = bookShops;
-            bookService.CreateAsync(book);
+            foreach (BookShop bookShop in bookShops)
+            {
+                book.BookShops.Add(bookShop);
+            }
+            await bookService.UpdateAsync();
         }
     }
 }

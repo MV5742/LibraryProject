@@ -30,9 +30,9 @@ namespace LibraryProject.Service.Services
             await repo.Add(entity);
         }
 
-        public virtual async Task UpdateAsync(TEntity entity)
+        public virtual async Task UpdateAsync()
         {
-            repo.Update(entity);
+            await repo.Update();
         }
 
         public virtual async Task DeleteAsync(TEntity entity)

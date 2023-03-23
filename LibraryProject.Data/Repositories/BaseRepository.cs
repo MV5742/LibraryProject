@@ -48,9 +48,9 @@ namespace LibraryProject.Data.Repositories
         }
 
         //Fix this when needed
-        public async Task Update<T>(T entity) where T : class
+        public async Task Update()
         {
-            throw new NotImplementedException();
+            await Context.SaveChangesAsync();
         }
     }
 }
