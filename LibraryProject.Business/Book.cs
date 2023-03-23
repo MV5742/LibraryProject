@@ -1,4 +1,5 @@
 ﻿using LibraryProject.Business.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -38,6 +39,7 @@ namespace LibraryProject.Business
         [Required]
         public int QuantityInStock { get; set; }
         [Required]
+        [Precision(10, 2)]
         public decimal Price { get; set; }
         [Required]
         public DateTime DatePublished { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {   
-    public abstract class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class
+    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class
     {
         protected readonly IRepository repo;
 

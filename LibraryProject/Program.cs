@@ -15,9 +15,9 @@ namespace LibraryProject.Presentation
         [STAThread]
         static void Main()
         {
-            ///Runs the MainPage Form
+            //Starts the app
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainPage());
+            //Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
 
             //Sets up the service provider who is responsible for implementing the Dependency Injection Pattern
             IServiceProvider serviceProvider = new ServiceCollection()
@@ -30,6 +30,9 @@ namespace LibraryProject.Presentation
             .AddScoped<IBaseService<BookShop>, BookShopService>()
             .BuildServiceProvider();
             GetServiceProvider = serviceProvider;
+
+            //Runs the MainPage Form
+            Application.Run(new MainPage());
         }
     }
 }

@@ -54,4 +54,6 @@
 >>> The View classes you saw are used only for Console Applications. 
 > The views in this project are the form design files and their respective .cs files
 
+>>> DON'T FORGET TO SET DEFAULT PROJECT AS DATA LAYER IN PACKAGE MANAGER CONSOLE!!!
+
 

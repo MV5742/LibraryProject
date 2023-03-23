@@ -25,8 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibraryProject.Business\LibraryProject.Business.csproj" />
-    <ProjectReference Include="..\LibraryProject.Data\LibraryProject.Data.csproj" />
     <ProjectReference Include="..\LibraryProject.Service\LibraryProject.Service.csproj" />
   </ItemGroup>
 

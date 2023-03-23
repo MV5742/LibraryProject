@@ -16,6 +16,7 @@ namespace LibraryProject.Data.Context
         private DbSet<Publisher> Publishers { get; set; }
         private DbSet<BookShop> BookShops { get; set; }
         private DbSet<City> Cities { get; set; }
+        private DbSet<User> Users { get; set; }
 
         //Constructor
         public LibraryContext(string connectionString) : base(GetOptions(connectionString))
