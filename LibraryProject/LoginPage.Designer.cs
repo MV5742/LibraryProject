@@ -28,78 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Title = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.PasswordBox = new System.Windows.Forms.TextBox();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.LogInButton = new System.Windows.Forms.Button();
+            this.SignUpButton = new System.Windows.Forms.Button();
+            this.UsernameBox = new System.Windows.Forms.TextBox();
+            this.UsernameLabel = new System.Windows.Forms.Label();
+            this.backLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Title
+            // TitleLabel
             // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Times New Roman", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.Title.Location = new System.Drawing.Point(51, 31);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(406, 61);
-            this.Title.TabIndex = 2;
-            this.Title.Text = "Bookish cataloge";
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Times New Roman", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.TitleLabel.Location = new System.Drawing.Point(51, 31);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(406, 61);
+            this.TitleLabel.TabIndex = 2;
+            this.TitleLabel.Text = "Bookish cataloge";
             // 
-            // label1
+            // EmailLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(164, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "EMAIL";
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Location = new System.Drawing.Point(160, 108);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(41, 15);
+            this.EmailLabel.TabIndex = 6;
+            this.EmailLabel.Text = "EMAIL";
             // 
-            // textBox1
+            // EmailBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 136);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 23);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.EmailBox.Location = new System.Drawing.Point(160, 126);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(178, 23);
+            this.EmailBox.TabIndex = 7;
+            this.EmailBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // PasswordBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(164, 192);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 23);
-            this.textBox2.TabIndex = 9;
+            this.PasswordBox.Location = new System.Drawing.Point(160, 177);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.Size = new System.Drawing.Size(178, 23);
+            this.PasswordBox.TabIndex = 9;
             // 
-            // label2
+            // PasswordLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(164, 174);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "PASSWORD";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Location = new System.Drawing.Point(160, 159);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(68, 15);
+            this.PasswordLabel.TabIndex = 8;
+            this.PasswordLabel.Text = "PASSWORD";
+            this.PasswordLabel.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button2
+            // LogInButton
             // 
-            this.button2.Location = new System.Drawing.Point(184, 241);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 36);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "LOG IN";
-            this.button2.UseVisualStyleBackColor = true;
+            this.LogInButton.Location = new System.Drawing.Point(114, 265);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(131, 36);
+            this.LogInButton.TabIndex = 10;
+            this.LogInButton.Text = "LOG IN";
+            this.LogInButton.UseVisualStyleBackColor = true;
+            this.LogInButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // SignUpButton
+            // 
+            this.SignUpButton.Location = new System.Drawing.Point(251, 265);
+            this.SignUpButton.Name = "SignUpButton";
+            this.SignUpButton.Size = new System.Drawing.Size(131, 36);
+            this.SignUpButton.TabIndex = 11;
+            this.SignUpButton.Text = "SIGN UP";
+            this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
+            // 
+            // UsernameBox
+            // 
+            this.UsernameBox.Location = new System.Drawing.Point(160, 230);
+            this.UsernameBox.Name = "UsernameBox";
+            this.UsernameBox.Size = new System.Drawing.Size(178, 23);
+            this.UsernameBox.TabIndex = 13;
+            // 
+            // UsernameLabel
+            // 
+            this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Location = new System.Drawing.Point(160, 212);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(68, 15);
+            this.UsernameLabel.TabIndex = 12;
+            this.UsernameLabel.Text = "USERNAME";
+            // 
+            // backLabel
+            // 
+            this.backLabel.AutoSize = true;
+            this.backLabel.Location = new System.Drawing.Point(21, 322);
+            this.backLabel.Name = "backLabel";
+            this.backLabel.Size = new System.Drawing.Size(106, 15);
+            this.backLabel.TabIndex = 14;
+            this.backLabel.Text = "Back To Main Page";
+            this.backLabel.Click += new System.EventHandler(this.backLabel_Click);
             // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 358);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Title);
+            this.Controls.Add(this.backLabel);
+            this.Controls.Add(this.UsernameBox);
+            this.Controls.Add(this.UsernameLabel);
+            this.Controls.Add(this.SignUpButton);
+            this.Controls.Add(this.LogInButton);
+            this.Controls.Add(this.PasswordBox);
+            this.Controls.Add(this.PasswordLabel);
+            this.Controls.Add(this.EmailBox);
+            this.Controls.Add(this.EmailLabel);
+            this.Controls.Add(this.TitleLabel);
             this.Name = "LoginPage";
             this.Text = "LoginPage";
             this.ResumeLayout(false);
@@ -109,11 +154,15 @@
 
         #endregion
 
-        private Label Title;
-        private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label2;
-        private Button button2;
+        private Label TitleLabel;
+        private Label EmailLabel;
+        private TextBox EmailBox;
+        private TextBox PasswordBox;
+        private Label PasswordLabel;
+        private Button LogInButton;
+        private Button SignUpButton;
+        private TextBox UsernameBox;
+        private Label UsernameLabel;
+        private Label backLabel;
     }
 }

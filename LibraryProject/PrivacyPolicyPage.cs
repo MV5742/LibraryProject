@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace LibraryProject.Presentation
 {
-    public partial class TrendingPage : Form
+    public partial class PrivacyPolicyPage : Form
     {
-        public TrendingPage()
+        public PrivacyPolicyPage()
         {
             InitializeComponent();
         }
 
-        private void BackLabel_Click(object sender, EventArgs e)
+        private void backLabel_Click(object sender, EventArgs e)
         {
             MainPage mainPage = new MainPage();
             mainPage.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

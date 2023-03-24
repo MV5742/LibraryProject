@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.logInButton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.trendingButton = new System.Windows.Forms.Button();
+            this.LogInButton = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.TrendingButton = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
             this.privacyPolicy = new System.Windows.Forms.Label();
             this.ContributorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // logInButton
+            // LogInButton
             // 
-            this.logInButton.Location = new System.Drawing.Point(157, 130);
-            this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(131, 36);
-            this.logInButton.TabIndex = 9;
-            this.logInButton.Text = "LOG IN";
-            this.logInButton.UseVisualStyleBackColor = true;
-            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
+            this.LogInButton.Location = new System.Drawing.Point(157, 130);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(131, 36);
+            this.LogInButton.TabIndex = 9;
+            this.LogInButton.Text = "LOG IN";
+            this.LogInButton.UseVisualStyleBackColor = true;
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
-            // searchButton
+            // SearchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(157, 191);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(131, 36);
-            this.searchButton.TabIndex = 10;
-            this.searchButton.Text = "SEARCH";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.SearchButton.Location = new System.Drawing.Point(157, 191);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(131, 36);
+            this.SearchButton.TabIndex = 10;
+            this.SearchButton.Text = "SEARCH";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // trendingButton
+            // TrendingButton
             // 
-            this.trendingButton.Location = new System.Drawing.Point(157, 251);
-            this.trendingButton.Name = "trendingButton";
-            this.trendingButton.Size = new System.Drawing.Size(131, 36);
-            this.trendingButton.TabIndex = 11;
-            this.trendingButton.Text = "TRENDING";
-            this.trendingButton.UseVisualStyleBackColor = true;
-            this.trendingButton.Click += new System.EventHandler(this.trendingButton_Click);
+            this.TrendingButton.Location = new System.Drawing.Point(157, 251);
+            this.TrendingButton.Name = "TrendingButton";
+            this.TrendingButton.Size = new System.Drawing.Size(131, 36);
+            this.TrendingButton.TabIndex = 11;
+            this.TrendingButton.Text = "TRENDING";
+            this.TrendingButton.UseVisualStyleBackColor = true;
+            this.TrendingButton.Click += new System.EventHandler(this.TrendingButton_Click);
             // 
             // Title
             // 
@@ -103,9 +103,9 @@
             this.Controls.Add(this.ContributorLabel);
             this.Controls.Add(this.privacyPolicy);
             this.Controls.Add(this.Title);
-            this.Controls.Add(this.trendingButton);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.logInButton);
+            this.Controls.Add(this.TrendingButton);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.LogInButton);
             this.Name = "MainPage";
             this.Text = "MainPage";
             this.ResumeLayout(false);
@@ -115,9 +115,9 @@
 
         #endregion
 
-        private Button logInButton;
-        private Button searchButton;
-        private Button trendingButton;
+        private Button LogInButton;
+        private Button SearchButton;
+        private Button TrendingButton;
         private Label Title;
         private Label privacyPolicy;
         private Label ContributorLabel;

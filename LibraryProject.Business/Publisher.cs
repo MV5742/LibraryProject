@@ -12,12 +12,11 @@ namespace LibraryProject.Business
     public class Publisher : IEntity
     {
         //Constructor(s)
-        public Publisher(string name, string address, int cityId)
+        public Publisher(string name, string address)
         {
             Name = name;
             Address = address;
             BooksPublished = new HashSet<Book>();
-            CityId = cityId;
         }
 
         //Properties

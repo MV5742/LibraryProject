@@ -28,144 +28,143 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.firstNameBox = new System.Windows.Forms.TextBox();
-            this.lastNameBox = new System.Windows.Forms.TextBox();
-            this.bioLabel = new System.Windows.Forms.Label();
-            this.bioBox = new System.Windows.Forms.TextBox();
-            this.backLabel = new System.Windows.Forms.Label();
-            this.addBooksButton = new System.Windows.Forms.Button();
-            this.bookNamesBox = new System.Windows.Forms.TextBox();
-            this.addBooksLabel = new System.Windows.Forms.Label();
-            this.addAuthorButton = new System.Windows.Forms.Button();
-            this.disclaimerLabel = new System.Windows.Forms.Label();
+            this.FirstNameLabel = new System.Windows.Forms.Label();
+            this.LastNameLabel = new System.Windows.Forms.Label();
+            this.FirstNameBox = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.BioLabel = new System.Windows.Forms.Label();
+            this.BioBox = new System.Windows.Forms.TextBox();
+            this.BackLabel = new System.Windows.Forms.Label();
+            this.AddBooksButton = new System.Windows.Forms.Button();
+            this.BookNamesBox = new System.Windows.Forms.TextBox();
+            this.AddBooksLabel = new System.Windows.Forms.Label();
+            this.AddAuthorButton = new System.Windows.Forms.Button();
+            this.DisclaimerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // firstNameLabel
+            // FirstNameLabel
             // 
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(46, 25);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(64, 15);
-            this.firstNameLabel.TabIndex = 0;
-            this.firstNameLabel.Text = "First Name";
+            this.FirstNameLabel.AutoSize = true;
+            this.FirstNameLabel.Location = new System.Drawing.Point(33, 25);
+            this.FirstNameLabel.Name = "FirstNameLabel";
+            this.FirstNameLabel.Size = new System.Drawing.Size(64, 15);
+            this.FirstNameLabel.TabIndex = 0;
+            this.FirstNameLabel.Text = "First Name";
             // 
-            // lastNameLabel
+            // LastNameLabel
             // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(147, 25);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(63, 15);
-            this.lastNameLabel.TabIndex = 1;
-            this.lastNameLabel.Text = "Last Name";
+            this.LastNameLabel.AutoSize = true;
+            this.LastNameLabel.Location = new System.Drawing.Point(132, 25);
+            this.LastNameLabel.Name = "LastNameLabel";
+            this.LastNameLabel.Size = new System.Drawing.Size(63, 15);
+            this.LastNameLabel.TabIndex = 1;
+            this.LastNameLabel.Text = "Last Name";
             // 
-            // firstNameBox
+            // FirstNameBox
             // 
-            this.firstNameBox.Location = new System.Drawing.Point(33, 43);
-            this.firstNameBox.Name = "firstNameBox";
-            this.firstNameBox.Size = new System.Drawing.Size(93, 23);
-            this.firstNameBox.TabIndex = 2;
+            this.FirstNameBox.Location = new System.Drawing.Point(33, 43);
+            this.FirstNameBox.Name = "FirstNameBox";
+            this.FirstNameBox.Size = new System.Drawing.Size(93, 23);
+            this.FirstNameBox.TabIndex = 2;
             // 
-            // lastNameBox
+            // LastNameBox
             // 
-            this.lastNameBox.Location = new System.Drawing.Point(132, 43);
-            this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(93, 23);
-            this.lastNameBox.TabIndex = 3;
+            this.LastNameBox.Location = new System.Drawing.Point(132, 43);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(93, 23);
+            this.LastNameBox.TabIndex = 3;
             // 
-            // bioLabel
+            // BioLabel
             // 
-            this.bioLabel.AutoSize = true;
-            this.bioLabel.Location = new System.Drawing.Point(84, 78);
-            this.bioLabel.Name = "bioLabel";
-            this.bioLabel.Size = new System.Drawing.Size(92, 15);
-            this.bioLabel.TabIndex = 4;
-            this.bioLabel.Text = "Short Biography";
-            this.bioLabel.Click += new System.EventHandler(this.bioLabel_Click);
+            this.BioLabel.AutoSize = true;
+            this.BioLabel.Location = new System.Drawing.Point(84, 78);
+            this.BioLabel.Name = "BioLabel";
+            this.BioLabel.Size = new System.Drawing.Size(92, 15);
+            this.BioLabel.TabIndex = 4;
+            this.BioLabel.Text = "Short Biography";
             // 
-            // bioBox
+            // BioBox
             // 
-            this.bioBox.Location = new System.Drawing.Point(12, 96);
-            this.bioBox.Multiline = true;
-            this.bioBox.Name = "bioBox";
-            this.bioBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.bioBox.Size = new System.Drawing.Size(246, 106);
-            this.bioBox.TabIndex = 14;
+            this.BioBox.Location = new System.Drawing.Point(12, 96);
+            this.BioBox.Multiline = true;
+            this.BioBox.Name = "BioBox";
+            this.BioBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.BioBox.Size = new System.Drawing.Size(246, 106);
+            this.BioBox.TabIndex = 14;
             // 
-            // backLabel
+            // BackLabel
             // 
-            this.backLabel.AutoSize = true;
-            this.backLabel.Location = new System.Drawing.Point(23, 252);
-            this.backLabel.Name = "backLabel";
-            this.backLabel.Size = new System.Drawing.Size(170, 15);
-            this.backLabel.TabIndex = 16;
-            this.backLabel.Text = "Back to Main Contributor Page";
-            this.backLabel.Click += new System.EventHandler(this.backLabel_Click);
+            this.BackLabel.AutoSize = true;
+            this.BackLabel.Location = new System.Drawing.Point(23, 252);
+            this.BackLabel.Name = "BackLabel";
+            this.BackLabel.Size = new System.Drawing.Size(170, 15);
+            this.BackLabel.TabIndex = 16;
+            this.BackLabel.Text = "Back to Main Contributor Page";
+            this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
             // 
-            // addBooksButton
+            // AddBooksButton
             // 
-            this.addBooksButton.Location = new System.Drawing.Point(342, 149);
-            this.addBooksButton.Name = "addBooksButton";
-            this.addBooksButton.Size = new System.Drawing.Size(91, 23);
-            this.addBooksButton.TabIndex = 25;
-            this.addBooksButton.Text = "Add Book(s)";
-            this.addBooksButton.UseVisualStyleBackColor = true;
-            this.addBooksButton.Click += new System.EventHandler(this.addBooksButton_Click);
+            this.AddBooksButton.Location = new System.Drawing.Point(342, 149);
+            this.AddBooksButton.Name = "AddBooksButton";
+            this.AddBooksButton.Size = new System.Drawing.Size(91, 23);
+            this.AddBooksButton.TabIndex = 25;
+            this.AddBooksButton.Text = "Add Book(s)";
+            this.AddBooksButton.UseVisualStyleBackColor = true;
+            this.AddBooksButton.Click += new System.EventHandler(this.AddBooksButton_Click);
             // 
-            // bookNamesBox
+            // BookNamesBox
             // 
-            this.bookNamesBox.Location = new System.Drawing.Point(291, 120);
-            this.bookNamesBox.Name = "bookNamesBox";
-            this.bookNamesBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.bookNamesBox.Size = new System.Drawing.Size(201, 23);
-            this.bookNamesBox.TabIndex = 24;
+            this.BookNamesBox.Location = new System.Drawing.Point(291, 120);
+            this.BookNamesBox.Name = "BookNamesBox";
+            this.BookNamesBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.BookNamesBox.Size = new System.Drawing.Size(201, 23);
+            this.BookNamesBox.TabIndex = 24;
             // 
-            // addBooksLabel
+            // AddBooksLabel
             // 
-            this.addBooksLabel.AutoSize = true;
-            this.addBooksLabel.Location = new System.Drawing.Point(291, 78);
-            this.addBooksLabel.Name = "addBooksLabel";
-            this.addBooksLabel.Size = new System.Drawing.Size(201, 30);
-            this.addBooksLabel.TabIndex = 23;
-            this.addBooksLabel.Text = "                 Book Name(s) \r\n(Make sure to split with a comma (,))";
+            this.AddBooksLabel.AutoSize = true;
+            this.AddBooksLabel.Location = new System.Drawing.Point(291, 78);
+            this.AddBooksLabel.Name = "AddBooksLabel";
+            this.AddBooksLabel.Size = new System.Drawing.Size(201, 30);
+            this.AddBooksLabel.TabIndex = 23;
+            this.AddBooksLabel.Text = "                 Book Name(s) \r\n(Make sure to split with a comma (,))";
             // 
-            // addAuthorButton
+            // AddAuthorButton
             // 
-            this.addAuthorButton.Location = new System.Drawing.Point(35, 208);
-            this.addAuthorButton.Name = "addAuthorButton";
-            this.addAuthorButton.Size = new System.Drawing.Size(75, 23);
-            this.addAuthorButton.TabIndex = 26;
-            this.addAuthorButton.Text = "Register";
-            this.addAuthorButton.UseVisualStyleBackColor = true;
-            this.addAuthorButton.Click += new System.EventHandler(this.addAuthorButton_Click);
+            this.AddAuthorButton.Location = new System.Drawing.Point(35, 208);
+            this.AddAuthorButton.Name = "AddAuthorButton";
+            this.AddAuthorButton.Size = new System.Drawing.Size(75, 23);
+            this.AddAuthorButton.TabIndex = 26;
+            this.AddAuthorButton.Text = "Register";
+            this.AddAuthorButton.UseVisualStyleBackColor = true;
+            this.AddAuthorButton.Click += new System.EventHandler(this.AddAuthorButton_Click);
             // 
-            // disclaimerLabel
+            // DisclaimerLabel
             // 
-            this.disclaimerLabel.AutoSize = true;
-            this.disclaimerLabel.Location = new System.Drawing.Point(305, 36);
-            this.disclaimerLabel.Name = "disclaimerLabel";
-            this.disclaimerLabel.Size = new System.Drawing.Size(178, 30);
-            this.disclaimerLabel.TabIndex = 27;
-            this.disclaimerLabel.Text = "Please input the author\'s names \r\n       to use the buttons below";
+            this.DisclaimerLabel.AutoSize = true;
+            this.DisclaimerLabel.Location = new System.Drawing.Point(305, 36);
+            this.DisclaimerLabel.Name = "DisclaimerLabel";
+            this.DisclaimerLabel.Size = new System.Drawing.Size(178, 30);
+            this.DisclaimerLabel.TabIndex = 27;
+            this.DisclaimerLabel.Text = "Please input the author\'s names \r\n       to use the buttons below";
             // 
             // AuthorRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 286);
-            this.Controls.Add(this.disclaimerLabel);
-            this.Controls.Add(this.addAuthorButton);
-            this.Controls.Add(this.addBooksButton);
-            this.Controls.Add(this.bookNamesBox);
-            this.Controls.Add(this.addBooksLabel);
-            this.Controls.Add(this.backLabel);
-            this.Controls.Add(this.bioBox);
-            this.Controls.Add(this.bioLabel);
-            this.Controls.Add(this.lastNameBox);
-            this.Controls.Add(this.firstNameBox);
-            this.Controls.Add(this.lastNameLabel);
-            this.Controls.Add(this.firstNameLabel);
+            this.Controls.Add(this.DisclaimerLabel);
+            this.Controls.Add(this.AddAuthorButton);
+            this.Controls.Add(this.AddBooksButton);
+            this.Controls.Add(this.BookNamesBox);
+            this.Controls.Add(this.AddBooksLabel);
+            this.Controls.Add(this.BackLabel);
+            this.Controls.Add(this.BioBox);
+            this.Controls.Add(this.BioLabel);
+            this.Controls.Add(this.LastNameBox);
+            this.Controls.Add(this.FirstNameBox);
+            this.Controls.Add(this.LastNameLabel);
+            this.Controls.Add(this.FirstNameLabel);
             this.Name = "AuthorRegister";
             this.Text = "AuthorRegister";
             this.ResumeLayout(false);
@@ -175,17 +174,17 @@
 
         #endregion
 
-        private Label firstNameLabel;
-        private Label lastNameLabel;
-        private TextBox firstNameBox;
-        private TextBox lastNameBox;
-        private Label bioLabel;
-        private TextBox bioBox;
-        private Label backLabel;
-        private Button addBooksButton;
-        private TextBox bookNamesBox;
-        private Label addBooksLabel;
-        private Button addAuthorButton;
-        private Label disclaimerLabel;
+        private Label FirstNameLabel;
+        private Label LastNameLabel;
+        private TextBox FirstNameBox;
+        private TextBox LastNameBox;
+        private Label BioLabel;
+        private TextBox BioBox;
+        private Label BackLabel;
+        private Button AddBooksButton;
+        private TextBox BookNamesBox;
+        private Label AddBooksLabel;
+        private Button AddAuthorButton;
+        private Label DisclaimerLabel;
     }
 }

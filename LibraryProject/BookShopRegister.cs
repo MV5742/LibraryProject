@@ -13,15 +13,28 @@ using System.Windows.Forms;
 
 namespace LibraryProject.Presentation
 {
-    public partial class AuthorRegister : Form
+    public partial class BookShopRegister : Form
     {
-        private AuthorService authorService;
+        private CityService cityService;
+        private BookShopService bookShopService;
         private BookService bookService;
-        public AuthorRegister()
+        public BookShopRegister()
         {
             InitializeComponent();
-            authorService = Program.GetServiceProvider.GetService<AuthorService>();
+            cityService = Program.GetServiceProvider.GetService<CityService>();
+            bookShopService = Program.GetServiceProvider.GetService<BookShopService>();
             bookService = Program.GetServiceProvider.GetService<BookService>();
+        }
+
+        private async void RegisterButton_Click(object sender, EventArgs e)
+        {
+            string name = NameBox.Text;
+            string address = AddressBox.Text;
+            City city = cityService.GetAllAsync().FirstOrDefault(x => x.CityName == CityNameBox.Text);
+            BookShop bookShop = new BookShop(name, address);
+            bookShop.City = city;
+            bookShop.CityId = city.Id;
+            await bookShopService.UpdateAsync();
         }
 
         private void BackLabel_Click(object sender, EventArgs e)
@@ -31,30 +44,18 @@ namespace LibraryProject.Presentation
             this.Hide();
         }
 
-        private async void AddAuthorButton_Click(object sender, EventArgs e)
-        {
-            string firstName = FirstNameBox.Text;
-            string lastName = LastNameBox.Text;
-            string bio = BioBox.Text;
-            Author author = new Author(firstName, lastName, bio);
-            authorService.CreateAsync(author);
-            await authorService.UpdateAsync();
-        }
-
         private async void AddBooksButton_Click(object sender, EventArgs e)
         {
-            Author author = authorService.GetAllAsync()
-                .FirstOrDefault(x => x.FullName == FirstNameBox.Text + " " + LastNameBox.Text);
-
+            BookShop bookShop = bookShopService.GetAllAsync().FirstOrDefault(x => x.Name == NameBox.Text);
             List<Book> books = bookService
                 .GetAllAsync()
                 .Where(x => BookNamesBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.Title))
                 .ToList();
             foreach (Book book in books)
             {
-                author.Books.Add(book);
+                bookShop.Books.Add(book);
             }
-            await authorService.UpdateAsync();
+            await bookShopService.UpdateAsync();
         }
     }
 }

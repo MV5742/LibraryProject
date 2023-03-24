@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Title = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.AddToWishlistButton = new System.Windows.Forms.Button();
+            this.SummaryLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.AuthorButton = new System.Windows.Forms.Button();
+            this.PublisherButton = new System.Windows.Forms.Button();
+            this.BookShopButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.BackLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,33 +49,33 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Title
+            // TitleLabel
             // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.Title.Location = new System.Drawing.Point(123, 320);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(66, 31);
-            this.Title.TabIndex = 2;
-            this.Title.Text = "Title";
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.TitleLabel.Location = new System.Drawing.Point(123, 320);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(66, 31);
+            this.TitleLabel.TabIndex = 2;
+            this.TitleLabel.Text = "Title";
             // 
-            // button1
+            // AddToWishlistButton
             // 
-            this.button1.Location = new System.Drawing.Point(60, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 36);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ADD TO WISHLIST";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddToWishlistButton.Location = new System.Drawing.Point(60, 354);
+            this.AddToWishlistButton.Name = "AddToWishlistButton";
+            this.AddToWishlistButton.Size = new System.Drawing.Size(203, 36);
+            this.AddToWishlistButton.TabIndex = 3;
+            this.AddToWishlistButton.Text = "ADD TO WISHLIST";
+            this.AddToWishlistButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // SummaryLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(290, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "SUMMARY";
+            this.SummaryLabel.AutoSize = true;
+            this.SummaryLabel.Location = new System.Drawing.Point(290, 96);
+            this.SummaryLabel.Name = "SummaryLabel";
+            this.SummaryLabel.Size = new System.Drawing.Size(65, 15);
+            this.SummaryLabel.TabIndex = 5;
+            this.SummaryLabel.Text = "SUMMARY";
             // 
             // label2
             // 
@@ -86,42 +86,33 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "AUTHOR/PUB/SB";
             // 
-            // button2
+            // AuthorButton
             // 
-            this.button2.Location = new System.Drawing.Point(290, 354);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 36);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "AUTHOR";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.AuthorButton.Location = new System.Drawing.Point(290, 354);
+            this.AuthorButton.Name = "AuthorButton";
+            this.AuthorButton.Size = new System.Drawing.Size(131, 36);
+            this.AuthorButton.TabIndex = 7;
+            this.AuthorButton.Text = "AUTHOR";
+            this.AuthorButton.UseVisualStyleBackColor = true;
+            this.AuthorButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // PublisherButton
             // 
-            this.button3.Location = new System.Drawing.Point(427, 354);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 36);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "PUBLISHER";
-            this.button3.UseVisualStyleBackColor = true;
+            this.PublisherButton.Location = new System.Drawing.Point(427, 354);
+            this.PublisherButton.Name = "PublisherButton";
+            this.PublisherButton.Size = new System.Drawing.Size(131, 36);
+            this.PublisherButton.TabIndex = 8;
+            this.PublisherButton.Text = "PUBLISHER";
+            this.PublisherButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BookShopButton
             // 
-            this.button4.Location = new System.Drawing.Point(564, 354);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(131, 36);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "BOOKSHOP";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(657, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(131, 36);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "HOME PAGE";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BookShopButton.Location = new System.Drawing.Point(564, 354);
+            this.BookShopButton.Name = "BookShopButton";
+            this.BookShopButton.Size = new System.Drawing.Size(131, 36);
+            this.BookShopButton.TabIndex = 9;
+            this.BookShopButton.Text = "BOOK SHOP";
+            this.BookShopButton.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -133,20 +124,30 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Bookish cataloge";
             // 
+            // BackLabel
+            // 
+            this.BackLabel.AutoSize = true;
+            this.BackLabel.Location = new System.Drawing.Point(12, 415);
+            this.BackLabel.Name = "BackLabel";
+            this.BackLabel.Size = new System.Drawing.Size(106, 15);
+            this.BackLabel.TabIndex = 12;
+            this.BackLabel.Text = "Back To Main Page";
+            this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
+            // 
             // SearchAndViewPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BackLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BookShopButton);
+            this.Controls.Add(this.PublisherButton);
+            this.Controls.Add(this.AuthorButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Title);
+            this.Controls.Add(this.SummaryLabel);
+            this.Controls.Add(this.AddToWishlistButton);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SearchAndViewPage";
             this.Text = "BookView";
@@ -160,14 +161,14 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label Title;
-        private Button button1;
-        private Label label1;
+        private Label TitleLabel;
+        private Button AddToWishlistButton;
+        private Label SummaryLabel;
         private Label label2;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button AuthorButton;
+        private Button PublisherButton;
+        private Button BookShopButton;
         private Label label3;
+        private Label BackLabel;
     }
 }

@@ -12,12 +12,11 @@ namespace LibraryProject.Business
     public class BookShop : IEntity
     {
         //Constructor(s)
-        public BookShop(string name, string address, int cityId)
+        public BookShop(string name, string address)
         {
             Name = name;
             Address = address;
             Books = new HashSet<Book>();
-            CityId = cityId;
         }
 
         //Properties

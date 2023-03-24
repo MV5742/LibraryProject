@@ -30,8 +30,9 @@
         {
             this.Title = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.BackLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Title
@@ -53,14 +54,14 @@
             this.listBox1.Size = new System.Drawing.Size(373, 169);
             this.listBox1.TabIndex = 4;
             // 
-            // button2
+            // RemoveButton
             // 
-            this.button2.Location = new System.Drawing.Point(85, 310);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 36);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "REMOVE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.RemoveButton.Location = new System.Drawing.Point(85, 310);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(131, 36);
+            this.RemoveButton.TabIndex = 11;
+            this.RemoveButton.Text = "REMOVE";
+            this.RemoveButton.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -71,16 +72,27 @@
             this.button5.Text = "HOME PAGE";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // BackLabel
+            // 
+            this.BackLabel.AutoSize = true;
+            this.BackLabel.Location = new System.Drawing.Point(12, 441);
+            this.BackLabel.Name = "BackLabel";
+            this.BackLabel.Size = new System.Drawing.Size(106, 15);
+            this.BackLabel.TabIndex = 13;
+            this.BackLabel.Text = "Back To Main Page";
+            this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
+            // 
+            // TrendingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 474);
+            this.Controls.Add(this.BackLabel);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Title);
-            this.Name = "Form2";
+            this.Name = "TrendingPage";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -91,7 +103,8 @@
 
         private Label Title;
         private ListBox listBox1;
-        private Button button2;
+        private Button RemoveButton;
         private Button button5;
+        private Label BackLabel;
     }
 }

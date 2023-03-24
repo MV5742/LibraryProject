@@ -28,7 +28,7 @@ namespace LibraryProject.Presentation
             bookShopService = Program.GetServiceProvider.GetService<BookShopService>();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void BackLabel_Click(object sender, EventArgs e)
         {
             ContributorModeMain conMain = new ContributorModeMain();
             conMain.Show();
@@ -36,22 +36,23 @@ namespace LibraryProject.Presentation
         }
 
         //Creates a new instance of a book and sends it to the Service layer
-        private void registerBookButton_Click(object sender, EventArgs e)
+        private async void RegisterBookButton_Click(object sender, EventArgs e)
         {
-            string iSBN = iSBNBox.Text;
-            string title = titleBox.Text;
-            string description = descriptionBox.Text;
-            string genre = genreBox.Text;
-            int quantity = int.Parse(quantityBox.Text);
-            decimal price = decimal.Parse(priceBox.Text);
-            DateTime datePublished = DateTime.Parse(dateBox.Text);
+            string iSBN = ISBNBox.Text;
+            string title = TitleBox.Text;
+            string description = DescriptionBox.Text;
+            string genre = GenreBox.Text;
+            int quantity = int.Parse(QuantityBox.Text);
+            decimal price = decimal.Parse(PriceBox.Text);
+            DateTime datePublished = DateTime.Parse(DateBox.Text);
             Book book = new Book(iSBN, title, description, genre, quantity, price, datePublished);
             bookService.CreateAsync(book);
+            await bookService.UpdateAsync();
         }
 
-        private async void addAuthorsButton_Click(object sender, EventArgs e)
+        private async void AddAuthorsButton_Click(object sender, EventArgs e)
         {
-            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == titleBox.Text);
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
             List<Author> authors = authorService
                 .GetAllAsync()
                 .Where(x => AuthorsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.FullName))
@@ -63,20 +64,21 @@ namespace LibraryProject.Presentation
             await bookService.UpdateAsync();
         }
 
-        private async void addPublisherButton_Click(object sender, EventArgs e)
+        private async void AddPublisherButton_Click(object sender, EventArgs e)
         {
-            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == titleBox.Text);
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
             Publisher publisher = publisherService.GetAllAsync().FirstOrDefault(x => x.Name == publisherNameBox.Text);
             book.Publisher = publisher;
+            book.PublisherId = publisher.Id;
             await bookService.UpdateAsync();
         }
 
-        private async void addShopsButton_Click(object sender, EventArgs e)
+        private async void AddShopsButton_Click(object sender, EventArgs e)
         {
-            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == titleBox.Text);
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
             List<BookShop> bookShops = bookShopService
                 .GetAllAsync()
-                .Where(x => bookShopsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.Name))
+                .Where(x => BookShopsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.Name))
                 .ToList();
             foreach (BookShop bookShop in bookShops)
             {

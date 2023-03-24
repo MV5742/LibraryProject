@@ -26,5 +26,17 @@ namespace LibraryProject.Presentation
         {
 
         }
+
+        private void BackLabel_Click(object sender, EventArgs e)
+        {
+            MainPage mainPage = new MainPage();
+            mainPage.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,46 +26,51 @@ namespace LibraryProject.Presentation
             }
         }
 
-        private void authorButton_Click(object sender, EventArgs e)
+        private void AuthorButton_Click(object sender, EventArgs e)
         {
             AuthorRegister authorRegister = new AuthorRegister();
             authorRegister.Show();
             this.Hide();
         }
 
-        private void bookButton_Click(object sender, EventArgs e)
+        private void BookButton_Click(object sender, EventArgs e)
         {
             BookRegister bookRegister = new BookRegister();
             bookRegister.Show();
             this.Hide();
         }
 
-        private void publisherButton_Click(object sender, EventArgs e)
+        private void PublisherButton_Click(object sender, EventArgs e)
+        {
+            PublisherRegister publisherRegister = new PublisherRegister();
+            publisherRegister.Show();
+            this.Hide();
+        }
+
+        private void BookShopButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void bookShopButton_Click(object sender, EventArgs e)
+        private void BackLabel_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void backButton_Click(object sender, EventArgs e)
-        {
-
+            MainPage mainPage = new MainPage();
+            mainPage.Show();
+            this.Hide();
         }
 
         private void ChangeView()
         {
-            checkButton.Visible = false;
-            checkButton.Enabled = false;
+            CheckButton.Visible = false;
+            CheckButton.Enabled = false;
             passwordLabel.Visible = false;
             passwordBox.Visible = false;
             welcomeLabel.Visible = true;
-            bookButton.Visible = true;
-            publisherButton.Visible = true;
-            authorButton.Visible = true;
-            bookShopButton.Visible = true;
+            BookButton.Visible = true;
+            PublisherButton.Visible = true;
+            AuthorButton.Visible = true;
+            BookShopButton.Visible = true;
+            CityButton.Visible = true;
         }
     }
 }

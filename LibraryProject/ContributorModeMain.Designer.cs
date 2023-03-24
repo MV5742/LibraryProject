@@ -31,12 +31,13 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.authorButton = new System.Windows.Forms.Button();
-            this.bookButton = new System.Windows.Forms.Button();
-            this.publisherButton = new System.Windows.Forms.Button();
-            this.bookShopButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Label();
-            this.checkButton = new System.Windows.Forms.Button();
+            this.AuthorButton = new System.Windows.Forms.Button();
+            this.BookButton = new System.Windows.Forms.Button();
+            this.PublisherButton = new System.Windows.Forms.Button();
+            this.BookShopButton = new System.Windows.Forms.Button();
+            this.BackLabel = new System.Windows.Forms.Label();
+            this.CheckButton = new System.Windows.Forms.Button();
+            this.CityButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // passwordLabel
@@ -65,81 +66,92 @@
             this.welcomeLabel.Text = "Welcome to Contributor Mode";
             this.welcomeLabel.Visible = false;
             // 
-            // authorButton
+            // AuthorButton
             // 
-            this.authorButton.Location = new System.Drawing.Point(49, 81);
-            this.authorButton.Name = "authorButton";
-            this.authorButton.Size = new System.Drawing.Size(107, 23);
-            this.authorButton.TabIndex = 3;
-            this.authorButton.Text = "Register Author";
-            this.authorButton.UseVisualStyleBackColor = true;
-            this.authorButton.Visible = false;
-            this.authorButton.Click += new System.EventHandler(this.authorButton_Click);
+            this.AuthorButton.Location = new System.Drawing.Point(75, 83);
+            this.AuthorButton.Name = "AuthorButton";
+            this.AuthorButton.Size = new System.Drawing.Size(107, 23);
+            this.AuthorButton.TabIndex = 3;
+            this.AuthorButton.Text = "Register Author";
+            this.AuthorButton.UseVisualStyleBackColor = true;
+            this.AuthorButton.Visible = false;
+            this.AuthorButton.Click += new System.EventHandler(this.AuthorButton_Click);
             // 
-            // bookButton
+            // BookButton
             // 
-            this.bookButton.Location = new System.Drawing.Point(162, 81);
-            this.bookButton.Name = "bookButton";
-            this.bookButton.Size = new System.Drawing.Size(97, 23);
-            this.bookButton.TabIndex = 4;
-            this.bookButton.Text = "Register Book";
-            this.bookButton.UseVisualStyleBackColor = true;
-            this.bookButton.Visible = false;
-            this.bookButton.Click += new System.EventHandler(this.bookButton_Click);
+            this.BookButton.Location = new System.Drawing.Point(188, 83);
+            this.BookButton.Name = "BookButton";
+            this.BookButton.Size = new System.Drawing.Size(97, 23);
+            this.BookButton.TabIndex = 4;
+            this.BookButton.Text = "Register Book";
+            this.BookButton.UseVisualStyleBackColor = true;
+            this.BookButton.Visible = false;
+            this.BookButton.Click += new System.EventHandler(this.BookButton_Click);
             // 
-            // publisherButton
+            // PublisherButton
             // 
-            this.publisherButton.Location = new System.Drawing.Point(37, 110);
-            this.publisherButton.Name = "publisherButton";
-            this.publisherButton.Size = new System.Drawing.Size(119, 23);
-            this.publisherButton.TabIndex = 5;
-            this.publisherButton.Text = "Register Publisher";
-            this.publisherButton.UseVisualStyleBackColor = true;
-            this.publisherButton.Visible = false;
-            this.publisherButton.Click += new System.EventHandler(this.publisherButton_Click);
+            this.PublisherButton.Location = new System.Drawing.Point(12, 110);
+            this.PublisherButton.Name = "PublisherButton";
+            this.PublisherButton.Size = new System.Drawing.Size(119, 23);
+            this.PublisherButton.TabIndex = 5;
+            this.PublisherButton.Text = "Register Publisher";
+            this.PublisherButton.UseVisualStyleBackColor = true;
+            this.PublisherButton.Visible = false;
+            this.PublisherButton.Click += new System.EventHandler(this.PublisherButton_Click);
             // 
-            // bookShopButton
+            // BookShopButton
             // 
-            this.bookShopButton.Location = new System.Drawing.Point(162, 110);
-            this.bookShopButton.Name = "bookShopButton";
-            this.bookShopButton.Size = new System.Drawing.Size(130, 23);
-            this.bookShopButton.TabIndex = 6;
-            this.bookShopButton.Text = "Register Book Shop";
-            this.bookShopButton.UseVisualStyleBackColor = true;
-            this.bookShopButton.Visible = false;
-            this.bookShopButton.Click += new System.EventHandler(this.bookShopButton_Click);
+            this.BookShopButton.Location = new System.Drawing.Point(226, 110);
+            this.BookShopButton.Name = "BookShopButton";
+            this.BookShopButton.Size = new System.Drawing.Size(130, 23);
+            this.BookShopButton.TabIndex = 6;
+            this.BookShopButton.Text = "Register Book Shop";
+            this.BookShopButton.UseVisualStyleBackColor = true;
+            this.BookShopButton.Visible = false;
+            this.BookShopButton.Click += new System.EventHandler(this.BookShopButton_Click);
             // 
-            // backButton
+            // BackLabel
             // 
-            this.backButton.AutoSize = true;
-            this.backButton.Location = new System.Drawing.Point(231, 165);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(111, 15);
-            this.backButton.TabIndex = 7;
-            this.backButton.Text = "Back to Home Page";
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.BackLabel.AutoSize = true;
+            this.BackLabel.Location = new System.Drawing.Point(231, 165);
+            this.BackLabel.Name = "BackLabel";
+            this.BackLabel.Size = new System.Drawing.Size(111, 15);
+            this.BackLabel.TabIndex = 7;
+            this.BackLabel.Text = "Back to Home Page";
+            this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
             // 
-            // checkButton
+            // CheckButton
             // 
-            this.checkButton.Location = new System.Drawing.Point(242, 118);
-            this.checkButton.Name = "checkButton";
-            this.checkButton.Size = new System.Drawing.Size(75, 23);
-            this.checkButton.TabIndex = 8;
-            this.checkButton.Text = "Check";
-            this.checkButton.UseVisualStyleBackColor = true;
-            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
+            this.CheckButton.Location = new System.Drawing.Point(242, 118);
+            this.CheckButton.Name = "CheckButton";
+            this.CheckButton.Size = new System.Drawing.Size(75, 23);
+            this.CheckButton.TabIndex = 8;
+            this.CheckButton.Text = "Check";
+            this.CheckButton.UseVisualStyleBackColor = true;
+            this.CheckButton.Click += new System.EventHandler(this.checkButton_Click);
+            // 
+            // CityButton
+            // 
+            this.CityButton.Location = new System.Drawing.Point(137, 110);
+            this.CityButton.Name = "CityButton";
+            this.CityButton.Size = new System.Drawing.Size(83, 23);
+            this.CityButton.TabIndex = 9;
+            this.CityButton.Text = "Register City";
+            this.CityButton.UseVisualStyleBackColor = true;
+            this.CityButton.Visible = false;
             // 
             // ContributorModeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 207);
-            this.Controls.Add(this.checkButton);
-            this.Controls.Add(this.backButton);
-            this.Controls.Add(this.bookShopButton);
-            this.Controls.Add(this.publisherButton);
-            this.Controls.Add(this.bookButton);
-            this.Controls.Add(this.authorButton);
+            this.ClientSize = new System.Drawing.Size(383, 207);
+            this.Controls.Add(this.CityButton);
+            this.Controls.Add(this.CheckButton);
+            this.Controls.Add(this.BackLabel);
+            this.Controls.Add(this.BookShopButton);
+            this.Controls.Add(this.PublisherButton);
+            this.Controls.Add(this.BookButton);
+            this.Controls.Add(this.AuthorButton);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.passwordLabel);
@@ -155,11 +167,12 @@
         private Label passwordLabel;
         private TextBox passwordBox;
         private Label welcomeLabel;
-        private Button authorButton;
-        private Button bookButton;
-        private Button publisherButton;
-        private Button bookShopButton;
-        private Label backButton;
-        private Button checkButton;
+        private Button AuthorButton;
+        private Button BookButton;
+        private Button PublisherButton;
+        private Button BookShopButton;
+        private Label BackLabel;
+        private Button CheckButton;
+        private Button CityButton;
     }
 }

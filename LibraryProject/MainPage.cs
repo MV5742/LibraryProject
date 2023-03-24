@@ -17,21 +17,21 @@ namespace LibraryProject.Presentation
             InitializeComponent();
         }
 
-        private void trendingButton_Click(object sender, EventArgs e)
+        private void TrendingButton_Click(object sender, EventArgs e)
         {
             TrendingPage trendingPage = new TrendingPage();
             trendingPage.Show();
             this.Hide();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
             SearchAndViewPage search = new SearchAndViewPage();
             search.Show();
             this.Hide();
         }
 
-        private void logInButton_Click(object sender, EventArgs e)
+        private void LogInButton_Click(object sender, EventArgs e)
         {
             LoginPage login = new LoginPage();
             login.Show();
