@@ -21,9 +21,9 @@ namespace LibraryProject.Presentation
         public CityRegister()
         {
             InitializeComponent();
-            cityService = Program.GetServiceProvider.GetService<CityService>();
-            publisherService = Program.GetServiceProvider.GetService<PublisherService>();
-            bookShopService = Program.GetServiceProvider.GetService<BookShopService>();
+            cityService = ServiceLocator.GetService<CityService>();
+            publisherService = ServiceLocator.GetService<PublisherService>();
+            bookShopService = ServiceLocator.GetService<BookShopService>();
         }
 
         private void BackLabel_Click(object sender, EventArgs e)

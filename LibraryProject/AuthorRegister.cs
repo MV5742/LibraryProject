@@ -15,13 +15,13 @@ namespace LibraryProject.Presentation
 {
     public partial class AuthorRegister : Form
     {
-        private AuthorService authorService;
-        private BookService bookService;
+        private AuthorService? authorService;
+        private BookService? bookService;
         public AuthorRegister()
         {
             InitializeComponent();
-            authorService = Program.GetServiceProvider.GetService<AuthorService>();
-            bookService = Program.GetServiceProvider.GetService<BookService>();
+            authorService = ServiceLocator.GetService<AuthorService>();
+            bookService = ServiceLocator.GetService<BookService>();
         }
 
         private void BackLabel_Click(object sender, EventArgs e)

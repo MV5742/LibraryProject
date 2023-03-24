@@ -21,9 +21,9 @@ namespace LibraryProject.Presentation
         public BookShopRegister()
         {
             InitializeComponent();
-            cityService = Program.GetServiceProvider.GetService<CityService>();
-            bookShopService = Program.GetServiceProvider.GetService<BookShopService>();
-            bookService = Program.GetServiceProvider.GetService<BookService>();
+            cityService = ServiceLocator.GetService<CityService>();
+            bookShopService = ServiceLocator.GetService<BookShopService>();
+            bookService = ServiceLocator.GetService<BookService>();
         }
 
         private async void RegisterButton_Click(object sender, EventArgs e)

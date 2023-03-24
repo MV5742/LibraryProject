@@ -22,10 +22,10 @@ namespace LibraryProject.Presentation
         public BookRegister()
         {
             InitializeComponent();
-            bookService = Program.GetServiceProvider.GetService<BookService>();
-            publisherService = Program.GetServiceProvider.GetService<PublisherService>();
-            authorService = Program.GetServiceProvider.GetService<AuthorService>();
-            bookShopService = Program.GetServiceProvider.GetService<BookShopService>();
+            bookService = ServiceLocator.GetService<BookService>();
+            publisherService = ServiceLocator.GetService<PublisherService>();
+            authorService = ServiceLocator.GetService<AuthorService>();
+            bookShopService = ServiceLocator.GetService<BookShopService>();
         }
 
         private void BackLabel_Click(object sender, EventArgs e)

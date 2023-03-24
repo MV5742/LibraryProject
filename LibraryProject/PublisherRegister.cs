@@ -21,9 +21,9 @@ namespace LibraryProject.Presentation
         public PublisherRegister()
         {
             InitializeComponent();
-            publisherService = Program.GetServiceProvider.GetService<PublisherService>();
-            bookService = Program.GetServiceProvider.GetService<BookService>();
-            cityService = Program.GetServiceProvider.GetService<CityService>();
+            publisherService = ServiceLocator.GetService<PublisherService>();
+            bookService = ServiceLocator.GetService<BookService>();
+            cityService = ServiceLocator.GetService<CityService>();
         }
 
         private async void RegisterButton_Click(object sender, EventArgs e)

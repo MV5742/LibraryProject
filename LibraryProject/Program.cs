@@ -11,13 +11,11 @@ namespace LibraryProject.Presentation
 {
     public static class Program
     {
-        public static IServiceProvider GetServiceProvider { get; private set; }
         [STAThread]
         static void Main()
         {
             //Starts the app
             ApplicationConfiguration.Initialize();
-            //Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
 
             //Sets up the service provider who is responsible for implementing the Dependency Injection Pattern
             IServiceProvider serviceProvider = new ServiceCollection()
@@ -28,8 +26,10 @@ namespace LibraryProject.Presentation
             .AddScoped<IBaseService<Publisher>, PublisherService>()
             .AddScoped<IBaseService<Author>, AuthorService>()
             .AddScoped<IBaseService<BookShop>, BookShopService>()
+            .AddScoped<IBaseService<City>, CityService>()
             .BuildServiceProvider();
-            GetServiceProvider = serviceProvider;
+            
+            ServiceLocator.SetServiceProvider(serviceProvider);
 
             //Runs the MainPage Form
             Application.Run(new MainPage());
