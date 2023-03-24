@@ -46,6 +46,7 @@
 > Create many-to-many relation using FluentAPI
 > Create contributor form where you can add entries to the database (pass: hiMom1234)
 > Forms will create object, service will check its values, repository will add it to DbContext/DbSet
+>>>Add validation that checks wether what is added is not already contained
 
 >>> VERY IMPORTANT <<<
 > Use the syntax in the image on your phone to run Sql scripts in the migration files' Up method.
@@ -56,4 +57,8 @@
 
 >>> DON'T FORGET TO SET DEFAULT PROJECT AS DATA LAYER IN PACKAGE MANAGER CONSOLE!!!
 
+>>> Minor fixes to be done <<<
+> Fix problem with project folder names (works anyway)
+> Resolve nullable warnings
+> Resolve async warnings
 

@@ -19,11 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\LibraryProject.Business\LibraryProject.Business.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibraryProject.Business\LibraryProject.Business.csproj" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

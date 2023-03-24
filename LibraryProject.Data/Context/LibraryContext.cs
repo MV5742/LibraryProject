@@ -37,17 +37,20 @@ namespace LibraryProject.Data.Context
             modelBuilder.Entity<Publisher>()
                 .HasOne(p => p.City)
                 .WithMany(c => c.Publishers)
-                .HasForeignKey(p => p.CityId);
+                .HasForeignKey(p => p.CityId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<BookShop>()
                 .HasOne(bs => bs.City)
                 .WithMany(c => c.BookShops)
-                .HasForeignKey(bs => bs.CityId);
+                .HasForeignKey(bs => bs.CityId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.Publisher)
                 .WithMany(p => p.BooksPublished)
-                .HasForeignKey(b => b.PublisherId);
+                .HasForeignKey(b => b.PublisherId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             //Many-to-many relations
 

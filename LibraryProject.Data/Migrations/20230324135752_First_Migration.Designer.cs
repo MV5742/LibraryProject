@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryProject.Data.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20230323202850_Test_Migration")]
-    partial class Test_Migration
+    [Migration("20230324135752_First_Migration")]
+    partial class First_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -282,7 +282,7 @@ namespace LibraryProject.Data.Migrations
                     b.HasOne("LibraryProject.Business.Publisher", "Publisher")
                         .WithMany("BooksPublished")
                         .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LibraryProject.Business.User", null)
@@ -297,7 +297,7 @@ namespace LibraryProject.Data.Migrations
                     b.HasOne("LibraryProject.Business.City", "City")
                         .WithMany("BookShops")
                         .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("City");
@@ -308,7 +308,7 @@ namespace LibraryProject.Data.Migrations
                     b.HasOne("LibraryProject.Business.City", "City")
                         .WithMany("Publishers")
                         .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("City");
