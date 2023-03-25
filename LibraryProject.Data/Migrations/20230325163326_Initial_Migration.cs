@@ -5,10 +5,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LibraryProject.Data.Migrations
 {
-    public partial class First_Migration : Migration
+    public partial class Initial_Migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "Books");
+
             migrationBuilder.CreateTable(
                 name: "Authors",
                 columns: table => new
@@ -152,28 +155,78 @@ namespace LibraryProject.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BooksShopBooks",
+                name: "BookShopBooks",
+                schema: "Books",
                 columns: table => new
                 {
-                    BookShopsId = table.Column<int>(type: "int", nullable: false),
-                    BooksId = table.Column<int>(type: "int", nullable: false)
+                    BookId = table.Column<int>(type: "int", nullable: false),
+                    BookShopId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BooksShopBooks", x => new { x.BookShopsId, x.BooksId });
+                    table.PrimaryKey("PK_BookShopBooks", x => new { x.BookId, x.BookShopId });
                     table.ForeignKey(
-                        name: "FK_BooksShopBooks_Books_BooksId",
-                        column: x => x.BooksId,
+                        name: "FK_BookShopBooks_Books_BookId",
+                        column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BooksShopBooks_BookShops_BookShopsId",
-                        column: x => x.BookShopsId,
+                        name: "FK_BookShopBooks_BookShops_BookShopId",
+                        column: x => x.BookShopId,
                         principalTable: "BookShops",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Authors",
+                columns: new[] { "Id", "FirstName", "LastName", "ShortBiography" },
+                values: new object[,]
+                {
+                    { 1, "Ivan", "Vazov", "bio1" },
+                    { 2, "Hristo", "Smirnenski", "bio2" },
+                    { 3, "Joanne", "Rowling", "bio3" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "CityName" },
+                values: new object[,]
+                {
+                    { 1, "Sofia" },
+                    { 2, "Plovdiv" },
+                    { 3, "Varna" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "BookShops",
+                columns: new[] { "Id", "Address", "CityId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "ul. Slovo 14", 1, "Kushtata na Vazov" },
+                    { 2, "Abe na glavnata e, maina", 2, "Helicon" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Publishers",
+                columns: new[] { "Id", "Address", "CityId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "ul. Smokinia 19", 1, "Bulgarski Fener" },
+                    { 2, "ul. Bai Ganio 69", 2, "Checheneca Publishing" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "DatePublished", "Description", "Genre", "ISBN", "Price", "PublisherId", "QuantityInStock", "Title", "UserId" },
+                values: new object[] { 1, new DateTime(2023, 3, 25, 18, 33, 26, 730, DateTimeKind.Local).AddTicks(962), "Pod Igoto na rasbiraem esik", "Tragikomedia", "9-876-543-21", 18.78m, 2, 42, "Pod Igoto na shliokavitsa", null });
+
+            migrationBuilder.InsertData(
+                schema: "Books",
+                table: "BookShopBooks",
+                columns: new[] { "BookId", "BookShopId" },
+                values: new object[] { 1, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AuthorBooks_BooksId",
@@ -197,6 +250,12 @@ namespace LibraryProject.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_BookShopBooks_BookShopId",
+                schema: "Books",
+                table: "BookShopBooks",
+                column: "BookShopId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_BookShops_CityId",
                 table: "BookShops",
                 column: "CityId");
@@ -206,11 +265,6 @@ namespace LibraryProject.Data.Migrations
                 table: "BookShops",
                 column: "Name",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BooksShopBooks_BooksId",
-                table: "BooksShopBooks",
-                column: "BooksId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Publishers_CityId",
@@ -230,7 +284,8 @@ namespace LibraryProject.Data.Migrations
                 name: "AuthorBooks");
 
             migrationBuilder.DropTable(
-                name: "BooksShopBooks");
+                name: "BookShopBooks",
+                schema: "Books");
 
             migrationBuilder.DropTable(
                 name: "Authors");

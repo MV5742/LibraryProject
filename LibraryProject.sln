@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryProject.Service", "L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryProject.Business", "LibraryProject.Business\LibraryProject.Business.csproj", "{A847502D-326F-4C76-8BF1-704CC054A5DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTesting", "ProjectTesting\ProjectTesting.csproj", "{BCA4CB83-5972-41E5-B4A9-9F46153D24DC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTests2", "ProjectTests2\ProjectTests2.csproj", "{C3069049-1DB8-4F4C-A0C1-13E679704B5C}"
 EndProject
 Global

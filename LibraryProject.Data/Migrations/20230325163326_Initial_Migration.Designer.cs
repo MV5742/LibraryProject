@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryProject.Data.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20230324135752_First_Migration")]
-    partial class First_Migration
+    [Migration("20230325163326_Initial_Migration")]
+    partial class Initial_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,19 +39,26 @@ namespace LibraryProject.Data.Migrations
                     b.ToTable("AuthorBooks", (string)null);
                 });
 
-            modelBuilder.Entity("BookBookShop", b =>
+            modelBuilder.Entity("BookShopBooks", b =>
                 {
-                    b.Property<int>("BookShopsId")
+                    b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.Property<int>("BooksId")
+                    b.Property<int>("BookShopId")
                         .HasColumnType("int");
 
-                    b.HasKey("BookShopsId", "BooksId");
+                    b.HasKey("BookId", "BookShopId");
 
-                    b.HasIndex("BooksId");
+                    b.HasIndex("BookShopId");
 
-                    b.ToTable("BooksShopBooks", (string)null);
+                    b.ToTable("BookShopBooks", "Books");
+
+                    b.HasData(
+                        new
+                        {
+                            BookId = 1,
+                            BookShopId = 1
+                        });
                 });
 
             modelBuilder.Entity("LibraryProject.Business.Author", b =>
@@ -79,6 +86,29 @@ namespace LibraryProject.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Ivan",
+                            LastName = "Vazov",
+                            ShortBiography = "bio1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FirstName = "Hristo",
+                            LastName = "Smirnenski",
+                            ShortBiography = "bio2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FirstName = "Joanne",
+                            LastName = "Rowling",
+                            ShortBiography = "bio3"
+                        });
                 });
 
             modelBuilder.Entity("LibraryProject.Business.Book", b =>
@@ -134,6 +164,20 @@ namespace LibraryProject.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DatePublished = new DateTime(2023, 3, 25, 18, 33, 26, 730, DateTimeKind.Local).AddTicks(962),
+                            Description = "Pod Igoto na rasbiraem esik",
+                            Genre = "Tragikomedia",
+                            ISBN = "9-876-543-21",
+                            Price = 18.78m,
+                            PublisherId = 2,
+                            QuantityInStock = 42,
+                            Title = "Pod Igoto na shliokavitsa"
+                        });
                 });
 
             modelBuilder.Entity("LibraryProject.Business.BookShop", b =>
@@ -165,6 +209,22 @@ namespace LibraryProject.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("BookShops");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "ul. Slovo 14",
+                            CityId = 1,
+                            Name = "Kushtata na Vazov"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "Abe na glavnata e, maina",
+                            CityId = 2,
+                            Name = "Helicon"
+                        });
                 });
 
             modelBuilder.Entity("LibraryProject.Business.City", b =>
@@ -183,6 +243,23 @@ namespace LibraryProject.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CityName = "Sofia"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityName = "Plovdiv"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityName = "Varna"
+                        });
                 });
 
             modelBuilder.Entity("LibraryProject.Business.Publisher", b =>
@@ -214,6 +291,22 @@ namespace LibraryProject.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Publishers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "ul. Smokinia 19",
+                            CityId = 1,
+                            Name = "Bulgarski Fener"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "ul. Bai Ganio 69",
+                            CityId = 2,
+                            Name = "Checheneca Publishing"
+                        });
                 });
 
             modelBuilder.Entity("LibraryProject.Business.User", b =>
@@ -262,17 +355,17 @@ namespace LibraryProject.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BookBookShop", b =>
+            modelBuilder.Entity("BookShopBooks", b =>
                 {
-                    b.HasOne("LibraryProject.Business.BookShop", null)
+                    b.HasOne("LibraryProject.Business.Book", null)
                         .WithMany()
-                        .HasForeignKey("BookShopsId")
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LibraryProject.Business.Book", null)
+                    b.HasOne("LibraryProject.Business.BookShop", null)
                         .WithMany()
-                        .HasForeignKey("BooksId")
+                        .HasForeignKey("BookShopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

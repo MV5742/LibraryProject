@@ -32,7 +32,12 @@ namespace LibraryProject.Data.Context
         //Creates Constraints
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //One-to-one relations
+            //Seeding
+            //Put seeding method below
+
+            LibrarySeeder.SeedStartingData(modelBuilder);
+
+            //One-to-many relations
 
             modelBuilder.Entity<Publisher>()
                 .HasOne(p => p.City)
@@ -54,15 +59,41 @@ namespace LibraryProject.Data.Context
 
             //Many-to-many relations
 
-            modelBuilder.Entity<Author>()
-            .HasMany(a => a.Books)
-            .WithMany(b => b.Authors)
-            .UsingEntity(x => x.ToTable("AuthorBooks"));
+            //AuthorBooks
+            modelBuilder.SharedTypeEntity<Dictionary<string, object>>("AuthorBooks", builder =>
 
+            {
+                builder.Property<int>("AuthorId");
+                builder.Property<int>("BookId");
+            });
+            
+            modelBuilder.Entity<Author>()
+                .HasMany(x => x.Books)
+                .WithMany(x => x.Authors)
+                .UsingEntity<Dictionary<string, object>>("AuthorBooks",
+                    x => x.HasOne<Book>().WithMany().HasForeignKey("BookId"),
+                    x => x.HasOne<Author>().WithMany().HasForeignKey("AuthorId"),
+                    x => x.ToTable("AuthorBooks", "Books").HasData(
+                        new {BookId = 1, AuthorId = 1} 
+                        ));
+            
+            //BookShopBooks
+            modelBuilder.SharedTypeEntity<Dictionary<string, object>>("BookShopBooks", builder =>
+
+            {
+                builder.Property<int>("BookShopId");
+                builder.Property<int>("BookId");
+            });
+            
             modelBuilder.Entity<BookShop>()
-                .HasMany(bs => bs.Books)
-                .WithMany(b => b.BookShops)
-                .UsingEntity(x => x.ToTable("BooksShopBooks"));
+                .HasMany(x => x.Books)
+                .WithMany(x => x.BookShops)
+                .UsingEntity<Dictionary<string, object>>("BookShopBooks",
+                    x => x.HasOne<Book>().WithMany().HasForeignKey("BookId"),
+                    x => x.HasOne<BookShop>().WithMany().HasForeignKey("BookShopId"),
+                    x => x.ToTable("BookShopBooks", "Books").HasData(
+                        new {BookId = 1, BookShopId = 1} 
+                        ));
 
             //Unique/Distinct validations
 
