@@ -1,4 +1,5 @@
 ﻿using LibraryProject.Business;
+using LibraryProject.Business.Interfaces;
 using LibraryProject.Data.Interfaces;
 using LibraryProject.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {
-    public class AuthorService : BaseService<Author>, ICustomService<Author>
+    public class AuthorService : BaseService<Author>, IAuthorService
+
     {
         public AuthorService(IRepository _repo) : base(_repo)
         {
@@ -22,15 +24,14 @@ namespace LibraryProject.Service.Services
         }
 
         //Prints author information
-        public string PrintInfoById(int id)
+        public string PrintInfoById(Author entity)
         {
-            Author author = GetByIdAsync(id).Result;
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"Author information:");
-            stringBuilder.AppendLine($"Name: {author.FirstName} {author.LastName}");
-            stringBuilder.AppendLine($"Books written: {author.BooksWritten}");
+            stringBuilder.AppendLine($"Name: {entity.FirstName} {entity.LastName}");
+            stringBuilder.AppendLine($"Books written: {entity.BooksWritten}");
             stringBuilder.AppendLine($"Short biography:");
-            stringBuilder.Append($"{author.ShortBiography}");
+            stringBuilder.Append($"{entity.ShortBiography}");
             return stringBuilder.ToString();
         }
     }

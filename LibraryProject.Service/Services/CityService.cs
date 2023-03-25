@@ -1,4 +1,5 @@
 ﻿using LibraryProject.Business;
+using LibraryProject.Business.Interfaces;
 using LibraryProject.Data.Interfaces;
 using LibraryProject.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ namespace LibraryProject.Service.Services
             return repo.GetAllAsync<City>().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public string PrintInfoById(int id)
+        public string PrintInfoById(City entity)
         {
             throw new NotImplementedException();
         }

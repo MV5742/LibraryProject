@@ -12,11 +12,11 @@ namespace LibraryProject.Data.Context
         //Handles the Configuration of the Connection String
         public static IConfiguration GetConfiguration()
         {
-            var builder = new ConfigurationBuilder()
+                var builder = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
-            return builder.Build();
+                return builder.Build();
         }
 
         //Is able to return the Connection string anywhere it is needed

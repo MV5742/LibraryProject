@@ -16,7 +16,7 @@ namespace LibraryProject.Data.Repositories
     {
         protected DbContext Context  { get; set; }
 
-        protected BaseRepository(LibraryContext context)
+        public BaseRepository(LibraryContext context)
         {
             this.Context = context;
         }

@@ -1,5 +1,6 @@
 ﻿using LibraryProject.Business;
 using LibraryProject.Service.Services;
+using LibraryProject.Service.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace LibraryProject.Presentation
         public AuthorRegister()
         {
             InitializeComponent();
-            authorService = ServiceLocator.GetService<AuthorService>();
+            authorService = Session.AuthorService;
             bookService = ServiceLocator.GetService<BookService>();
         }
 

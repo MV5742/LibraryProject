@@ -24,7 +24,7 @@ namespace LibraryProject.Presentation
             .AddScoped<IRepository, BaseRepository>()
             .AddScoped<IBaseService<Book>, BookService>()
             .AddScoped<IBaseService<Publisher>, PublisherService>()
-            .AddScoped<IBaseService<Author>, AuthorService>()
+            .AddScoped<IAuthorService, AuthorService>()
             .AddScoped<IBaseService<BookShop>, BookShopService>()
             .AddScoped<IBaseService<City>, CityService>()
             .AddScoped<IBaseService<User>, UserService>()

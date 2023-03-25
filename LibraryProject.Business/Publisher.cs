@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibraryProject.Business
 {
@@ -42,5 +43,6 @@ namespace LibraryProject.Business
         public City City { get; set; }
         public string CityName => City.CityName;
         public int BookCount => BooksPublished.Count;
+        public string BookTitles => string.Join(", ", BooksPublished.Select(x => x.Title).ToList());
     }
 }

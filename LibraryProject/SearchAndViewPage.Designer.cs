@@ -40,7 +40,10 @@
             this.BookInfoBox = new System.Windows.Forms.RichTextBox();
             this.BookInfoLabel = new System.Windows.Forms.Label();
             this.BookSummaryBox = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.ExtraInfoBox = new System.Windows.Forms.RichTextBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.TitleBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -61,6 +64,7 @@
             this.AddToWishlistButton.TabIndex = 3;
             this.AddToWishlistButton.Text = "ADD TO WISHLIST";
             this.AddToWishlistButton.UseVisualStyleBackColor = true;
+            this.AddToWishlistButton.Click += new System.EventHandler(this.AddToWishlistButton_Click);
             // 
             // BookSummaryLabel
             // 
@@ -74,7 +78,7 @@
             // AdditionalInfoLabel
             // 
             this.AdditionalInfoLabel.AutoSize = true;
-            this.AdditionalInfoLabel.Location = new System.Drawing.Point(255, 72);
+            this.AdditionalInfoLabel.Location = new System.Drawing.Point(258, 112);
             this.AdditionalInfoLabel.Name = "AdditionalInfoLabel";
             this.AdditionalInfoLabel.Size = new System.Drawing.Size(184, 15);
             this.AdditionalInfoLabel.TabIndex = 6;
@@ -82,31 +86,33 @@
             // 
             // AuthorButton
             // 
-            this.AuthorButton.Location = new System.Drawing.Point(470, 93);
+            this.AuthorButton.Location = new System.Drawing.Point(473, 133);
             this.AuthorButton.Name = "AuthorButton";
             this.AuthorButton.Size = new System.Drawing.Size(131, 36);
             this.AuthorButton.TabIndex = 7;
             this.AuthorButton.Text = "AUTHOR";
             this.AuthorButton.UseVisualStyleBackColor = true;
-            this.AuthorButton.Click += new System.EventHandler(this.button2_Click);
+            this.AuthorButton.Click += new System.EventHandler(this.AuthorButton_Click);
             // 
             // PublisherButton
             // 
-            this.PublisherButton.Location = new System.Drawing.Point(470, 135);
+            this.PublisherButton.Location = new System.Drawing.Point(473, 175);
             this.PublisherButton.Name = "PublisherButton";
             this.PublisherButton.Size = new System.Drawing.Size(131, 36);
             this.PublisherButton.TabIndex = 8;
             this.PublisherButton.Text = "PUBLISHER";
             this.PublisherButton.UseVisualStyleBackColor = true;
+            this.PublisherButton.Click += new System.EventHandler(this.PublisherButton_Click);
             // 
             // BookShopButton
             // 
-            this.BookShopButton.Location = new System.Drawing.Point(470, 177);
+            this.BookShopButton.Location = new System.Drawing.Point(473, 217);
             this.BookShopButton.Name = "BookShopButton";
             this.BookShopButton.Size = new System.Drawing.Size(131, 36);
             this.BookShopButton.TabIndex = 9;
             this.BookShopButton.Text = "BOOK SHOP";
             this.BookShopButton.UseVisualStyleBackColor = true;
+            this.BookShopButton.Click += new System.EventHandler(this.BookShopButton_Click);
             // 
             // CatalogueLabel
             // 
@@ -154,20 +160,49 @@
             this.BookSummaryBox.TabIndex = 16;
             this.BookSummaryBox.Text = "";
             // 
-            // richTextBox3
+            // ExtraInfoBox
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(255, 93);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(209, 236);
-            this.richTextBox3.TabIndex = 17;
-            this.richTextBox3.Text = "";
+            this.ExtraInfoBox.Location = new System.Drawing.Point(258, 133);
+            this.ExtraInfoBox.Name = "ExtraInfoBox";
+            this.ExtraInfoBox.Size = new System.Drawing.Size(209, 236);
+            this.ExtraInfoBox.TabIndex = 17;
+            this.ExtraInfoBox.Text = "";
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Location = new System.Drawing.Point(258, 53);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(113, 15);
+            this.SearchLabel.TabIndex = 18;
+            this.SearchLabel.Text = "Search by Book Title";
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Location = new System.Drawing.Point(408, 74);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(76, 24);
+            this.SearchButton.TabIndex = 19;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // TitleBox
+            // 
+            this.TitleBox.Location = new System.Drawing.Point(258, 75);
+            this.TitleBox.Name = "TitleBox";
+            this.TitleBox.Size = new System.Drawing.Size(144, 23);
+            this.TitleBox.TabIndex = 20;
             // 
             // SearchAndViewPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 405);
-            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.TitleBox);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.SearchLabel);
+            this.Controls.Add(this.ExtraInfoBox);
             this.Controls.Add(this.BookSummaryBox);
             this.Controls.Add(this.BookInfoLabel);
             this.Controls.Add(this.BookInfoBox);
@@ -201,6 +236,9 @@
         private RichTextBox BookInfoBox;
         private Label BookInfoLabel;
         private RichTextBox BookSummaryBox;
-        private RichTextBox richTextBox3;
+        private RichTextBox ExtraInfoBox;
+        private Label SearchLabel;
+        private Button SearchButton;
+        private TextBox TitleBox;
     }
 }

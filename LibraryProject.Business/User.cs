@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibraryProject.Business
 {
@@ -41,5 +42,7 @@ namespace LibraryProject.Business
 
         [Required]
         public ICollection<Book> Wishlist { get; set; }
+
+        public string WishlistTitles => string.Join(", ", Wishlist.Select(x => x.Title).ToList());
     }
 }

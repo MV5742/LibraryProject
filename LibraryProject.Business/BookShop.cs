@@ -41,5 +41,7 @@ namespace LibraryProject.Business
         [Required]
         public City City { get; set; }
         public string CityName => City.CityName;
+
+        public string BookTitles => string.Join(", ", Books.Select(x => x.Title).ToList());
     }
 }

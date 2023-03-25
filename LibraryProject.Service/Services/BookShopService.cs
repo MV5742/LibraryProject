@@ -1,4 +1,5 @@
 ﻿using LibraryProject.Business;
+using LibraryProject.Business.Interfaces;
 using LibraryProject.Data.Interfaces;
 using LibraryProject.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {
-    public class BookShopService : BaseService<BookShop>, ICustomService<BookShop>
+    public class BookShopService : BaseService<BookShop>, IBookShopService
     {
         public BookShopService(IRepository _repo) : base(_repo)
         {
@@ -21,9 +22,14 @@ namespace LibraryProject.Service.Services
             return repo.GetAllAsync<BookShop>().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public string PrintInfoById(int id)
+        public string PrintInfoById(BookShop entity)
         {
-            throw new NotImplementedException();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine("Book Shop information:");
+            stringBuilder.AppendLine($"Name: {entity.Name}");
+            stringBuilder.AppendLine($"Address: {entity.Address}");
+            stringBuilder.AppendLine($"Books Available: {entity.BookTitles}");
+            return stringBuilder.ToString();
         }
     }
 }

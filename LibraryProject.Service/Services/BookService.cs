@@ -1,4 +1,5 @@
 ﻿using LibraryProject.Business;
+using LibraryProject.Business.Interfaces;
 using LibraryProject.Data.Interfaces;
 using LibraryProject.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -22,18 +23,16 @@ namespace LibraryProject.Service.Services
         }
 
         //Prints book information
-        public string PrintInfoById(int id)
+        public string PrintInfoById(Book entity)
         {
-            //Finish method + make book-author/pub/shop many to many
             StringBuilder stringBuilder = new StringBuilder();
-            Book book = GetByIdAsync(id).Result;
             stringBuilder.AppendLine("Book information:");
-            stringBuilder.AppendLine($"Title: {book.Title}");
-            stringBuilder.AppendLine($"Author(s): {book.AuthorNames}");
-            stringBuilder.AppendLine($"ISBN: {book.ISBN}");
-            stringBuilder.AppendLine($"Genre: {book.Genre}");
-            stringBuilder.AppendLine($"NumberInStock: {book.QuantityInStock}");
-            stringBuilder.AppendLine($"Date published: {book.DatePublished}");
+            stringBuilder.AppendLine($"Title: {entity.Title}");
+            stringBuilder.AppendLine($"Author(s): {entity.AuthorNames}");
+            stringBuilder.AppendLine($"ISBN: {entity.ISBN}");
+            stringBuilder.AppendLine($"Genre: {entity.Genre}");
+            stringBuilder.AppendLine($"NumberInStock: {entity.QuantityInStock}");
+            stringBuilder.AppendLine($"Date published: {entity.DatePublished}");
             stringBuilder.AppendLine($"Available in [ShopNames]");
             return stringBuilder.ToString();
         }
