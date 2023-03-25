@@ -38,113 +38,152 @@
             this.BackLabel = new System.Windows.Forms.Label();
             this.CheckButton = new System.Windows.Forms.Button();
             this.CityButton = new System.Windows.Forms.Button();
+            this.CatalogueLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(138, 87);
+            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.passwordLabel.Location = new System.Drawing.Point(235, 96);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(62, 15);
+            this.passwordLabel.Size = new System.Drawing.Size(68, 17);
             this.passwordLabel.TabIndex = 0;
             this.passwordLabel.Text = "Password?";
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(120, 118);
+            this.passwordBox.Location = new System.Drawing.Point(170, 127);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(100, 23);
+            this.passwordBox.Size = new System.Drawing.Size(100, 25);
             this.passwordBox.TabIndex = 1;
             // 
             // welcomeLabel
             // 
             this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.Location = new System.Drawing.Point(86, 48);
+            this.welcomeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.welcomeLabel.Location = new System.Drawing.Point(187, 64);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(170, 15);
+            this.welcomeLabel.Size = new System.Drawing.Size(188, 17);
             this.welcomeLabel.TabIndex = 2;
             this.welcomeLabel.Text = "Welcome to Contributor Mode";
             this.welcomeLabel.Visible = false;
             // 
             // AuthorButton
             // 
-            this.AuthorButton.Location = new System.Drawing.Point(75, 83);
+            this.AuthorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AuthorButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AuthorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AuthorButton.Location = new System.Drawing.Point(133, 96);
             this.AuthorButton.Name = "AuthorButton";
-            this.AuthorButton.Size = new System.Drawing.Size(107, 23);
+            this.AuthorButton.Size = new System.Drawing.Size(137, 26);
             this.AuthorButton.TabIndex = 3;
-            this.AuthorButton.Text = "Register Author";
-            this.AuthorButton.UseVisualStyleBackColor = true;
+            this.AuthorButton.Text = "REGISTER AUTHOR";
+            this.AuthorButton.UseVisualStyleBackColor = false;
             this.AuthorButton.Visible = false;
             this.AuthorButton.Click += new System.EventHandler(this.AuthorButton_Click);
             // 
             // BookButton
             // 
-            this.BookButton.Location = new System.Drawing.Point(188, 83);
+            this.BookButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.BookButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.BookButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BookButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BookButton.Location = new System.Drawing.Point(285, 96);
             this.BookButton.Name = "BookButton";
-            this.BookButton.Size = new System.Drawing.Size(97, 23);
+            this.BookButton.Size = new System.Drawing.Size(119, 26);
             this.BookButton.TabIndex = 4;
-            this.BookButton.Text = "Register Book";
-            this.BookButton.UseVisualStyleBackColor = true;
+            this.BookButton.Text = "REGISTER BOOK";
+            this.BookButton.UseVisualStyleBackColor = false;
             this.BookButton.Visible = false;
             this.BookButton.Click += new System.EventHandler(this.BookButton_Click);
             // 
             // PublisherButton
             // 
-            this.PublisherButton.Location = new System.Drawing.Point(12, 110);
+            this.PublisherButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.PublisherButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.PublisherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PublisherButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PublisherButton.Location = new System.Drawing.Point(12, 127);
             this.PublisherButton.Name = "PublisherButton";
-            this.PublisherButton.Size = new System.Drawing.Size(119, 23);
+            this.PublisherButton.Size = new System.Drawing.Size(170, 26);
             this.PublisherButton.TabIndex = 5;
-            this.PublisherButton.Text = "Register Publisher";
-            this.PublisherButton.UseVisualStyleBackColor = true;
+            this.PublisherButton.Text = "REGISTER PUBLISHER";
+            this.PublisherButton.UseVisualStyleBackColor = false;
             this.PublisherButton.Visible = false;
             this.PublisherButton.Click += new System.EventHandler(this.PublisherButton_Click);
             // 
             // BookShopButton
             // 
-            this.BookShopButton.Location = new System.Drawing.Point(226, 110);
+            this.BookShopButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.BookShopButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.BookShopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BookShopButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BookShopButton.Location = new System.Drawing.Point(340, 128);
             this.BookShopButton.Name = "BookShopButton";
-            this.BookShopButton.Size = new System.Drawing.Size(130, 23);
+            this.BookShopButton.Size = new System.Drawing.Size(156, 26);
             this.BookShopButton.TabIndex = 6;
-            this.BookShopButton.Text = "Register Book Shop";
-            this.BookShopButton.UseVisualStyleBackColor = true;
+            this.BookShopButton.Text = "REGISTER BOOK SHOP";
+            this.BookShopButton.UseVisualStyleBackColor = false;
             this.BookShopButton.Visible = false;
             this.BookShopButton.Click += new System.EventHandler(this.BookShopButton_Click);
             // 
             // BackLabel
             // 
             this.BackLabel.AutoSize = true;
-            this.BackLabel.Location = new System.Drawing.Point(231, 165);
+            this.BackLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.BackLabel.Location = new System.Drawing.Point(410, 209);
             this.BackLabel.Name = "BackLabel";
-            this.BackLabel.Size = new System.Drawing.Size(111, 15);
+            this.BackLabel.Size = new System.Drawing.Size(117, 17);
             this.BackLabel.TabIndex = 7;
             this.BackLabel.Text = "Back to Home Page";
             this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
             // 
             // CheckButton
             // 
-            this.CheckButton.Location = new System.Drawing.Point(242, 118);
+            this.CheckButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.CheckButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.CheckButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CheckButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CheckButton.Location = new System.Drawing.Point(276, 127);
             this.CheckButton.Name = "CheckButton";
-            this.CheckButton.Size = new System.Drawing.Size(75, 23);
+            this.CheckButton.Size = new System.Drawing.Size(106, 26);
             this.CheckButton.TabIndex = 8;
-            this.CheckButton.Text = "Check";
-            this.CheckButton.UseVisualStyleBackColor = true;
+            this.CheckButton.Text = "CHECK";
+            this.CheckButton.UseVisualStyleBackColor = false;
             this.CheckButton.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // CityButton
             // 
-            this.CityButton.Location = new System.Drawing.Point(137, 110);
+            this.CityButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.CityButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.CityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CityButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CityButton.Location = new System.Drawing.Point(187, 128);
             this.CityButton.Name = "CityButton";
-            this.CityButton.Size = new System.Drawing.Size(83, 23);
+            this.CityButton.Size = new System.Drawing.Size(147, 26);
             this.CityButton.TabIndex = 9;
-            this.CityButton.Text = "Register City";
-            this.CityButton.UseVisualStyleBackColor = true;
+            this.CityButton.Text = "REGISTER CITY";
+            this.CityButton.UseVisualStyleBackColor = false;
             this.CityButton.Visible = false;
+            // 
+            // CatalogueLabel
+            // 
+            this.CatalogueLabel.AutoSize = true;
+            this.CatalogueLabel.Font = new System.Drawing.Font("Times New Roman", 19.69811F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.CatalogueLabel.Location = new System.Drawing.Point(12, 9);
+            this.CatalogueLabel.Name = "CatalogueLabel";
+            this.CatalogueLabel.Size = new System.Drawing.Size(239, 33);
+            this.CatalogueLabel.TabIndex = 12;
+            this.CatalogueLabel.Text = "Bookish catalogue";
             // 
             // ContributorModeMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 207);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.ClientSize = new System.Drawing.Size(539, 235);
+            this.Controls.Add(this.CatalogueLabel);
             this.Controls.Add(this.CityButton);
             this.Controls.Add(this.CheckButton);
             this.Controls.Add(this.BackLabel);
@@ -174,5 +213,6 @@
         private Label BackLabel;
         private Button CheckButton;
         private Button CityButton;
+        private Label CatalogueLabel;
     }
 }

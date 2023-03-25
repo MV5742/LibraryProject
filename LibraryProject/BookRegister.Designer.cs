@@ -54,144 +54,159 @@
             this.AddPublisherButton = new System.Windows.Forms.Button();
             this.AddShopsButton = new System.Windows.Forms.Button();
             this.DisclaimerLabel = new System.Windows.Forms.Label();
+            this.CatalogueLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TitleLable
             // 
             this.TitleLable.AutoSize = true;
-            this.TitleLable.Location = new System.Drawing.Point(27, 19);
+            this.TitleLable.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.TitleLable.Location = new System.Drawing.Point(12, 53);
             this.TitleLable.Name = "TitleLable";
-            this.TitleLable.Size = new System.Drawing.Size(29, 15);
+            this.TitleLable.Size = new System.Drawing.Size(35, 17);
             this.TitleLable.TabIndex = 0;
             this.TitleLable.Text = "Title";
             // 
             // ISBNLabel
             // 
             this.ISBNLabel.AutoSize = true;
-            this.ISBNLabel.Location = new System.Drawing.Point(27, 63);
+            this.ISBNLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.ISBNLabel.Location = new System.Drawing.Point(12, 102);
             this.ISBNLabel.Name = "ISBNLabel";
-            this.ISBNLabel.Size = new System.Drawing.Size(32, 15);
+            this.ISBNLabel.Size = new System.Drawing.Size(37, 17);
             this.ISBNLabel.TabIndex = 1;
             this.ISBNLabel.Text = "ISBN";
+            this.ISBNLabel.Click += new System.EventHandler(this.ISBNLabel_Click);
             // 
             // GenreLabel
             // 
             this.GenreLabel.AutoSize = true;
-            this.GenreLabel.Location = new System.Drawing.Point(27, 107);
+            this.GenreLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.GenreLabel.Location = new System.Drawing.Point(12, 152);
             this.GenreLabel.Name = "GenreLabel";
-            this.GenreLabel.Size = new System.Drawing.Size(38, 15);
+            this.GenreLabel.Size = new System.Drawing.Size(44, 17);
             this.GenreLabel.TabIndex = 2;
             this.GenreLabel.Text = "Genre";
             // 
             // QuantityLabel
             // 
             this.QuantityLabel.AutoSize = true;
-            this.QuantityLabel.Location = new System.Drawing.Point(171, 19);
+            this.QuantityLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.QuantityLabel.Location = new System.Drawing.Point(152, 53);
             this.QuantityLabel.Name = "QuantityLabel";
-            this.QuantityLabel.Size = new System.Drawing.Size(92, 15);
+            this.QuantityLabel.Size = new System.Drawing.Size(106, 17);
             this.QuantityLabel.TabIndex = 3;
             this.QuantityLabel.Text = "QuantityInStock";
             // 
             // PriceLabel
             // 
             this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Location = new System.Drawing.Point(170, 66);
+            this.PriceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.PriceLabel.Location = new System.Drawing.Point(156, 101);
             this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(33, 15);
+            this.PriceLabel.Size = new System.Drawing.Size(38, 17);
             this.PriceLabel.TabIndex = 4;
             this.PriceLabel.Text = "Price";
             // 
             // TitleBox
             // 
-            this.TitleBox.Location = new System.Drawing.Point(27, 37);
+            this.TitleBox.Location = new System.Drawing.Point(12, 73);
             this.TitleBox.Name = "TitleBox";
             this.TitleBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.TitleBox.Size = new System.Drawing.Size(100, 23);
+            this.TitleBox.Size = new System.Drawing.Size(100, 25);
             this.TitleBox.TabIndex = 5;
             // 
             // ISBNBox
             // 
-            this.ISBNBox.Location = new System.Drawing.Point(27, 81);
+            this.ISBNBox.Location = new System.Drawing.Point(12, 123);
             this.ISBNBox.Name = "ISBNBox";
             this.ISBNBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.ISBNBox.Size = new System.Drawing.Size(100, 23);
+            this.ISBNBox.Size = new System.Drawing.Size(100, 25);
             this.ISBNBox.TabIndex = 6;
             // 
             // GenreBox
             // 
-            this.GenreBox.Location = new System.Drawing.Point(29, 125);
+            this.GenreBox.Location = new System.Drawing.Point(14, 173);
             this.GenreBox.Name = "GenreBox";
             this.GenreBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.GenreBox.Size = new System.Drawing.Size(100, 23);
+            this.GenreBox.Size = new System.Drawing.Size(100, 25);
             this.GenreBox.TabIndex = 7;
             // 
             // QuantityBox
             // 
-            this.QuantityBox.Location = new System.Drawing.Point(171, 37);
+            this.QuantityBox.Location = new System.Drawing.Point(156, 73);
             this.QuantityBox.Name = "QuantityBox";
             this.QuantityBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.QuantityBox.Size = new System.Drawing.Size(100, 23);
+            this.QuantityBox.Size = new System.Drawing.Size(100, 25);
             this.QuantityBox.TabIndex = 8;
             // 
             // PriceBox
             // 
-            this.PriceBox.Location = new System.Drawing.Point(171, 84);
+            this.PriceBox.Location = new System.Drawing.Point(156, 123);
             this.PriceBox.Name = "PriceBox";
             this.PriceBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.PriceBox.Size = new System.Drawing.Size(100, 23);
+            this.PriceBox.Size = new System.Drawing.Size(100, 25);
             this.PriceBox.TabIndex = 9;
             // 
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.Location = new System.Drawing.Point(171, 112);
+            this.DateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.DateLabel.Location = new System.Drawing.Point(156, 154);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(83, 15);
+            this.DateLabel.Size = new System.Drawing.Size(95, 17);
             this.DateLabel.TabIndex = 10;
             this.DateLabel.Text = "DatePublished";
             // 
             // DateBox
             // 
-            this.DateBox.Location = new System.Drawing.Point(171, 130);
+            this.DateBox.Location = new System.Drawing.Point(156, 173);
             this.DateBox.Name = "DateBox";
             this.DateBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.DateBox.Size = new System.Drawing.Size(100, 23);
+            this.DateBox.Size = new System.Drawing.Size(100, 25);
             this.DateBox.TabIndex = 11;
             // 
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(105, 162);
+            this.DescriptionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.DescriptionLabel.Location = new System.Drawing.Point(75, 213);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(98, 15);
+            this.DescriptionLabel.Size = new System.Drawing.Size(112, 17);
             this.DescriptionLabel.TabIndex = 12;
             this.DescriptionLabel.Text = "Short Description";
             // 
             // DescriptionBox
             // 
-            this.DescriptionBox.Location = new System.Drawing.Point(27, 185);
+            this.DescriptionBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.DescriptionBox.Location = new System.Drawing.Point(12, 241);
             this.DescriptionBox.Multiline = true;
             this.DescriptionBox.Name = "DescriptionBox";
             this.DescriptionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DescriptionBox.Size = new System.Drawing.Size(246, 106);
+            this.DescriptionBox.Size = new System.Drawing.Size(246, 120);
             this.DescriptionBox.TabIndex = 13;
             // 
             // RegisterBookButton
             // 
-            this.RegisterBookButton.Location = new System.Drawing.Point(52, 305);
+            this.RegisterBookButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.RegisterBookButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.RegisterBookButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegisterBookButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegisterBookButton.Location = new System.Drawing.Point(12, 377);
             this.RegisterBookButton.Name = "RegisterBookButton";
-            this.RegisterBookButton.Size = new System.Drawing.Size(75, 23);
+            this.RegisterBookButton.Size = new System.Drawing.Size(100, 26);
             this.RegisterBookButton.TabIndex = 14;
-            this.RegisterBookButton.Text = "Register";
-            this.RegisterBookButton.UseVisualStyleBackColor = true;
+            this.RegisterBookButton.Text = "REGISTER";
+            this.RegisterBookButton.UseVisualStyleBackColor = false;
             this.RegisterBookButton.Click += new System.EventHandler(this.RegisterBookButton_Click);
             // 
             // BackLabel
             // 
             this.BackLabel.AutoSize = true;
-            this.BackLabel.Location = new System.Drawing.Point(12, 352);
+            this.BackLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.BackLabel.Location = new System.Drawing.Point(12, 416);
             this.BackLabel.Name = "BackLabel";
-            this.BackLabel.Size = new System.Drawing.Size(170, 15);
+            this.BackLabel.Size = new System.Drawing.Size(180, 17);
             this.BackLabel.TabIndex = 15;
             this.BackLabel.Text = "Back to Main Contributor Page";
             this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
@@ -199,98 +214,129 @@
             // AuthorNamesLabel
             // 
             this.AuthorNamesLabel.AutoSize = true;
-            this.AuthorNamesLabel.Location = new System.Drawing.Point(302, 74);
+            this.AuthorNamesLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.AuthorNamesLabel.Location = new System.Drawing.Point(290, 94);
             this.AuthorNamesLabel.Name = "AuthorNamesLabel";
-            this.AuthorNamesLabel.Size = new System.Drawing.Size(201, 30);
+            this.AuthorNamesLabel.Size = new System.Drawing.Size(233, 34);
             this.AuthorNamesLabel.TabIndex = 16;
-            this.AuthorNamesLabel.Text = "                 Author Name(s) \r\n(Make sure to split with a comma (,))";
+            this.AuthorNamesLabel.Text = "! Author Name(s) \r\n(Make sure to split with a comma (,)) !";
+            this.AuthorNamesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AuthorsBox
             // 
-            this.AuthorsBox.Location = new System.Drawing.Point(302, 116);
+            this.AuthorsBox.Location = new System.Drawing.Point(302, 150);
             this.AuthorsBox.Name = "AuthorsBox";
             this.AuthorsBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.AuthorsBox.Size = new System.Drawing.Size(201, 23);
+            this.AuthorsBox.Size = new System.Drawing.Size(201, 25);
             this.AuthorsBox.TabIndex = 17;
             // 
             // PublisherLabel
             // 
             this.PublisherLabel.AutoSize = true;
-            this.PublisherLabel.Location = new System.Drawing.Point(361, 181);
+            this.PublisherLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.PublisherLabel.Location = new System.Drawing.Point(349, 225);
             this.PublisherLabel.Name = "PublisherLabel";
-            this.PublisherLabel.Size = new System.Drawing.Size(91, 15);
+            this.PublisherLabel.Size = new System.Drawing.Size(103, 17);
             this.PublisherLabel.TabIndex = 18;
             this.PublisherLabel.Text = "Publisher Name";
             // 
             // publisherNameBox
             // 
-            this.publisherNameBox.Location = new System.Drawing.Point(302, 199);
+            this.publisherNameBox.Location = new System.Drawing.Point(302, 246);
             this.publisherNameBox.Name = "publisherNameBox";
             this.publisherNameBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.publisherNameBox.Size = new System.Drawing.Size(201, 23);
+            this.publisherNameBox.Size = new System.Drawing.Size(201, 25);
             this.publisherNameBox.TabIndex = 19;
             // 
             // BookShopsBox
             // 
-            this.BookShopsBox.Location = new System.Drawing.Point(302, 306);
+            this.BookShopsBox.Location = new System.Drawing.Point(302, 368);
             this.BookShopsBox.Name = "BookShopsBox";
             this.BookShopsBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.BookShopsBox.Size = new System.Drawing.Size(201, 23);
+            this.BookShopsBox.Size = new System.Drawing.Size(201, 25);
             this.BookShopsBox.TabIndex = 21;
             // 
             // BookShopsLabel
             // 
             this.BookShopsLabel.AutoSize = true;
-            this.BookShopsLabel.Location = new System.Drawing.Point(302, 264);
+            this.BookShopsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.BookShopsLabel.Location = new System.Drawing.Point(290, 331);
             this.BookShopsLabel.Name = "BookShopsLabel";
-            this.BookShopsLabel.Size = new System.Drawing.Size(201, 30);
+            this.BookShopsLabel.Size = new System.Drawing.Size(233, 34);
             this.BookShopsLabel.TabIndex = 20;
-            this.BookShopsLabel.Text = "                 BookShop Name(s) \r\n(Make sure to split with a comma (,))";
+            this.BookShopsLabel.Text = "! BookShop Name(s) \r\n(Make sure to split with a comma (,)) !";
+            this.BookShopsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddAuthorsButton
             // 
-            this.AddAuthorsButton.Location = new System.Drawing.Point(361, 145);
+            this.AddAuthorsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AddAuthorsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AddAuthorsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddAuthorsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddAuthorsButton.Location = new System.Drawing.Point(340, 181);
             this.AddAuthorsButton.Name = "AddAuthorsButton";
-            this.AddAuthorsButton.Size = new System.Drawing.Size(91, 23);
+            this.AddAuthorsButton.Size = new System.Drawing.Size(121, 26);
             this.AddAuthorsButton.TabIndex = 22;
-            this.AddAuthorsButton.Text = "Add Author(s)";
-            this.AddAuthorsButton.UseVisualStyleBackColor = true;
+            this.AddAuthorsButton.Text = "ADD AUTHOR(S)";
+            this.AddAuthorsButton.UseVisualStyleBackColor = false;
             this.AddAuthorsButton.Click += new System.EventHandler(this.AddAuthorsButton_Click);
             // 
             // AddPublisherButton
             // 
-            this.AddPublisherButton.Location = new System.Drawing.Point(357, 228);
+            this.AddPublisherButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AddPublisherButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AddPublisherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddPublisherButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddPublisherButton.Location = new System.Drawing.Point(340, 277);
             this.AddPublisherButton.Name = "AddPublisherButton";
-            this.AddPublisherButton.Size = new System.Drawing.Size(95, 23);
+            this.AddPublisherButton.Size = new System.Drawing.Size(121, 26);
             this.AddPublisherButton.TabIndex = 23;
-            this.AddPublisherButton.Text = "Add Publisher";
-            this.AddPublisherButton.UseVisualStyleBackColor = true;
+            this.AddPublisherButton.Text = "ADD PUBLISHER";
+            this.AddPublisherButton.UseVisualStyleBackColor = false;
             this.AddPublisherButton.Click += new System.EventHandler(this.AddPublisherButton_Click);
             // 
             // AddShopsButton
             // 
-            this.AddShopsButton.Location = new System.Drawing.Point(361, 335);
+            this.AddShopsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AddShopsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.AddShopsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddShopsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddShopsButton.Location = new System.Drawing.Point(340, 399);
             this.AddShopsButton.Name = "AddShopsButton";
-            this.AddShopsButton.Size = new System.Drawing.Size(91, 23);
+            this.AddShopsButton.Size = new System.Drawing.Size(121, 26);
             this.AddShopsButton.TabIndex = 24;
-            this.AddShopsButton.Text = "Add Shop(s)";
-            this.AddShopsButton.UseVisualStyleBackColor = true;
+            this.AddShopsButton.Text = "ADD SHOP(S)";
+            this.AddShopsButton.UseVisualStyleBackColor = false;
             this.AddShopsButton.Click += new System.EventHandler(this.AddShopsButton_Click);
             // 
             // DisclaimerLabel
             // 
             this.DisclaimerLabel.AutoSize = true;
-            this.DisclaimerLabel.Location = new System.Drawing.Point(328, 30);
+            this.DisclaimerLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.DisclaimerLabel.Location = new System.Drawing.Point(316, 44);
             this.DisclaimerLabel.Name = "DisclaimerLabel";
-            this.DisclaimerLabel.Size = new System.Drawing.Size(155, 30);
+            this.DisclaimerLabel.Size = new System.Drawing.Size(187, 34);
             this.DisclaimerLabel.TabIndex = 25;
-            this.DisclaimerLabel.Text = "Please input the book\'s title \r\n    to use the buttons below";
+            this.DisclaimerLabel.Text = "! Please input the book\'s title \r\nto use the buttons below !";
+            this.DisclaimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CatalogueLabel
+            // 
+            this.CatalogueLabel.AutoSize = true;
+            this.CatalogueLabel.Font = new System.Drawing.Font("Times New Roman", 19.69811F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.CatalogueLabel.Location = new System.Drawing.Point(12, 9);
+            this.CatalogueLabel.Name = "CatalogueLabel";
+            this.CatalogueLabel.Size = new System.Drawing.Size(239, 33);
+            this.CatalogueLabel.TabIndex = 26;
+            this.CatalogueLabel.Text = "Bookish catalogue";
             // 
             // BookRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 390);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.ClientSize = new System.Drawing.Size(530, 442);
+            this.Controls.Add(this.CatalogueLabel);
             this.Controls.Add(this.DisclaimerLabel);
             this.Controls.Add(this.AddShopsButton);
             this.Controls.Add(this.AddPublisherButton);
@@ -319,6 +365,7 @@
             this.Controls.Add(this.TitleLable);
             this.Name = "BookRegister";
             this.Text = "BookRegister";
+            this.Load += new System.EventHandler(this.BookRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +399,6 @@
         private Button AddPublisherButton;
         private Button AddShopsButton;
         private Label DisclaimerLabel;
+        private Label CatalogueLabel;
     }
 }

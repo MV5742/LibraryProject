@@ -46,18 +46,19 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Times New Roman", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.TitleLabel.Location = new System.Drawing.Point(51, 31);
+            this.TitleLabel.Location = new System.Drawing.Point(22, 28);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(406, 61);
+            this.TitleLabel.Size = new System.Drawing.Size(481, 66);
             this.TitleLabel.TabIndex = 2;
-            this.TitleLabel.Text = "Bookish cataloge";
+            this.TitleLabel.Text = "Bookish catalogue";
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(160, 108);
+            this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmailLabel.Location = new System.Drawing.Point(160, 105);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(41, 15);
+            this.EmailLabel.Size = new System.Drawing.Size(47, 17);
             this.EmailLabel.TabIndex = 6;
             this.EmailLabel.Text = "EMAIL";
             // 
@@ -65,69 +66,81 @@
             // 
             this.EmailBox.Location = new System.Drawing.Point(160, 126);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(178, 23);
+            this.EmailBox.Size = new System.Drawing.Size(178, 25);
             this.EmailBox.TabIndex = 7;
             this.EmailBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(160, 177);
+            this.PasswordBox.Location = new System.Drawing.Point(160, 184);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(178, 23);
+            this.PasswordBox.Size = new System.Drawing.Size(178, 25);
             this.PasswordBox.TabIndex = 9;
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(160, 159);
+            this.PasswordLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PasswordLabel.Location = new System.Drawing.Point(160, 163);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(68, 15);
+            this.PasswordLabel.Size = new System.Drawing.Size(79, 17);
             this.PasswordLabel.TabIndex = 8;
             this.PasswordLabel.Text = "PASSWORD";
             this.PasswordLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // LogInButton
             // 
-            this.LogInButton.Location = new System.Drawing.Point(114, 265);
+            this.LogInButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.LogInButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.LogInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogInButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LogInButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LogInButton.Location = new System.Drawing.Point(114, 300);
             this.LogInButton.Name = "LogInButton";
-            this.LogInButton.Size = new System.Drawing.Size(131, 36);
+            this.LogInButton.Size = new System.Drawing.Size(131, 41);
             this.LogInButton.TabIndex = 10;
             this.LogInButton.Text = "LOG IN";
-            this.LogInButton.UseVisualStyleBackColor = true;
+            this.LogInButton.UseVisualStyleBackColor = false;
             this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
             // SignUpButton
             // 
-            this.SignUpButton.Location = new System.Drawing.Point(251, 265);
+            this.SignUpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.SignUpButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.SignUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignUpButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SignUpButton.Location = new System.Drawing.Point(251, 300);
             this.SignUpButton.Name = "SignUpButton";
-            this.SignUpButton.Size = new System.Drawing.Size(131, 36);
+            this.SignUpButton.Size = new System.Drawing.Size(131, 41);
             this.SignUpButton.TabIndex = 11;
             this.SignUpButton.Text = "SIGN UP";
-            this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.UseVisualStyleBackColor = false;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // UsernameBox
             // 
-            this.UsernameBox.Location = new System.Drawing.Point(160, 230);
+            this.UsernameBox.Location = new System.Drawing.Point(160, 244);
             this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(178, 23);
+            this.UsernameBox.Size = new System.Drawing.Size(178, 25);
             this.UsernameBox.TabIndex = 13;
             // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(160, 212);
+            this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UsernameLabel.Location = new System.Drawing.Point(160, 223);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(68, 15);
+            this.UsernameLabel.Size = new System.Drawing.Size(77, 17);
             this.UsernameLabel.TabIndex = 12;
             this.UsernameLabel.Text = "USERNAME";
             // 
             // BackLabel
             // 
             this.BackLabel.AutoSize = true;
-            this.BackLabel.Location = new System.Drawing.Point(21, 322);
+            this.BackLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.BackLabel.Location = new System.Drawing.Point(12, 373);
             this.BackLabel.Name = "BackLabel";
-            this.BackLabel.Size = new System.Drawing.Size(106, 15);
+            this.BackLabel.Size = new System.Drawing.Size(115, 17);
             this.BackLabel.TabIndex = 14;
             this.BackLabel.Text = "Back To Main Page";
             this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
@@ -135,25 +148,27 @@
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(357, 329);
+            this.StatusLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.StatusLabel.Location = new System.Drawing.Point(361, 373);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(42, 15);
+            this.StatusLabel.Size = new System.Drawing.Size(44, 17);
             this.StatusLabel.TabIndex = 15;
             this.StatusLabel.Text = "Status:";
             // 
             // StatusInfoLabel
             // 
             this.StatusInfoLabel.AutoSize = true;
-            this.StatusInfoLabel.Location = new System.Drawing.Point(407, 330);
+            this.StatusInfoLabel.Location = new System.Drawing.Point(407, 374);
             this.StatusInfoLabel.Name = "StatusInfoLabel";
-            this.StatusInfoLabel.Size = new System.Drawing.Size(0, 15);
+            this.StatusInfoLabel.Size = new System.Drawing.Size(0, 17);
             this.StatusInfoLabel.TabIndex = 16;
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 358);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.ClientSize = new System.Drawing.Size(525, 406);
             this.Controls.Add(this.StatusInfoLabel);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.BackLabel);

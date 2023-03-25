@@ -87,5 +87,15 @@ namespace LibraryProject.Presentation
             }
             await bookService.UpdateAsync();
         }
+
+        private void ISBNLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BookRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

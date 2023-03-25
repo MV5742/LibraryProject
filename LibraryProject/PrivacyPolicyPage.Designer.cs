@@ -35,28 +35,31 @@
             // TrollLabel
             // 
             this.TrollLabel.AutoSize = true;
-            this.TrollLabel.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TrollLabel.Location = new System.Drawing.Point(29, 39);
+            this.TrollLabel.Font = new System.Drawing.Font("Segoe UI Black", 27.84906F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TrollLabel.Location = new System.Drawing.Point(-4, 60);
             this.TrollLabel.Name = "TrollLabel";
-            this.TrollLabel.Size = new System.Drawing.Size(454, 100);
+            this.TrollLabel.Size = new System.Drawing.Size(571, 110);
             this.TrollLabel.TabIndex = 0;
-            this.TrollLabel.Text = "     NO PRIVACY HERE\r\n[Insert IP Adress leak here]";
+            this.TrollLabel.Text = "NO PRIVACY HERE\r\n[Insert IP Adress leak here]";
+            this.TrollLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // backLabel
             // 
             this.backLabel.AutoSize = true;
-            this.backLabel.Location = new System.Drawing.Point(29, 202);
+            this.backLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.backLabel.Location = new System.Drawing.Point(12, 227);
             this.backLabel.Name = "backLabel";
-            this.backLabel.Size = new System.Drawing.Size(106, 15);
+            this.backLabel.Size = new System.Drawing.Size(115, 17);
             this.backLabel.TabIndex = 1;
             this.backLabel.Text = "Back To Main Page";
             this.backLabel.Click += new System.EventHandler(this.backLabel_Click);
             // 
             // PrivacyPolicyPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 236);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.ClientSize = new System.Drawing.Size(564, 267);
             this.Controls.Add(this.backLabel);
             this.Controls.Add(this.TrollLabel);
             this.Name = "PrivacyPolicyPage";

@@ -24,7 +24,7 @@ namespace LibraryProject.Service.Utils
         private static UserService userService = new UserService(repo);
 
         //Public getter properties
-        public static AuthorService AuthorService { get => new AuthorService(repo); }
+        public static AuthorService AuthorService { get => authorService; }
         public static BookService BookService { get => bookService; }
         public static BookShopService BookShopService { get => bookShopService; }
         public static CityService CityService { get => cityService; }

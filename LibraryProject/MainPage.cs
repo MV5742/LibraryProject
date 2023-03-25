@@ -44,5 +44,10 @@ namespace LibraryProject.Presentation
             contributor.Show();
             this.Hide();
         }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
