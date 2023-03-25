@@ -37,7 +37,9 @@
             this.SignUpButton = new System.Windows.Forms.Button();
             this.UsernameBox = new System.Windows.Forms.TextBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.backLabel = new System.Windows.Forms.Label();
+            this.BackLabel = new System.Windows.Forms.Label();
+            this.StatusLabel = new System.Windows.Forms.Label();
+            this.StatusInfoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -92,7 +94,7 @@
             this.LogInButton.TabIndex = 10;
             this.LogInButton.Text = "LOG IN";
             this.LogInButton.UseVisualStyleBackColor = true;
-            this.LogInButton.Click += new System.EventHandler(this.button2_Click);
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
             // SignUpButton
             // 
@@ -120,22 +122,41 @@
             this.UsernameLabel.TabIndex = 12;
             this.UsernameLabel.Text = "USERNAME";
             // 
-            // backLabel
+            // BackLabel
             // 
-            this.backLabel.AutoSize = true;
-            this.backLabel.Location = new System.Drawing.Point(21, 322);
-            this.backLabel.Name = "backLabel";
-            this.backLabel.Size = new System.Drawing.Size(106, 15);
-            this.backLabel.TabIndex = 14;
-            this.backLabel.Text = "Back To Main Page";
-            this.backLabel.Click += new System.EventHandler(this.backLabel_Click);
+            this.BackLabel.AutoSize = true;
+            this.BackLabel.Location = new System.Drawing.Point(21, 322);
+            this.BackLabel.Name = "BackLabel";
+            this.BackLabel.Size = new System.Drawing.Size(106, 15);
+            this.BackLabel.TabIndex = 14;
+            this.BackLabel.Text = "Back To Main Page";
+            this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(357, 329);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(42, 15);
+            this.StatusLabel.TabIndex = 15;
+            this.StatusLabel.Text = "Status:";
+            // 
+            // StatusInfoLabel
+            // 
+            this.StatusInfoLabel.AutoSize = true;
+            this.StatusInfoLabel.Location = new System.Drawing.Point(407, 330);
+            this.StatusInfoLabel.Name = "StatusInfoLabel";
+            this.StatusInfoLabel.Size = new System.Drawing.Size(0, 15);
+            this.StatusInfoLabel.TabIndex = 16;
             // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 358);
-            this.Controls.Add(this.backLabel);
+            this.Controls.Add(this.StatusInfoLabel);
+            this.Controls.Add(this.StatusLabel);
+            this.Controls.Add(this.BackLabel);
             this.Controls.Add(this.UsernameBox);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.SignUpButton);
@@ -163,6 +184,8 @@
         private Button SignUpButton;
         private TextBox UsernameBox;
         private Label UsernameLabel;
-        private Label backLabel;
+        private Label BackLabel;
+        private Label StatusLabel;
+        private Label StatusInfoLabel;
     }
 }

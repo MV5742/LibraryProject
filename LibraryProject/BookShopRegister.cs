@@ -34,6 +34,7 @@ namespace LibraryProject.Presentation
             BookShop bookShop = new BookShop(name, address);
             bookShop.City = city;
             bookShop.CityId = city.Id;
+            await bookShopService.CreateAsync(bookShop);
             await bookShopService.UpdateAsync();
         }
 

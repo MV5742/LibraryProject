@@ -37,7 +37,7 @@ namespace LibraryProject.Presentation
         {
             string cityName = CityNameBox.Text;
             City city = new City(cityName);
-            cityService.CreateAsync(city);
+            await cityService.CreateAsync(city);
             await cityService.UpdateAsync();
         }
 

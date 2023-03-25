@@ -34,7 +34,7 @@ namespace LibraryProject.Presentation
             City city = cityService.GetAllAsync().FirstOrDefault(x => x.CityName == CityNameBox.Text);
             publisher.City = city;
             publisher.CityId = city.Id;
-            publisherService.CreateAsync(publisher);
+            await publisherService.CreateAsync(publisher);
             await publisherService.UpdateAsync();
         }
 

@@ -20,13 +20,14 @@ namespace LibraryProject.Presentation
             //Sets up the service provider who is responsible for implementing the Dependency Injection Pattern
             IServiceProvider serviceProvider = new ServiceCollection()
             .AddDbContext<LibraryContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")))
+             options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")))
             .AddScoped<IRepository, BaseRepository>()
             .AddScoped<IBaseService<Book>, BookService>()
             .AddScoped<IBaseService<Publisher>, PublisherService>()
             .AddScoped<IBaseService<Author>, AuthorService>()
             .AddScoped<IBaseService<BookShop>, BookShopService>()
             .AddScoped<IBaseService<City>, CityService>()
+            .AddScoped<IBaseService<User>, UserService>()
             .BuildServiceProvider();
             
             ServiceLocator.SetServiceProvider(serviceProvider);

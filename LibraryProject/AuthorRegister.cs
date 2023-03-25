@@ -37,7 +37,7 @@ namespace LibraryProject.Presentation
             string lastName = LastNameBox.Text;
             string bio = BioBox.Text;
             Author author = new Author(firstName, lastName, bio);
-            authorService.CreateAsync(author);
+            await authorService.CreateAsync(author);
             await authorService.UpdateAsync();
         }
 

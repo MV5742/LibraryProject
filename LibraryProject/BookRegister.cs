@@ -46,7 +46,7 @@ namespace LibraryProject.Presentation
             decimal price = decimal.Parse(PriceBox.Text);
             DateTime datePublished = DateTime.Parse(DateBox.Text);
             Book book = new Book(iSBN, title, description, genre, quantity, price, datePublished);
-            bookService.CreateAsync(book);
+            await bookService.CreateAsync(book);
             await bookService.UpdateAsync();
         }
 
