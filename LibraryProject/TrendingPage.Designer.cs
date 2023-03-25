@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.Title = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.TrendingListBox = new System.Windows.Forms.ListBox();
+            this.ViewButton = new System.Windows.Forms.Button();
             this.BackLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -45,37 +44,28 @@
             this.Title.TabIndex = 3;
             this.Title.Text = "Bookish cataloge";
             // 
-            // listBox1
+            // TrendingListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(57, 113);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(373, 169);
-            this.listBox1.TabIndex = 4;
+            this.TrendingListBox.FormattingEnabled = true;
+            this.TrendingListBox.ItemHeight = 15;
+            this.TrendingListBox.Location = new System.Drawing.Point(57, 113);
+            this.TrendingListBox.Name = "TrendingListBox";
+            this.TrendingListBox.Size = new System.Drawing.Size(373, 169);
+            this.TrendingListBox.TabIndex = 4;
             // 
-            // RemoveButton
+            // ViewButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(85, 310);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(131, 36);
-            this.RemoveButton.TabIndex = 11;
-            this.RemoveButton.Text = "REMOVE";
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(265, 310);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(131, 36);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "HOME PAGE";
-            this.button5.UseVisualStyleBackColor = true;
+            this.ViewButton.Location = new System.Drawing.Point(168, 298);
+            this.ViewButton.Name = "ViewButton";
+            this.ViewButton.Size = new System.Drawing.Size(131, 36);
+            this.ViewButton.TabIndex = 11;
+            this.ViewButton.Text = "View Selected";
+            this.ViewButton.UseVisualStyleBackColor = true;
             // 
             // BackLabel
             // 
             this.BackLabel.AutoSize = true;
-            this.BackLabel.Location = new System.Drawing.Point(12, 441);
+            this.BackLabel.Location = new System.Drawing.Point(12, 357);
             this.BackLabel.Name = "BackLabel";
             this.BackLabel.Size = new System.Drawing.Size(106, 15);
             this.BackLabel.TabIndex = 13;
@@ -86,11 +76,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 474);
+            this.ClientSize = new System.Drawing.Size(484, 390);
             this.Controls.Add(this.BackLabel);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.RemoveButton);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.ViewButton);
+            this.Controls.Add(this.TrendingListBox);
             this.Controls.Add(this.Title);
             this.Name = "TrendingPage";
             this.Text = "Form2";
@@ -102,9 +91,8 @@
         #endregion
 
         private Label Title;
-        private ListBox listBox1;
-        private Button RemoveButton;
-        private Button button5;
+        private ListBox TrendingListBox;
+        private Button ViewButton;
         private Label BackLabel;
     }
 }

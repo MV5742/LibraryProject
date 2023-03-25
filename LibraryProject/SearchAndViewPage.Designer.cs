@@ -28,32 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.AddToWishlistButton = new System.Windows.Forms.Button();
-            this.SummaryLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.BookSummaryLabel = new System.Windows.Forms.Label();
+            this.AdditionalInfoLabel = new System.Windows.Forms.Label();
             this.AuthorButton = new System.Windows.Forms.Button();
             this.PublisherButton = new System.Windows.Forms.Button();
             this.BookShopButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.CatalogueLabel = new System.Windows.Forms.Label();
             this.BackLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BookInfoBox = new System.Windows.Forms.RichTextBox();
+            this.BookInfoLabel = new System.Windows.Forms.Label();
+            this.BookSummaryBox = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(69, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 240);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.TitleLabel.Location = new System.Drawing.Point(123, 320);
+            this.TitleLabel.Location = new System.Drawing.Point(82, 32);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(66, 31);
             this.TitleLabel.TabIndex = 2;
@@ -61,34 +55,34 @@
             // 
             // AddToWishlistButton
             // 
-            this.AddToWishlistButton.Location = new System.Drawing.Point(60, 354);
+            this.AddToWishlistButton.Location = new System.Drawing.Point(29, 333);
             this.AddToWishlistButton.Name = "AddToWishlistButton";
             this.AddToWishlistButton.Size = new System.Drawing.Size(203, 36);
             this.AddToWishlistButton.TabIndex = 3;
             this.AddToWishlistButton.Text = "ADD TO WISHLIST";
             this.AddToWishlistButton.UseVisualStyleBackColor = true;
             // 
-            // SummaryLabel
+            // BookSummaryLabel
             // 
-            this.SummaryLabel.AutoSize = true;
-            this.SummaryLabel.Location = new System.Drawing.Point(290, 96);
-            this.SummaryLabel.Name = "SummaryLabel";
-            this.SummaryLabel.Size = new System.Drawing.Size(65, 15);
-            this.SummaryLabel.TabIndex = 5;
-            this.SummaryLabel.Text = "SUMMARY";
+            this.BookSummaryLabel.AutoSize = true;
+            this.BookSummaryLabel.Location = new System.Drawing.Point(29, 213);
+            this.BookSummaryLabel.Name = "BookSummaryLabel";
+            this.BookSummaryLabel.Size = new System.Drawing.Size(58, 15);
+            this.BookSummaryLabel.TabIndex = 5;
+            this.BookSummaryLabel.Text = "Summary";
             // 
-            // label2
+            // AdditionalInfoLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(290, 252);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "AUTHOR/PUB/SB";
+            this.AdditionalInfoLabel.AutoSize = true;
+            this.AdditionalInfoLabel.Location = new System.Drawing.Point(255, 72);
+            this.AdditionalInfoLabel.Name = "AdditionalInfoLabel";
+            this.AdditionalInfoLabel.Size = new System.Drawing.Size(184, 15);
+            this.AdditionalInfoLabel.TabIndex = 6;
+            this.AdditionalInfoLabel.Text = "Author/Publisher/Book Shop Info";
             // 
             // AuthorButton
             // 
-            this.AuthorButton.Location = new System.Drawing.Point(290, 354);
+            this.AuthorButton.Location = new System.Drawing.Point(470, 93);
             this.AuthorButton.Name = "AuthorButton";
             this.AuthorButton.Size = new System.Drawing.Size(131, 36);
             this.AuthorButton.TabIndex = 7;
@@ -98,7 +92,7 @@
             // 
             // PublisherButton
             // 
-            this.PublisherButton.Location = new System.Drawing.Point(427, 354);
+            this.PublisherButton.Location = new System.Drawing.Point(470, 135);
             this.PublisherButton.Name = "PublisherButton";
             this.PublisherButton.Size = new System.Drawing.Size(131, 36);
             this.PublisherButton.TabIndex = 8;
@@ -107,68 +101,106 @@
             // 
             // BookShopButton
             // 
-            this.BookShopButton.Location = new System.Drawing.Point(564, 354);
+            this.BookShopButton.Location = new System.Drawing.Point(470, 177);
             this.BookShopButton.Name = "BookShopButton";
             this.BookShopButton.Size = new System.Drawing.Size(131, 36);
             this.BookShopButton.TabIndex = 9;
             this.BookShopButton.Text = "BOOK SHOP";
             this.BookShopButton.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // CatalogueLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 27F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(379, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(272, 41);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Bookish cataloge";
+            this.CatalogueLabel.AutoSize = true;
+            this.CatalogueLabel.Font = new System.Drawing.Font("Times New Roman", 27F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.CatalogueLabel.Location = new System.Drawing.Point(213, 9);
+            this.CatalogueLabel.Name = "CatalogueLabel";
+            this.CatalogueLabel.Size = new System.Drawing.Size(292, 41);
+            this.CatalogueLabel.TabIndex = 11;
+            this.CatalogueLabel.Text = "Bookish catalogue";
             // 
             // BackLabel
             // 
             this.BackLabel.AutoSize = true;
-            this.BackLabel.Location = new System.Drawing.Point(12, 415);
+            this.BackLabel.Location = new System.Drawing.Point(525, 365);
             this.BackLabel.Name = "BackLabel";
             this.BackLabel.Size = new System.Drawing.Size(106, 15);
             this.BackLabel.TabIndex = 12;
             this.BackLabel.Text = "Back To Main Page";
             this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
             // 
+            // BookInfoBox
+            // 
+            this.BookInfoBox.Enabled = false;
+            this.BookInfoBox.Location = new System.Drawing.Point(29, 93);
+            this.BookInfoBox.Name = "BookInfoBox";
+            this.BookInfoBox.Size = new System.Drawing.Size(203, 117);
+            this.BookInfoBox.TabIndex = 14;
+            this.BookInfoBox.Text = "";
+            // 
+            // BookInfoLabel
+            // 
+            this.BookInfoLabel.AutoSize = true;
+            this.BookInfoLabel.Location = new System.Drawing.Point(29, 72);
+            this.BookInfoLabel.Name = "BookInfoLabel";
+            this.BookInfoLabel.Size = new System.Drawing.Size(100, 15);
+            this.BookInfoLabel.TabIndex = 15;
+            this.BookInfoLabel.Text = "Book Information";
+            // 
+            // BookSummaryBox
+            // 
+            this.BookSummaryBox.Location = new System.Drawing.Point(29, 233);
+            this.BookSummaryBox.Name = "BookSummaryBox";
+            this.BookSummaryBox.Size = new System.Drawing.Size(203, 96);
+            this.BookSummaryBox.TabIndex = 16;
+            this.BookSummaryBox.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(255, 93);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(209, 236);
+            this.richTextBox3.TabIndex = 17;
+            this.richTextBox3.Text = "";
+            // 
             // SearchAndViewPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(671, 405);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.BookSummaryBox);
+            this.Controls.Add(this.BookInfoLabel);
+            this.Controls.Add(this.BookInfoBox);
             this.Controls.Add(this.BackLabel);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.CatalogueLabel);
             this.Controls.Add(this.BookShopButton);
             this.Controls.Add(this.PublisherButton);
             this.Controls.Add(this.AuthorButton);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.SummaryLabel);
+            this.Controls.Add(this.AdditionalInfoLabel);
+            this.Controls.Add(this.BookSummaryLabel);
             this.Controls.Add(this.AddToWishlistButton);
             this.Controls.Add(this.TitleLabel);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "SearchAndViewPage";
             this.Text = "BookView";
             this.Load += new System.EventHandler(this.BookView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Label TitleLabel;
         private Button AddToWishlistButton;
-        private Label SummaryLabel;
-        private Label label2;
+        private Label BookSummaryLabel;
+        private Label AdditionalInfoLabel;
         private Button AuthorButton;
         private Button PublisherButton;
         private Button BookShopButton;
-        private Label label3;
+        private Label CatalogueLabel;
         private Label BackLabel;
+        private RichTextBox BookInfoBox;
+        private Label BookInfoLabel;
+        private RichTextBox BookSummaryBox;
+        private RichTextBox richTextBox3;
     }
 }
