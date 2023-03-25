@@ -24,7 +24,7 @@ namespace LibraryProject.Service.Services
         }
 
         //Prints author information
-        public string PrintInfoById(Author entity)
+        public string PrintInfoOfEntity(Author entity)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"Author information:");

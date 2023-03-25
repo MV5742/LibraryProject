@@ -22,19 +22,31 @@ namespace LibraryProject.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("AuthorBook", b =>
+            modelBuilder.Entity("AuthorBooks", b =>
                 {
-                    b.Property<int>("AuthorsId")
+                    b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("BooksId")
+                    b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.HasKey("AuthorsId", "BooksId");
+                    b.HasKey("AuthorId", "BookId");
 
-                    b.HasIndex("BooksId");
+                    b.HasIndex("BookId");
 
-                    b.ToTable("AuthorBooks", (string)null);
+                    b.ToTable("AuthorBooks", "Books");
+
+                    b.HasData(
+                        new
+                        {
+                            AuthorId = 1,
+                            BookId = 1
+                        },
+                        new
+                        {
+                            AuthorId = 2,
+                            BookId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookShopBooks", b =>
@@ -56,6 +68,11 @@ namespace LibraryProject.Data.Migrations
                         {
                             BookId = 1,
                             BookShopId = 1
+                        },
+                        new
+                        {
+                            BookId = 1,
+                            BookShopId = 2
                         });
                 });
 
@@ -167,7 +184,7 @@ namespace LibraryProject.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DatePublished = new DateTime(2023, 3, 25, 18, 33, 26, 730, DateTimeKind.Local).AddTicks(962),
+                            DatePublished = new DateTime(2023, 3, 25, 20, 5, 45, 29, DateTimeKind.Local).AddTicks(378),
                             Description = "Pod Igoto na rasbiraem esik",
                             Genre = "Tragikomedia",
                             ISBN = "9-876-543-21",
@@ -338,17 +355,17 @@ namespace LibraryProject.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("AuthorBook", b =>
+            modelBuilder.Entity("AuthorBooks", b =>
                 {
                     b.HasOne("LibraryProject.Business.Author", null)
                         .WithMany()
-                        .HasForeignKey("AuthorsId")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("LibraryProject.Business.Book", null)
                         .WithMany()
-                        .HasForeignKey("BooksId")
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

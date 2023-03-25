@@ -22,12 +22,12 @@ namespace LibraryProject.Presentation
             .AddDbContext<LibraryContext>(options =>
              options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")))
             .AddScoped<IRepository, BaseRepository>()
-            .AddScoped<IBaseService<Book>, BookService>()
-            .AddScoped<IBaseService<Publisher>, PublisherService>()
+            .AddScoped<IBookService, BookService>()
+            .AddScoped<IPublisherService, PublisherService>()
             .AddScoped<IAuthorService, AuthorService>()
-            .AddScoped<IBaseService<BookShop>, BookShopService>()
-            .AddScoped<IBaseService<City>, CityService>()
-            .AddScoped<IBaseService<User>, UserService>()
+            .AddScoped<IBookShopService, BookShopService>()
+            .AddScoped<ICityService, CityService>()
+            .AddScoped<IUserService, UserService>()
             .BuildServiceProvider();
             
             ServiceLocator.SetServiceProvider(serviceProvider);

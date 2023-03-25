@@ -1,5 +1,6 @@
 ﻿using LibraryProject.Business;
 using LibraryProject.Service.Services;
+using LibraryProject.Service.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace LibraryProject.Presentation
         public CityRegister()
         {
             InitializeComponent();
-            cityService = ServiceLocator.GetService<CityService>();
-            publisherService = ServiceLocator.GetService<PublisherService>();
-            bookShopService = ServiceLocator.GetService<BookShopService>();
+            cityService = Session.CityService;
+            publisherService = Session.PublisherService;
+            bookShopService = Session.BookShopService;
         }
 
         private void BackLabel_Click(object sender, EventArgs e)

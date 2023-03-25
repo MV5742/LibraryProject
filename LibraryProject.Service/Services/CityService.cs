@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {
-    public class CityService : BaseService<City>, ICustomService<City>
+    public class CityService : BaseService<City>, ICityService
     {
         public CityService(IRepository _repo) : base(_repo)
         {
@@ -22,7 +22,7 @@ namespace LibraryProject.Service.Services
             return repo.GetAllAsync<City>().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public string PrintInfoById(City entity)
+        public string PrintInfoOfEntity(City entity)
         {
             throw new NotImplementedException();
         }

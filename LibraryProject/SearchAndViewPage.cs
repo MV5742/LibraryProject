@@ -1,5 +1,6 @@
 ﻿using LibraryProject.Business;
 using LibraryProject.Service.Services;
+using LibraryProject.Service.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,16 +23,18 @@ namespace LibraryProject.Presentation
         public SearchAndViewPage()
         {
             InitializeComponent();
-            bookService = ServiceLocator.GetService<BookService>();
-            publisherService = ServiceLocator.GetService<PublisherService>();
-            authorService = ServiceLocator.GetService<AuthorService>();
-            bookShopService = ServiceLocator.GetService<BookShopService>();
+            bookService = Session.BookService;
+            publisherService = Session.PublisherService;
+            authorService = Session.AuthorService;
+            bookShopService = Session.BookShopService;
         }
 
         private void AuthorButton_Click(object sender, EventArgs e)
         {
-            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
-            ExtraInfoBox.Text = bookService.PrintInfoById(book);
+            //TODO
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == SearchTitleBox.Text);
+            StringBuilder sb = new StringBuilder();
+            ExtraInfoBox.Text = bookService.PrintInfoOfEntity(book);
         }
 
         private void BookView_Load(object sender, EventArgs e)
@@ -68,7 +71,18 @@ namespace LibraryProject.Presentation
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == SearchTitleBox.Text);
             
+            if (book != null)
+            {
+                TitleLabel.Text = book.Title;
+                BookInfoBox.Text = bookService.PrintInfoOfEntity(book);
+                BookSummaryBox.Text = book.Description;
+            }
+            else
+            {
+                TitleLabel.Text = "No book found";
+            }
         }
     }
 }

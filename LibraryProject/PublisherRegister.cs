@@ -1,5 +1,6 @@
 ﻿using LibraryProject.Business;
 using LibraryProject.Service.Services;
+using LibraryProject.Service.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace LibraryProject.Presentation
         public PublisherRegister()
         {
             InitializeComponent();
-            publisherService = ServiceLocator.GetService<PublisherService>();
-            bookService = ServiceLocator.GetService<BookService>();
-            cityService = ServiceLocator.GetService<CityService>();
+            publisherService = Session.PublisherService;
+            bookService = Session.BookService;
+            cityService = Session.CityService;
         }
 
         private async void RegisterButton_Click(object sender, EventArgs e)

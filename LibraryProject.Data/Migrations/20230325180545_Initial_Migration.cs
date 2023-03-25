@@ -132,23 +132,24 @@ namespace LibraryProject.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AuthorBooks",
+                schema: "Books",
                 columns: table => new
                 {
-                    AuthorsId = table.Column<int>(type: "int", nullable: false),
-                    BooksId = table.Column<int>(type: "int", nullable: false)
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    BookId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AuthorBooks", x => new { x.AuthorsId, x.BooksId });
+                    table.PrimaryKey("PK_AuthorBooks", x => new { x.AuthorId, x.BookId });
                     table.ForeignKey(
-                        name: "FK_AuthorBooks_Authors_AuthorsId",
-                        column: x => x.AuthorsId,
+                        name: "FK_AuthorBooks_Authors_AuthorId",
+                        column: x => x.AuthorId,
                         principalTable: "Authors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AuthorBooks_Books_BooksId",
-                        column: x => x.BooksId,
+                        name: "FK_AuthorBooks_Books_BookId",
+                        column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -220,18 +221,33 @@ namespace LibraryProject.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "DatePublished", "Description", "Genre", "ISBN", "Price", "PublisherId", "QuantityInStock", "Title", "UserId" },
-                values: new object[] { 1, new DateTime(2023, 3, 25, 18, 33, 26, 730, DateTimeKind.Local).AddTicks(962), "Pod Igoto na rasbiraem esik", "Tragikomedia", "9-876-543-21", 18.78m, 2, 42, "Pod Igoto na shliokavitsa", null });
+                values: new object[] { 1, new DateTime(2023, 3, 25, 20, 5, 45, 29, DateTimeKind.Local).AddTicks(378), "Pod Igoto na rasbiraem esik", "Tragikomedia", "9-876-543-21", 18.78m, 2, 42, "Pod Igoto na shliokavitsa", null });
+
+            migrationBuilder.InsertData(
+                schema: "Books",
+                table: "AuthorBooks",
+                columns: new[] { "AuthorId", "BookId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 1 }
+                });
 
             migrationBuilder.InsertData(
                 schema: "Books",
                 table: "BookShopBooks",
                 columns: new[] { "BookId", "BookShopId" },
-                values: new object[] { 1, 1 });
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 }
+                });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AuthorBooks_BooksId",
+                name: "IX_AuthorBooks_BookId",
+                schema: "Books",
                 table: "AuthorBooks",
-                column: "BooksId");
+                column: "BookId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_PublisherId",
@@ -281,7 +297,8 @@ namespace LibraryProject.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AuthorBooks");
+                name: "AuthorBooks",
+                schema: "Books");
 
             migrationBuilder.DropTable(
                 name: "BookShopBooks",

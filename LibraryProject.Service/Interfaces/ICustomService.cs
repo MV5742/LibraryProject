@@ -9,7 +9,7 @@ namespace LibraryProject.Service.Interfaces
     //Specific interface for the purpose of this project 
     public interface ICustomService<TEntity>
     {
-        public string PrintInfoById(TEntity entity);
+        public string PrintInfoOfEntity(TEntity entity);
 
         public Task<TEntity> GetByIdAsync(int id);
     }

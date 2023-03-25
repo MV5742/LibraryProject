@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryProject.Business;
 using LibraryProject.Service.Services;
+using LibraryProject.Service.Utils;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LibraryProject.Presentation
@@ -22,10 +23,10 @@ namespace LibraryProject.Presentation
         public BookRegister()
         {
             InitializeComponent();
-            bookService = ServiceLocator.GetService<BookService>();
-            publisherService = ServiceLocator.GetService<PublisherService>();
-            authorService = ServiceLocator.GetService<AuthorService>();
-            bookShopService = ServiceLocator.GetService<BookShopService>();
+            bookService = Session.BookService;
+            publisherService = Session.PublisherService;
+            authorService = Session.AuthorService;
+            bookShopService = Session.BookShopService;
         }
 
         private void BackLabel_Click(object sender, EventArgs e)

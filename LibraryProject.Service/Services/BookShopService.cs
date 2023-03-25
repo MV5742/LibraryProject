@@ -22,7 +22,7 @@ namespace LibraryProject.Service.Services
             return repo.GetAllAsync<BookShop>().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public string PrintInfoById(BookShop entity)
+        public string PrintInfoOfEntity(BookShop entity)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("Book Shop information:");

@@ -55,5 +55,6 @@ namespace LibraryProject.Business
         [Required]
         public ICollection<BookShop> BookShops { get; set; }
         public string AuthorNames => string.Join(", ", Authors.Select(x => x.FullName).ToList());
+        public string ShopNames => string.Join(", ", BookShops.Select(x => x.Name).ToList());
     }
 }

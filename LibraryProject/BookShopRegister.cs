@@ -1,5 +1,6 @@
 ﻿using LibraryProject.Business;
 using LibraryProject.Service.Services;
+using LibraryProject.Service.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace LibraryProject.Presentation
         public BookShopRegister()
         {
             InitializeComponent();
-            cityService = ServiceLocator.GetService<CityService>();
-            bookShopService = ServiceLocator.GetService<BookShopService>();
-            bookService = ServiceLocator.GetService<BookService>();
+            cityService = Session.CityService;
+            bookShopService = Session.BookShopService;
+            bookService = Session.BookService;
         }
 
         private async void RegisterButton_Click(object sender, EventArgs e)

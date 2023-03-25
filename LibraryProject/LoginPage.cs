@@ -1,5 +1,6 @@
 ﻿using LibraryProject.Business;
 using LibraryProject.Service.Services;
+using LibraryProject.Service.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace LibraryProject.Presentation
         public LoginPage()
         {
             InitializeComponent();
-            userService = ServiceLocator.GetService<UserService>();
+            userService = Session.UserService;
         }
 
         private void label2_Click(object sender, EventArgs e)

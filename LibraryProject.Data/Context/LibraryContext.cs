@@ -32,11 +32,6 @@ namespace LibraryProject.Data.Context
         //Creates Constraints
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Seeding
-            //Put seeding method below
-
-            LibrarySeeder.SeedStartingData(modelBuilder);
-
             //One-to-many relations
 
             modelBuilder.Entity<Publisher>()
@@ -74,7 +69,8 @@ namespace LibraryProject.Data.Context
                     x => x.HasOne<Book>().WithMany().HasForeignKey("BookId"),
                     x => x.HasOne<Author>().WithMany().HasForeignKey("AuthorId"),
                     x => x.ToTable("AuthorBooks", "Books").HasData(
-                        new {BookId = 1, AuthorId = 1} 
+                        new {BookId = 1, AuthorId = 1},
+                        new {BookId = 1, AuthorId = 2}
                         ));
             
             //BookShopBooks
@@ -92,7 +88,8 @@ namespace LibraryProject.Data.Context
                     x => x.HasOne<Book>().WithMany().HasForeignKey("BookId"),
                     x => x.HasOne<BookShop>().WithMany().HasForeignKey("BookShopId"),
                     x => x.ToTable("BookShopBooks", "Books").HasData(
-                        new {BookId = 1, BookShopId = 1} 
+                        new {BookId = 1, BookShopId = 1}, 
+                        new {BookId = 1, BookShopId = 2}
                         ));
 
             //Unique/Distinct validations
@@ -108,6 +105,11 @@ namespace LibraryProject.Data.Context
             modelBuilder.Entity<BookShop>()
                 .HasIndex(bs => bs.Name)
                 .IsUnique();
+
+            //Seeding
+            //Put seeding method below
+
+            LibrarySeeder.SeedStartingData(modelBuilder);
         }
 
         //Handles Connection String Configuration

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {
-    public class UserService : BaseService<User>, ICustomService<User>
+    public class UserService : BaseService<User>, IUserService
     {
         public UserService(IRepository _repo) : base(_repo)
         {
@@ -22,7 +22,7 @@ namespace LibraryProject.Service.Services
             return repo.GetAllAsync<User>().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public string PrintInfoById(User entity)
+        public string PrintInfoOfEntity(User entity)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("User information:");

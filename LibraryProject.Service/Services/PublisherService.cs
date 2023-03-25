@@ -21,7 +21,7 @@ namespace LibraryProject.Service.Services
             return repo.GetAllAsync<Publisher>().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public string PrintInfoById(Publisher entity)
+        public string PrintInfoOfEntity(Publisher entity)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("Publisher information:");

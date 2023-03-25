@@ -43,14 +43,14 @@
             this.ExtraInfoBox = new System.Windows.Forms.RichTextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.TitleBox = new System.Windows.Forms.TextBox();
+            this.SearchTitleBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.TitleLabel.Location = new System.Drawing.Point(82, 32);
+            this.TitleLabel.Location = new System.Drawing.Point(29, 28);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(66, 31);
             this.TitleLabel.TabIndex = 2;
@@ -118,7 +118,7 @@
             // 
             this.CatalogueLabel.AutoSize = true;
             this.CatalogueLabel.Font = new System.Drawing.Font("Times New Roman", 27F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.CatalogueLabel.Location = new System.Drawing.Point(213, 9);
+            this.CatalogueLabel.Location = new System.Drawing.Point(258, 9);
             this.CatalogueLabel.Name = "CatalogueLabel";
             this.CatalogueLabel.Size = new System.Drawing.Size(292, 41);
             this.CatalogueLabel.TabIndex = 11;
@@ -136,9 +136,9 @@
             // 
             // BookInfoBox
             // 
-            this.BookInfoBox.Enabled = false;
             this.BookInfoBox.Location = new System.Drawing.Point(29, 93);
             this.BookInfoBox.Name = "BookInfoBox";
+            this.BookInfoBox.ReadOnly = true;
             this.BookInfoBox.Size = new System.Drawing.Size(203, 117);
             this.BookInfoBox.TabIndex = 14;
             this.BookInfoBox.Text = "";
@@ -156,6 +156,7 @@
             // 
             this.BookSummaryBox.Location = new System.Drawing.Point(29, 233);
             this.BookSummaryBox.Name = "BookSummaryBox";
+            this.BookSummaryBox.ReadOnly = true;
             this.BookSummaryBox.Size = new System.Drawing.Size(203, 96);
             this.BookSummaryBox.TabIndex = 16;
             this.BookSummaryBox.Text = "";
@@ -164,6 +165,7 @@
             // 
             this.ExtraInfoBox.Location = new System.Drawing.Point(258, 133);
             this.ExtraInfoBox.Name = "ExtraInfoBox";
+            this.ExtraInfoBox.ReadOnly = true;
             this.ExtraInfoBox.Size = new System.Drawing.Size(209, 236);
             this.ExtraInfoBox.TabIndex = 17;
             this.ExtraInfoBox.Text = "";
@@ -187,19 +189,19 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // TitleBox
+            // SearchTitleBox
             // 
-            this.TitleBox.Location = new System.Drawing.Point(258, 75);
-            this.TitleBox.Name = "TitleBox";
-            this.TitleBox.Size = new System.Drawing.Size(144, 23);
-            this.TitleBox.TabIndex = 20;
+            this.SearchTitleBox.Location = new System.Drawing.Point(258, 75);
+            this.SearchTitleBox.Name = "SearchTitleBox";
+            this.SearchTitleBox.Size = new System.Drawing.Size(144, 23);
+            this.SearchTitleBox.TabIndex = 20;
             // 
             // SearchAndViewPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 405);
-            this.Controls.Add(this.TitleBox);
+            this.Controls.Add(this.SearchTitleBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ExtraInfoBox);
@@ -239,6 +241,6 @@
         private RichTextBox ExtraInfoBox;
         private Label SearchLabel;
         private Button SearchButton;
-        private TextBox TitleBox;
+        private TextBox SearchTitleBox;
     }
 }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Service.Services
 {
-    public class BookService : BaseService<Book>, ICustomService<Book>
+    public class BookService : BaseService<Book>, IBookService
     {
         public BookService(IRepository _repo) : base(_repo)
         {
@@ -23,7 +23,7 @@ namespace LibraryProject.Service.Services
         }
 
         //Prints book information
-        public string PrintInfoById(Book entity)
+        public string PrintInfoOfEntity(Book entity)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("Book information:");
@@ -32,8 +32,9 @@ namespace LibraryProject.Service.Services
             stringBuilder.AppendLine($"ISBN: {entity.ISBN}");
             stringBuilder.AppendLine($"Genre: {entity.Genre}");
             stringBuilder.AppendLine($"NumberInStock: {entity.QuantityInStock}");
+            stringBuilder.AppendLine($"Price: {entity.Price}");
             stringBuilder.AppendLine($"Date published: {entity.DatePublished}");
-            stringBuilder.AppendLine($"Available in [ShopNames]");
+            stringBuilder.AppendLine($"Available in {entity.ShopNames}");
             return stringBuilder.ToString();
         }
     }

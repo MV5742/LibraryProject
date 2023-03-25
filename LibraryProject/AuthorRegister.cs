@@ -22,7 +22,7 @@ namespace LibraryProject.Presentation
         {
             InitializeComponent();
             authorService = Session.AuthorService;
-            bookService = ServiceLocator.GetService<BookService>();
+            bookService = Session.BookService;
         }
 
         private void BackLabel_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace LibraryProject.Presentation
         private async void AddBooksButton_Click(object sender, EventArgs e)
         {
             Author author = authorService.GetAllAsync()
-                .FirstOrDefault(x => x.FullName == FirstNameBox.Text + " " + LastNameBox.Text);
+                .FirstOrDefault(x => x.FirstName == FirstNameBox.Text && x.LastName == LastNameBox.Text);
 
             List<Book> books = bookService
                 .GetAllAsync()
