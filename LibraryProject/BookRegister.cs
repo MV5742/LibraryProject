@@ -39,53 +39,105 @@ namespace LibraryProject.Presentation
         //Creates a new instance of a book and sends it to the Service layer
         private async void RegisterBookButton_Click(object sender, EventArgs e)
         {
-            string iSBN = ISBNBox.Text;
-            string title = TitleBox.Text;
-            string description = DescriptionBox.Text;
-            string genre = GenreBox.Text;
-            int quantity = int.Parse(QuantityBox.Text);
-            decimal price = decimal.Parse(PriceBox.Text);
-            DateTime datePublished = DateTime.Parse(DateBox.Text);
-            Book book = new Book(iSBN, title, description, genre, quantity, price, datePublished);
-            await bookService.CreateAsync(book);
-            await bookService.UpdateAsync();
+            try
+            {
+                string iSBN = ISBNBox.Text;
+                string title = TitleBox.Text;
+                string description = DescriptionBox.Text;
+                string genre = GenreBox.Text;
+                int quantity = int.Parse(QuantityBox.Text);
+                decimal price = decimal.Parse(PriceBox.Text);
+                //DateTime datePublished = DateTime.Parse(DateBox.Text);
+
+                if (string.IsNullOrEmpty(iSBN) || string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description) || string.IsNullOrEmpty(genre) || price == 0m)
+                {
+                    throw new ArgumentException("Not all input fields have a value");
+                }
+                Book book = new Book(iSBN, title, description, genre, quantity, price);
+                await bookService.CreateAsync(book);
+                await bookService.UpdateAsync();
+                DescriptionBox.Text = "Process successful";
+            }
+            catch (Exception ex)
+            {
+                DescriptionBox.Text = ex.Message;
+            }
         }
 
         private async void AddAuthorsButton_Click(object sender, EventArgs e)
         {
-            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
-            List<Author> authors = authorService
-                .GetAllAsync()
-                .Where(x => AuthorsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.FullName))
-                .ToList();
-            foreach (Author author in authors)
+            try
             {
-                book.Authors.Add(author);
+                Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
+
+                if (book == null)
+                    throw new ArgumentException("Please provide existing book title");
+
+                Author author = authorService.GetAllAsync().FirstOrDefault(x => x.FullName == AuthorsBox.Text);
+
+                if (author == null)
+                    throw new ArgumentException("Please provide existing author name");
+
+                book.Author = author;
+                book.AuthorId = author.Id;
+                await bookService.UpdateAsync();
+                DescriptionBox.Text = "Process successful";
+
             }
-            await bookService.UpdateAsync();
+            catch(ArgumentException ex)
+            {
+                DescriptionBox.Text = ex.Message;
+            }
         }
 
         private async void AddPublisherButton_Click(object sender, EventArgs e)
         {
-            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
-            Publisher publisher = publisherService.GetAllAsync().FirstOrDefault(x => x.Name == publisherNameBox.Text);
-            book.Publisher = publisher;
-            book.PublisherId = publisher.Id;
-            await bookService.UpdateAsync();
+            try
+            {
+                Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
+
+                if (book == null)
+                    throw new ArgumentException("Please provide existing book title");
+
+                Publisher publisher = publisherService.GetAllAsync().FirstOrDefault(x => x.Name == publisherNameBox.Text);
+
+                if (publisher == null)
+                    throw new ArgumentException("Please provide existing publisher name");
+
+                book.Publisher = publisher;
+                book.PublisherId = publisher.Id;
+                await bookService.UpdateAsync();
+                DescriptionBox.Text = "Process successful";
+            }
+            catch(ArgumentException ex)
+            {
+                DescriptionBox.Text = ex.Message;
+            }
         }
 
         private async void AddShopsButton_Click(object sender, EventArgs e)
         {
-            Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
-            List<BookShop> bookShops = bookShopService
-                .GetAllAsync()
-                .Where(x => BookShopsBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.Name))
-                .ToList();
-            foreach (BookShop bookShop in bookShops)
+            try
             {
-                book.BookShops.Add(bookShop);
+                Book book = bookService.GetAllAsync().FirstOrDefault(x => x.Title == TitleBox.Text);
+
+                if (book == null)
+                    throw new ArgumentException("Please provide existing book title");
+
+                BookShop bookShop = bookShopService.GetAllAsync().FirstOrDefault(x => x.Name == BookShopsBox.Text);
+
+                if (bookShop == null)
+                    throw new ArgumentException("Please provide existing shop name");
+
+                book.BookShop = bookShop;
+                book.BookShopId = bookShop.Id;
+                await bookService.UpdateAsync();
+                DescriptionBox.Text = "Process successful";
             }
-            await bookService.UpdateAsync();
+            catch(ArgumentException ex)
+            {
+                DescriptionBox.Text = ex.Message;
+            }
         }
 
         private void ISBNLabel_Click(object sender, EventArgs e)

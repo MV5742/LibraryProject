@@ -8,7 +8,7 @@ namespace LibraryProject.Business
     public class Book : IEntity
     {
         //Constructor(s)
-        public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price, DateTime datePublished)
+        public Book(string iSBN, string title, string description, string genre, int quantityInStock, decimal price)
         {
             ISBN = iSBN;
             Title = title;
@@ -16,9 +16,7 @@ namespace LibraryProject.Business
             Genre = genre;
             QuantityInStock = quantityInStock;
             Price = price;
-            DatePublished = datePublished;
-            Authors = new HashSet<Author>();
-            BookShops = new HashSet<BookShop>();
+            DatePublished = DateTime.Now;
         }
 
         //Properties
@@ -50,11 +48,17 @@ namespace LibraryProject.Business
         public int PublisherId { get; set; }
         [Required]
         public Publisher Publisher { get; set; }
+        [ForeignKey("Author")]
         [Required]
-        public ICollection<Author> Authors { get; set; }
+        public int AuthorId { get; set; }
         [Required]
-        public ICollection<BookShop> BookShops { get; set; }
-        public string AuthorNames => string.Join(", ", Authors.Select(x => x.FullName).ToList());
-        public string ShopNames => string.Join(", ", BookShops.Select(x => x.Name).ToList());
+        public Author Author { get; set; }
+        [ForeignKey("BookShop")]
+        [Required]
+        public int BookShopId { get; set; }
+        [Required]
+        public BookShop BookShop { get; set; }
+        public string AuthorName => Author.FullName;
+        public string ShopName => BookShop.Name;
     }
 }

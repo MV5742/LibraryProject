@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryProject.Data.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20230325180545_Initial_Migration")]
+    [Migration("20230326003224_Initial_Migration")]
     partial class Initial_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,60 +23,6 @@ namespace LibraryProject.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("AuthorBooks", b =>
-                {
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AuthorId", "BookId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("AuthorBooks", "Books");
-
-                    b.HasData(
-                        new
-                        {
-                            AuthorId = 1,
-                            BookId = 1
-                        },
-                        new
-                        {
-                            AuthorId = 2,
-                            BookId = 1
-                        });
-                });
-
-            modelBuilder.Entity("BookShopBooks", b =>
-                {
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookShopId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BookId", "BookShopId");
-
-                    b.HasIndex("BookShopId");
-
-                    b.ToTable("BookShopBooks", "Books");
-
-                    b.HasData(
-                        new
-                        {
-                            BookId = 1,
-                            BookShopId = 1
-                        },
-                        new
-                        {
-                            BookId = 1,
-                            BookShopId = 2
-                        });
-                });
 
             modelBuilder.Entity("LibraryProject.Business.Author", b =>
                 {
@@ -136,6 +82,12 @@ namespace LibraryProject.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookShopId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DatePublished")
                         .HasColumnType("datetime2");
 
@@ -173,6 +125,10 @@ namespace LibraryProject.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("BookShopId");
+
                     b.HasIndex("PublisherId");
 
                     b.HasIndex("Title")
@@ -186,7 +142,9 @@ namespace LibraryProject.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DatePublished = new DateTime(2023, 3, 25, 20, 5, 45, 29, DateTimeKind.Local).AddTicks(378),
+                            AuthorId = 1,
+                            BookShopId = 1,
+                            DatePublished = new DateTime(2023, 3, 26, 2, 32, 24, 444, DateTimeKind.Local).AddTicks(2079),
                             Description = "Pod Igoto na rasbiraem esik",
                             Genre = "Tragikomedia",
                             ISBN = "9-876-543-21",
@@ -357,38 +315,20 @@ namespace LibraryProject.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("AuthorBooks", b =>
+            modelBuilder.Entity("LibraryProject.Business.Book", b =>
                 {
-                    b.HasOne("LibraryProject.Business.Author", null)
-                        .WithMany()
+                    b.HasOne("LibraryProject.Business.Author", "Author")
+                        .WithMany("Books")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LibraryProject.Business.Book", null)
-                        .WithMany()
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BookShopBooks", b =>
-                {
-                    b.HasOne("LibraryProject.Business.Book", null)
-                        .WithMany()
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LibraryProject.Business.BookShop", null)
-                        .WithMany()
+                    b.HasOne("LibraryProject.Business.BookShop", "BookShop")
+                        .WithMany("Books")
                         .HasForeignKey("BookShopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("LibraryProject.Business.Book", b =>
-                {
                     b.HasOne("LibraryProject.Business.Publisher", "Publisher")
                         .WithMany("BooksPublished")
                         .HasForeignKey("PublisherId")
@@ -398,6 +338,10 @@ namespace LibraryProject.Data.Migrations
                     b.HasOne("LibraryProject.Business.User", null)
                         .WithMany("Wishlist")
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Author");
+
+                    b.Navigation("BookShop");
 
                     b.Navigation("Publisher");
                 });
@@ -422,6 +366,16 @@ namespace LibraryProject.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("City");
+                });
+
+            modelBuilder.Entity("LibraryProject.Business.Author", b =>
+                {
+                    b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("LibraryProject.Business.BookShop", b =>
+                {
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("LibraryProject.Business.City", b =>

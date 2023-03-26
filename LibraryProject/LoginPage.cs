@@ -34,26 +34,30 @@ namespace LibraryProject.Presentation
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            User user = userService.GetAllAsync().FirstOrDefault(x => x.Email == EmailBox.Text);
-            if (user != null)
+            try
             {
+                User user = userService.GetAllAsync().FirstOrDefault(x => x.Email == EmailBox.Text);
+                if (user == null)
+                {
+                    throw new ArgumentException("Account not found");
+                }
+
                 if (user.Username != UsernameBox.Text)
                 {
-                    StatusInfoLabel.Text = "Incorrect Username";
+                    throw new ArgumentException("Icorrect Username");
                 }
-                else if (user.Password != PasswordBox.Text)
+                if (user.Password != PasswordBox.Text)
                 {
-                    StatusInfoLabel.Text = "Incorrect Password";
+                    throw new ArgumentException("Icorrect Password");
                 }
-                else
-                {
-                    StatusInfoLabel.Text = "Logged in successfully";
-                }
+                
+                StatusInfoLabel.Text = "Logged in successfully"; 
             }
-            else
+            catch(ArgumentException ex)
             {
-                StatusInfoLabel.Text = "Account not found";
+                StatusInfoLabel.Text = ex.Message;
             }
+            
         }
 
         private async void SignUpButton_Click(object sender, EventArgs e)

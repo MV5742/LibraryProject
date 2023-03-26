@@ -28,13 +28,13 @@ namespace LibraryProject.Service.Services
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("Book information:");
             stringBuilder.AppendLine($"Title: {entity.Title}");
-            stringBuilder.AppendLine($"Author(s): {entity.AuthorNames}");
+            //stringBuilder.AppendLine($"Author(s): {entity.AuthorName}");
             stringBuilder.AppendLine($"ISBN: {entity.ISBN}");
             stringBuilder.AppendLine($"Genre: {entity.Genre}");
             stringBuilder.AppendLine($"NumberInStock: {entity.QuantityInStock}");
             stringBuilder.AppendLine($"Price: {entity.Price}");
             stringBuilder.AppendLine($"Date published: {entity.DatePublished}");
-            stringBuilder.AppendLine($"Available in {entity.ShopNames}");
+            //stringBuilder.AppendLine($"Available in {entity.ShopName}");
             return stringBuilder.ToString();
         }
     }

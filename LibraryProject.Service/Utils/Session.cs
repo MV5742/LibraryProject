@@ -28,7 +28,7 @@ namespace LibraryProject.Service.Utils
         public static BookService BookService { get => bookService; }
         public static BookShopService BookShopService { get => bookShopService; }
         public static CityService CityService { get => cityService; }
-        public static PublisherService PublisherService { get => new PublisherService(repo); }
-        public static UserService UserService { get => new UserService(repo); }
+        public static PublisherService PublisherService { get => publisherService; }
+        public static UserService UserService { get => userService; }
     }
 }

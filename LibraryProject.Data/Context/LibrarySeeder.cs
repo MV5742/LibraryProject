@@ -43,7 +43,7 @@ namespace LibraryProject.Data.Context
             //Book => ISBN, Title, Description, Genre, QuantityInStock, Price, DatePublished, PublisherId
 
             modelBuilder.Entity<Book>().HasData(
-                new {Id = 1, ISBN = "9-876-543-21", Title = "Pod Igoto na shliokavitsa", Description = "Pod Igoto na rasbiraem esik", Genre = "Tragikomedia", QuantityInStock = 42, Price = 18.78m, DatePublished = DateTime.Now, PublisherId = 2}
+                new {Id = 1, ISBN = "9-876-543-21", Title = "Pod Igoto na shliokavitsa", Description = "Pod Igoto na rasbiraem esik", Genre = "Tragikomedia", QuantityInStock = 42, Price = 18.78m, DatePublished = DateTime.Now, PublisherId = 2, AuthorId = 1, BookShopId = 1}
                 );
         }
     }

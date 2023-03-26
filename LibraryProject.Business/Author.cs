@@ -39,8 +39,5 @@ namespace LibraryProject.Business
 
         [Required]
         public ICollection<Book> Books { get; set; }
-
-        //Author Sample Input
-        //AddData("Ivan", "Vazov", "blah blah blah bio", 1)
     }
 }

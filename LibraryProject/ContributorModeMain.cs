@@ -49,7 +49,9 @@ namespace LibraryProject.Presentation
 
         private void BookShopButton_Click(object sender, EventArgs e)
         {
-
+            BookShopRegister bookShopRegister = new BookShopRegister();
+            bookShopRegister.Show();
+            this.Hide();
         }
 
         private void BackLabel_Click(object sender, EventArgs e)
@@ -71,6 +73,13 @@ namespace LibraryProject.Presentation
             AuthorButton.Visible = true;
             BookShopButton.Visible = true;
             CityButton.Visible = true;
+        }
+
+        private void CityButton_Click(object sender, EventArgs e)
+        {
+            CityRegister cityRegister = new CityRegister();
+            cityRegister.Show();
+            this.Hide();
         }
     }
 }

@@ -29,14 +29,28 @@ namespace LibraryProject.Presentation
 
         private async void RegisterButton_Click(object sender, EventArgs e)
         {
-            string name = NameBox.Text;
-            string address = AddressBox.Text;
-            Publisher publisher = new Publisher(name, address);
-            City city = cityService.GetAllAsync().FirstOrDefault(x => x.CityName == CityNameBox.Text);
-            publisher.City = city;
-            publisher.CityId = city.Id;
-            await publisherService.CreateAsync(publisher);
-            await publisherService.UpdateAsync();
+            try
+            {
+                string name = NameBox.Text;
+                string address = AddressBox.Text;
+
+                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(address))
+                {
+                    throw new ArgumentException("Not all input fields contain a value");
+                }
+
+                Publisher publisher = new Publisher(name, address);
+                City city = cityService.GetAllAsync().FirstOrDefault(x => x.CityName == CityNameBox.Text);
+                publisher.City = city;
+                publisher.CityId = city.Id;
+                await publisherService.CreateAsync(publisher);
+                await publisherService.UpdateAsync();
+                BookNamesBox.Text = "Process Successful";
+            }
+            catch(ArgumentException ex)
+            {
+                BookNamesBox.Text = ex.Message;
+            }
         }
 
         private async void AddBooksButton_Click(object sender, EventArgs e)

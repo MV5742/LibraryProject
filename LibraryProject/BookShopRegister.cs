@@ -29,14 +29,28 @@ namespace LibraryProject.Presentation
 
         private async void RegisterButton_Click(object sender, EventArgs e)
         {
-            string name = NameBox.Text;
-            string address = AddressBox.Text;
-            City city = cityService.GetAllAsync().FirstOrDefault(x => x.CityName == CityNameBox.Text);
-            BookShop bookShop = new BookShop(name, address);
-            bookShop.City = city;
-            bookShop.CityId = city.Id;
-            await bookShopService.CreateAsync(bookShop);
-            await bookShopService.UpdateAsync();
+            try
+            {
+                string name = NameBox.Text;
+                string address = AddressBox.Text;
+
+                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(address))
+                {
+                    throw new ArgumentException("Not all input fields contain a value");
+                }
+
+                City city = cityService.GetAllAsync().FirstOrDefault(x => x.CityName == CityNameBox.Text);
+                BookShop bookShop = new BookShop(name, address);
+                bookShop.City = city;
+                bookShop.CityId = city.Id;
+                await bookShopService.CreateAsync(bookShop);
+                await bookShopService.UpdateAsync();
+                BookNamesBox.Text = "Process successful";
+            }
+            catch(ArgumentException ex)
+            {
+                BookNamesBox.Text = ex.Message;
+            }
         }
 
         private void BackLabel_Click(object sender, EventArgs e)

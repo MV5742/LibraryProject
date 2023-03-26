@@ -46,9 +46,9 @@
             // 
             this.DisclaimerLabel.AutoSize = true;
             this.DisclaimerLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.DisclaimerLabel.Location = new System.Drawing.Point(32, 109);
+            this.DisclaimerLabel.Location = new System.Drawing.Point(32, 96);
             this.DisclaimerLabel.Name = "DisclaimerLabel";
-            this.DisclaimerLabel.Size = new System.Drawing.Size(185, 34);
+            this.DisclaimerLabel.Size = new System.Drawing.Size(162, 30);
             this.DisclaimerLabel.TabIndex = 31;
             this.DisclaimerLabel.Text = "! Please input the city\'s name\r\nto use the buttons below !";
             this.DisclaimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,9 +59,9 @@
             this.AddBookShopsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.AddBookShopsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddBookShopsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddBookShopsButton.Location = new System.Drawing.Point(51, 237);
+            this.AddBookShopsButton.Location = new System.Drawing.Point(51, 209);
             this.AddBookShopsButton.Name = "AddBookShopsButton";
-            this.AddBookShopsButton.Size = new System.Drawing.Size(153, 26);
+            this.AddBookShopsButton.Size = new System.Drawing.Size(153, 23);
             this.AddBookShopsButton.TabIndex = 30;
             this.AddBookShopsButton.Text = "ADD BOOK SHOP(S)";
             this.AddBookShopsButton.UseVisualStyleBackColor = false;
@@ -69,19 +69,19 @@
             // 
             // BookShopNamesBox
             // 
-            this.BookShopNamesBox.Location = new System.Drawing.Point(22, 206);
+            this.BookShopNamesBox.Location = new System.Drawing.Point(22, 182);
             this.BookShopNamesBox.Name = "BookShopNamesBox";
             this.BookShopNamesBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.BookShopNamesBox.Size = new System.Drawing.Size(212, 25);
+            this.BookShopNamesBox.Size = new System.Drawing.Size(212, 23);
             this.BookShopNamesBox.TabIndex = 29;
             // 
             // AddBookShopsLabel
             // 
             this.AddBookShopsLabel.AutoSize = true;
             this.AddBookShopsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.AddBookShopsLabel.Location = new System.Drawing.Point(10, 169);
+            this.AddBookShopsLabel.Location = new System.Drawing.Point(10, 149);
             this.AddBookShopsLabel.Name = "AddBookShopsLabel";
-            this.AddBookShopsLabel.Size = new System.Drawing.Size(233, 34);
+            this.AddBookShopsLabel.Size = new System.Drawing.Size(210, 30);
             this.AddBookShopsLabel.TabIndex = 28;
             this.AddBookShopsLabel.Text = "! Book Shop Name(s) \r\n(Make sure to split with a comma (,)) !";
             this.AddBookShopsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,9 +92,9 @@
             this.AddPublishersButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.AddPublishersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddPublishersButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddPublishersButton.Location = new System.Drawing.Point(51, 365);
+            this.AddPublishersButton.Location = new System.Drawing.Point(51, 322);
             this.AddPublishersButton.Name = "AddPublishersButton";
-            this.AddPublishersButton.Size = new System.Drawing.Size(153, 26);
+            this.AddPublishersButton.Size = new System.Drawing.Size(153, 23);
             this.AddPublishersButton.TabIndex = 34;
             this.AddPublishersButton.Text = "ADD PUBLISHER(S)";
             this.AddPublishersButton.UseVisualStyleBackColor = false;
@@ -102,19 +102,19 @@
             // 
             // PublisherNameBox
             // 
-            this.PublisherNameBox.Location = new System.Drawing.Point(22, 334);
+            this.PublisherNameBox.Location = new System.Drawing.Point(22, 295);
             this.PublisherNameBox.Name = "PublisherNameBox";
             this.PublisherNameBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.PublisherNameBox.Size = new System.Drawing.Size(212, 25);
+            this.PublisherNameBox.Size = new System.Drawing.Size(212, 23);
             this.PublisherNameBox.TabIndex = 33;
             // 
             // PublisherNamesLabel
             // 
             this.PublisherNamesLabel.AutoSize = true;
             this.PublisherNamesLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.PublisherNamesLabel.Location = new System.Drawing.Point(10, 297);
+            this.PublisherNamesLabel.Location = new System.Drawing.Point(10, 262);
             this.PublisherNamesLabel.Name = "PublisherNamesLabel";
-            this.PublisherNamesLabel.Size = new System.Drawing.Size(233, 34);
+            this.PublisherNamesLabel.Size = new System.Drawing.Size(210, 30);
             this.PublisherNamesLabel.TabIndex = 32;
             this.PublisherNamesLabel.Text = "! Publisher Name(s) \r\n(Make sure to split with a comma (,)) !";
             this.PublisherNamesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,17 +123,18 @@
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.NameLabel.Location = new System.Drawing.Point(22, 61);
+            this.NameLabel.Location = new System.Drawing.Point(22, 54);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(71, 17);
+            this.NameLabel.Size = new System.Drawing.Size(64, 15);
             this.NameLabel.TabIndex = 35;
             this.NameLabel.Text = "City Name";
             // 
             // CityNameBox
             // 
-            this.CityNameBox.Location = new System.Drawing.Point(22, 81);
+            this.CityNameBox.Location = new System.Drawing.Point(22, 71);
             this.CityNameBox.Name = "CityNameBox";
-            this.CityNameBox.Size = new System.Drawing.Size(132, 25);
+            this.CityNameBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.CityNameBox.Size = new System.Drawing.Size(132, 23);
             this.CityNameBox.TabIndex = 36;
             // 
             // RegisterCityButton
@@ -142,9 +143,9 @@
             this.RegisterCityButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.RegisterCityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterCityButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RegisterCityButton.Location = new System.Drawing.Point(160, 79);
+            this.RegisterCityButton.Location = new System.Drawing.Point(160, 70);
             this.RegisterCityButton.Name = "RegisterCityButton";
-            this.RegisterCityButton.Size = new System.Drawing.Size(75, 26);
+            this.RegisterCityButton.Size = new System.Drawing.Size(75, 23);
             this.RegisterCityButton.TabIndex = 37;
             this.RegisterCityButton.Text = "REGISTER";
             this.RegisterCityButton.UseVisualStyleBackColor = false;
@@ -154,9 +155,9 @@
             // 
             this.BackLabel.AutoSize = true;
             this.BackLabel.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.BackLabel.Location = new System.Drawing.Point(3, 415);
+            this.BackLabel.Location = new System.Drawing.Point(3, 366);
             this.BackLabel.Name = "BackLabel";
-            this.BackLabel.Size = new System.Drawing.Size(180, 17);
+            this.BackLabel.Size = new System.Drawing.Size(168, 15);
             this.BackLabel.TabIndex = 38;
             this.BackLabel.Text = "Back to Main Contributor Page";
             this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
@@ -165,18 +166,18 @@
             // 
             this.CatalogueLabel.AutoSize = true;
             this.CatalogueLabel.Font = new System.Drawing.Font("Times New Roman", 19.69811F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.CatalogueLabel.Location = new System.Drawing.Point(5, 9);
+            this.CatalogueLabel.Location = new System.Drawing.Point(5, 8);
             this.CatalogueLabel.Name = "CatalogueLabel";
-            this.CatalogueLabel.Size = new System.Drawing.Size(239, 33);
+            this.CatalogueLabel.Size = new System.Drawing.Size(226, 31);
             this.CatalogueLabel.TabIndex = 39;
             this.CatalogueLabel.Text = "Bookish catalogue";
             // 
             // CityRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.ClientSize = new System.Drawing.Size(256, 441);
+            this.ClientSize = new System.Drawing.Size(256, 389);
             this.Controls.Add(this.CatalogueLabel);
             this.Controls.Add(this.BackLabel);
             this.Controls.Add(this.RegisterCityButton);

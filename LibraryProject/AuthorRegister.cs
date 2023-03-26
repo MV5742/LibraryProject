@@ -37,25 +37,56 @@ namespace LibraryProject.Presentation
             string firstName = FirstNameBox.Text;
             string lastName = LastNameBox.Text;
             string bio = BioBox.Text;
-            Author author = new Author(firstName, lastName, bio);
-            await authorService.CreateAsync(author);
-            await authorService.UpdateAsync();
+
+            if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(bio))
+            {
+                Author author = new Author(firstName, lastName, bio);
+                await authorService.CreateAsync(author);
+                await authorService.UpdateAsync();
+            }
+            else
+                BioBox.Text = "Not all fields have a value";
         }
 
         private async void AddBooksButton_Click(object sender, EventArgs e)
         {
-            Author author = authorService.GetAllAsync()
+            try
+            {
+                Author author = authorService.GetAllAsync()
                 .FirstOrDefault(x => x.FirstName == FirstNameBox.Text && x.LastName == LastNameBox.Text);
 
-            List<Book> books = bookService
-                .GetAllAsync()
-                .Where(x => BookNamesBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).Contains(x.Title))
-                .ToList();
-            foreach (Book book in books)
-            {
-                author.Books.Add(book);
+                if (author == null)
+                    throw new ArgumentException("Please provide an existing author's name");
+
+                List<string> splitInput = BookNamesBox.Text.Split(", ", StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                if (splitInput.Count == 0)
+                    throw new ArgumentException("No author input provided");
+
+                List<Book> books = bookService
+                    .GetAllAsync()
+                    .Where(x => splitInput.Contains(x.Title))
+                    .ToList();
+
+                if (books.Count == 0)
+                    throw new ArgumentException("Provided books do not exist");
+
+                foreach (Book book in books)
+                {
+                    if (!author.Books.Contains(book))
+                        author.Books.Add(book);
+                    else
+                        BioBox.Text = $"Book {book.Title} already exists\n";
+                }
+
+                await authorService.UpdateAsync();
+
+                BioBox.Text += $"Process successful";
             }
-            await authorService.UpdateAsync();
+            catch(ArgumentException ex)
+            {
+                BioBox.Text = ex.Message;
+            }
         }
     }
 }

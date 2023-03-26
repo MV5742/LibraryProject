@@ -9,9 +9,6 @@ namespace LibraryProject.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "Books");
-
             migrationBuilder.CreateTable(
                 name: "Authors",
                 columns: table => new
@@ -112,11 +109,25 @@ namespace LibraryProject.Data.Migrations
                     Price = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
                     DatePublished = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PublisherId = table.Column<int>(type: "int", nullable: false),
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    BookShopId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Books_Authors_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Books_BookShops_BookShopId",
+                        column: x => x.BookShopId,
+                        principalTable: "BookShops",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Books_Publishers_PublisherId",
                         column: x => x.PublisherId,
@@ -128,56 +139,6 @@ namespace LibraryProject.Data.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AuthorBooks",
-                schema: "Books",
-                columns: table => new
-                {
-                    AuthorId = table.Column<int>(type: "int", nullable: false),
-                    BookId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AuthorBooks", x => new { x.AuthorId, x.BookId });
-                    table.ForeignKey(
-                        name: "FK_AuthorBooks_Authors_AuthorId",
-                        column: x => x.AuthorId,
-                        principalTable: "Authors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AuthorBooks_Books_BookId",
-                        column: x => x.BookId,
-                        principalTable: "Books",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "BookShopBooks",
-                schema: "Books",
-                columns: table => new
-                {
-                    BookId = table.Column<int>(type: "int", nullable: false),
-                    BookShopId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BookShopBooks", x => new { x.BookId, x.BookShopId });
-                    table.ForeignKey(
-                        name: "FK_BookShopBooks_Books_BookId",
-                        column: x => x.BookId,
-                        principalTable: "Books",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_BookShopBooks_BookShops_BookShopId",
-                        column: x => x.BookShopId,
-                        principalTable: "BookShops",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -220,34 +181,18 @@ namespace LibraryProject.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "DatePublished", "Description", "Genre", "ISBN", "Price", "PublisherId", "QuantityInStock", "Title", "UserId" },
-                values: new object[] { 1, new DateTime(2023, 3, 25, 20, 5, 45, 29, DateTimeKind.Local).AddTicks(378), "Pod Igoto na rasbiraem esik", "Tragikomedia", "9-876-543-21", 18.78m, 2, 42, "Pod Igoto na shliokavitsa", null });
-
-            migrationBuilder.InsertData(
-                schema: "Books",
-                table: "AuthorBooks",
-                columns: new[] { "AuthorId", "BookId" },
-                values: new object[,]
-                {
-                    { 1, 1 },
-                    { 2, 1 }
-                });
-
-            migrationBuilder.InsertData(
-                schema: "Books",
-                table: "BookShopBooks",
-                columns: new[] { "BookId", "BookShopId" },
-                values: new object[,]
-                {
-                    { 1, 1 },
-                    { 1, 2 }
-                });
+                columns: new[] { "Id", "AuthorId", "BookShopId", "DatePublished", "Description", "Genre", "ISBN", "Price", "PublisherId", "QuantityInStock", "Title", "UserId" },
+                values: new object[] { 1, 1, 1, new DateTime(2023, 3, 26, 2, 32, 24, 444, DateTimeKind.Local).AddTicks(2079), "Pod Igoto na rasbiraem esik", "Tragikomedia", "9-876-543-21", 18.78m, 2, 42, "Pod Igoto na shliokavitsa", null });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AuthorBooks_BookId",
-                schema: "Books",
-                table: "AuthorBooks",
-                column: "BookId");
+                name: "IX_Books_AuthorId",
+                table: "Books",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Books_BookShopId",
+                table: "Books",
+                column: "BookShopId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_PublisherId",
@@ -264,12 +209,6 @@ namespace LibraryProject.Data.Migrations
                 name: "IX_Books_UserId",
                 table: "Books",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BookShopBooks_BookShopId",
-                schema: "Books",
-                table: "BookShopBooks",
-                column: "BookShopId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookShops_CityId",
@@ -297,18 +236,10 @@ namespace LibraryProject.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AuthorBooks",
-                schema: "Books");
-
-            migrationBuilder.DropTable(
-                name: "BookShopBooks",
-                schema: "Books");
+                name: "Books");
 
             migrationBuilder.DropTable(
                 name: "Authors");
-
-            migrationBuilder.DropTable(
-                name: "Books");
 
             migrationBuilder.DropTable(
                 name: "BookShops");

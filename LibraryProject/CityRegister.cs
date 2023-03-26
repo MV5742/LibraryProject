@@ -36,10 +36,22 @@ namespace LibraryProject.Presentation
 
         private async void RegisterCityButton_Click(object sender, EventArgs e)
         {
-            string cityName = CityNameBox.Text;
-            City city = new City(cityName);
-            await cityService.CreateAsync(city);
-            await cityService.UpdateAsync();
+            try
+            {
+                string cityName = CityNameBox.Text;
+
+                if (string.IsNullOrEmpty(cityName))
+                    throw new ArgumentException("Not all input fields contain a value");
+
+                City city = new City(cityName);
+                await cityService.CreateAsync(city);
+                await cityService.UpdateAsync();
+                CityNameBox.Text = "Process successful";
+            }
+            catch(ArgumentException ex)
+            {
+                CityNameBox.Text = ex.Message;
+            }
         }
 
         private async void AddPublishersButton_Click(object sender, EventArgs e)
